@@ -7,7 +7,7 @@
         "1": {
           "npcName": "Narrator",
           "npcLine": "Вы возвращаетесь из школы. Учеба в третьем классе даётся нелегко.",
-          "imgSrc": "frog",
+          "imgSrc": "npc_img",
           "right": {
             "text": "Грустить",
             "nextCard": "2"
@@ -16,7 +16,7 @@
         "2": {
           "npcName": "Narrator",
           "npcLine": "Вместо хороших оценок вам дают наклейки. И сегодня вы опять ничего не получили.",
-          "imgSrc": "frog",
+          "imgSrc": "npc_img",
           "right": {
             "text": "Мечтать",
             "nextCard": "3"
@@ -25,7 +25,7 @@
         "3": {
           "npcName": "Narrator",
           "npcLine": "Вот бы наконец-то получить весёлого динозаврика или машинку.",
-          "imgSrc": "frog",
+          "imgSrc": "npc_img",
           "right": {
             "text": "Мечтать",
             "nextCard": "4"
@@ -34,7 +34,7 @@
         "4": {
           "npcName": "Narrator",
           "npcLine": "Но больше всего вы мечтаете о золотом плюсике. Он сияет на солнце словно сокровище.",
-          "imgSrc": "frog",
+          "imgSrc": "npc_img",
           "right": {
             "text": "Мечтать…",
             "nextCard": "5"
@@ -43,7 +43,7 @@
         "5": {
           "npcName": "Narrator",
           "npcLine": "Как бы хотелось получить этот золотой плюсик.",
-          "imgSrc": "frog",
+          "imgSrc": "npc_img",
           "right": {
             "text": "С другой стороны",
             "nextCard": "6"
@@ -52,7 +52,7 @@
         "6": {
           "npcName": "Narrator",
           "npcLine": "Вместо учёбы можно было бы заняться своими любимыми делами…",
-          "imgSrc": "frog",
+          "imgSrc": "npc_img",
           "right": {
             "text": "Комиксы",
             "nextCard": "7"
@@ -65,7 +65,7 @@
         "7": {
           "npcName": "Narrator",
           "npcLine": "Или поиграть…",
-          "imgSrc": "frog",
+          "imgSrc": "npc_img",
           "right": {
             "text": "На площадке",
             "nextCard": "8"
@@ -77,8 +77,8 @@
         },
         "8": {
           "npcName": "Narrator",
-          "npcLine": "Или поиграть…",
-          "imgSrc": "frog",
+          "npcLine": "Но легендарная наклейка так и манит. Может, всё же поучиться?",
+          "imgSrc": "npc_img",
           "right": {
             "text": "Учиться",
             "nextCard": null
@@ -97,7 +97,7 @@
         "1": {
           "npcName": "Narrator",
           "npcLine": "Вы полны решимости и садитесь за уроки.",
-          "imgSrc": "frog",
+          "imgSrc": "npc_img",
           "right": {
             "text": "Открыть “Окружающий мир”",
             "nextCard": "2"
@@ -106,7 +106,7 @@
         "2": {
           "npcName": "Narrator",
           "npcLine": "Волга — река в Европейской части России.",
-          "imgSrc": "frog",
+          "imgSrc": "npc_img",
           "right": {
             "text": "Читать",
             "nextCard": "3"
@@ -115,7 +115,7 @@
         "3": {
           "npcName": "Narrator",
           "npcLine": "По разнообразию рыбы-Волга одна из богатейших рек. В реке водятся: сазан, окунь, лещ, сом, судак, щука и ерш. В Волге живут также осётры, белуги и севрюги.",
-          "imgSrc": "frog",
+          "imgSrc": "npc_img",
           "right": {
             "text": "Читать дальше",
             "nextCard": "4"
@@ -124,7 +124,7 @@
         "4": {
           "npcName": "Narrator",
           "npcLine": "На берегах реки Волги можно увидеть таких редких и красивых птиц, как кудрявый пеликан, большая белая цапля, фазан и многих других.",
-          "imgSrc": "frog",
+          "imgSrc": "npc_img",
           "right": {
             "text": "Читать…",
             "nextCard": "5"
@@ -133,7 +133,7 @@
         "5": {
           "npcName": "Narrator",
           "npcLine": "В дельте Волги в тростниках обитают дикие кабаны.",
-          "imgSrc": "frog",
+          "imgSrc": "npc_img",
           "right": {
             "text": "Читать…",
             "nextCard": "6"
@@ -142,7 +142,7 @@
         "6": {
           "npcName": "Narrator",
           "npcLine": "…насекомые, змеи и лягушки…",
-          "imgSrc": "frog",
+          "imgSrc": "npc_img",
           "right": {
             "text": "Читать…",
             "nextCard": "7"
@@ -151,7 +151,7 @@
         "7": {
           "npcName": "Narrator",
           "npcLine": "… печенька…",
-          "imgSrc": "frog",
+          "imgSrc": "npc_img",
           "right": {
             "text": "Печенька?",
             "nextCard": null
@@ -166,7 +166,7 @@
         "1": {
           "npcName": "Печенька",
           "npcLine": "Ты готов к приключениям? Ради золотого плюсика придётся попотеть!",
-          "imgSrc": "frog",
+          "imgSrc": "cookie",
           "right": {
             "text": "Приключениям?",
             "nextCard": "2"
@@ -175,7 +175,7 @@
         "2": {
           "npcName": "Печенька",
           "npcLine": "Да, но они опаснее, чем обычные приключения. Тебе понадобится помощь. Держи…",
-          "imgSrc": "frog",
+          "imgSrc": "cookie",
           "right": {
             "text": "Что это?",
             "nextCard": "3"
@@ -184,7 +184,7 @@
         "3": {
           "npcName": "Печенька",
           "npcLine": "Это магия! Теперь ты волшебник, Гарри!",
-          "imgSrc": "frog",
+          "imgSrc": "cookie",
           "right": {
             "text": "Я не Гарри",
             "nextCard": "4"
@@ -193,7 +193,7 @@
         "4": {
           "npcName": "Печенька",
           "npcLine": "Смотри, тут твои способности и предметы!",
-          "imgSrc": "frog",
+          "imgSrc": "cookie",
           "right": {
             "text": "Но зачем?",
             "nextCard": "5"
@@ -202,7 +202,7 @@
         "5": {
           "npcName": "Печенька",
           "npcLine": "Они пригодятся! Тебя ждёт множество непростых выборов, влияющих на полоску кармы сверху.",
-          "imgSrc": "frog",
+          "imgSrc": "cookie",
           "right": {
             "text": "Карма?",
             "nextCard": "6"
@@ -211,7 +211,7 @@
         "6": {
           "npcName": "Печенька",
           "npcLine": "Карма приведёт к тому или иному концу приключения. Удачи!",
-          "imgSrc": "frog",
+          "imgSrc": "cookie",
           "right": {
             "text": "Ничего не понимаю",
             "nextCard": null
@@ -227,7 +227,7 @@
         "1": {
           "npcName": "Narrator",
           "npcLine": "Вы оказываетесь возле широкой реки. Перед вами каменный город с высокими стенами и башнями, прямо как в мультиках",
-          "imgSrc": "frog",
+          "imgSrc": "npc_img",
           "right": {
             "text": "Оглядеться",
             "nextCard": "2"
@@ -240,7 +240,7 @@
         "2": {
           "npcName": "Narrator",
           "npcLine": "Вдоль реки вы видите луга, а далеко за ними лес",
-          "imgSrc": "frog",
+          "imgSrc": "npc_img",
           "right": {
             "text": "Идти в город",
             "nextCard": "3"
@@ -249,7 +249,7 @@
         "3": {
           "npcName": "Narrator",
           "npcLine": "У ворот никого нет, проходя внутрь вы слышите множество криков",
-          "imgSrc": "frog",
+          "imgSrc": "npc_img",
           "right": {
             "text": "Идти на крики",
             "nextCard": "4"
@@ -258,7 +258,7 @@
         "4": {
           "npcName": "Narrator",
           "npcLine": "Под опрокинутой телегой замечаете девочку с лицом лягушки, она плачет",
-          "imgSrc": "frog",
+          "imgSrc": "npc_img",
           "right": {
             "text": "Спросить про лицо",
             "nextCard": "8"
@@ -284,7 +284,7 @@
         "6": {
           "npcName": "Narrator",
           "npcLine": "Вы помогаете девочке найти дом. В благодарность она вручает вам монетку",
-          "imgSrc": "frog",
+          "imgSrc": "npc_img",
           "right": {
             "text": "Идти дальше",
             "nextCard": "9"
@@ -293,12 +293,12 @@
         "7": {
           "npcName": "Narrator",
           "npcLine": "Девочка удивленно на вас смотрит",
-          "imgSrc": "frog",
-          "right": {
+          "imgSrc": "npc_img",
+          "left": {
             "text": "Помочь",
             "nextCard": "6"
           },
-          "left": {
+          "right": {
             "text": "Идти дальше",
             "nextCard": "9"
           }
@@ -306,18 +306,35 @@
         "8": {
           "npcName": "Narrator",
           "npcLine": "Девочка не отвечает. Но вы замечаете, что и руки и ноги у неё тоже лягушачьи.",
-          "imgSrc": "frog",
+          "imgSrc": "npc_img",
           "right": {
             "text": "Идти дальше",
             "nextCard": "9"
+          },
+          "left": {
+            "text": "Что случилось?",
+            "nextCard": "5"
           }
         },
         "9": {
           "npcName": "Narrator",
           "npcLine": "Вы выходите на площадь и видите стрекозу размером с дом. Вокруг разбросаны люди в доспехах.",
-          "imgSrc": "frog",
+          "imgSrc": "npc_img",
           "right": {
             "text": "Приглядеться",
+            "nextCard": "10"
+          }
+        },
+        "10": {
+          "npcName": "Narrator",
+          "npcLine": "Недалеко от чудовища стоит паренёк. Похоже, его пытается защитить женщина в доспехах, но она слишком сильно ранена.",
+          "imgSrc": "npc_img",
+          "right": {
+            "text": "Помочь",
+            "nextCard": null
+          },
+          "left": {
+            "text": "Бежать",
             "nextCard": null
           }
         }

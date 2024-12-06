@@ -9,6 +9,7 @@ export const loadAssets = async () => {
   Assets.add({ alias: "npc_img", src: "assets/npc1.png" });
   Assets.add({ alias: "frog", src: "assets/frog.png" });
   Assets.add({ alias: "sturgeon", src: "assets/sturgeon.png" });
+  Assets.add({ alias: "cookie", src: "assets/cookie.png" });
 
   await Assets.load("background");
   await Assets.load("settings_button");
@@ -17,4 +18,5 @@ export const loadAssets = async () => {
   await Assets.load("npc_img");
   await Assets.load("frog");
   await Assets.load("sturgeon");
+  await Assets.load("cookie");
 };
