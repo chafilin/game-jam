@@ -1,5 +1,5 @@
 import { Container } from "pixi.js";
-import { Card, Selection } from "./types";
+import { Card, Selection, Stats } from "./types";
 import { createCard, createImage } from "./ui";
 
 // Get the next card based on the current selection
@@ -27,20 +27,22 @@ const createNpc = (name: string, screenWidth: number): Container => {
 // Create encounter container
 export const createEncounter = (
   screenWidth: number,
-  screenHeight: number,
+  containerHeight: number, // Receive the container height
   CARDS: Record<string, Card>,
   onLevelComplete: () => void,
   initialCardId: string,
-  saveCurrentCardId: (cardId: string) => void
+  saveCurrentCardId: (cardId: string) => void,
+  stats: Stats, // Pass current stats
+  updateStats: (newStats: Stats) => void // Function to update stats
 ): Container => {
   let encounter = CARDS[initialCardId];
   const encounterContainer = new Container();
-  encounterContainer.y = screenHeight / 3;
-  encounterContainer.height = screenHeight;
+  encounterContainer.y = containerHeight + 20;
 
   const renderEncounter = (card: Card) => {
     encounterContainer.removeChildren();
     const npc = createNpc(card.imgSrc, screenWidth);
+    npc.y = 40; // Position at the top of encounterContainer
     encounterContainer.addChild(npc);
 
     const cardStack = createCard(
@@ -50,12 +52,41 @@ export const createEncounter = (
       onLevelComplete
     );
     cardStack.x = screenWidth / 2 - cardStack.width / 2;
-    cardStack.y = encounterContainer.height;
+    // Position cardStack below the NPC image with some spacing
+    cardStack.y = npc.height + 60;
     encounterContainer.addChild(cardStack);
   };
 
   const changeEncounter = (selection: Selection) => {
     const nextCard = getNextCard(encounter, selection, CARDS);
+    const selectionData = encounter[selection];
+    console.log("stats", stats);
+    // Check for stat requirements
+    if (selectionData?.statRequirements) {
+      const requirementsMet = Object.entries(
+        selectionData.statRequirements
+      ).every(([key, value]) => stats[key as keyof Stats] >= value);
+      if (!requirementsMet) {
+        console.log(
+          "Stat requirements not met",
+          selectionData.statRequirements,
+          stats
+        );
+        // Optionally display a message to the player
+        return;
+      }
+    }
+
+    // Apply stat changes
+    if (selectionData?.statChanges) {
+      const newStats = { ...stats };
+      Object.entries(selectionData.statChanges).forEach(([key, value]) => {
+        console.log(`Action: ${key} changed by ${value}`);
+        newStats[key as keyof Stats] += value;
+      });
+      updateStats(newStats);
+    }
+
     if (nextCard) {
       encounter = nextCard;
       saveCurrentCardId(nextCard.id);

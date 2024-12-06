@@ -1,6 +1,6 @@
 import { Graphics, Sprite, Texture, Text, Container } from "pixi.js";
 import { DropShadowFilter } from "pixi-filters";
-import { Card, ImgOptions, Selection } from "./types";
+import { Card, ImgOptions, Selection, Stats } from "./types";
 
 // Create background sprite
 export const createBackground = (
@@ -125,28 +125,38 @@ const createResourceContainer = (
 };
 
 // Create resources container
-export const createResources = (screenWidth: number): Container => {
+export const createResources = (
+  screenWidth: number,
+  stats: Stats
+): Container => {
   const resourcesContainer = new Container();
   resourcesContainer.width = screenWidth; // Ensure resources adjust width
-  const resourceContainer1 = createResourceContainer(50, 120, screenWidth);
+  const resourceContainer1 = createResourceContainer(
+    stats.dexterity * 10,
+    120,
+    screenWidth
+  );
   resourceContainer1.x = 12;
   resourceContainer1.y = 100;
   resourcesContainer.addChild(resourceContainer1);
 
-  const resourceContainer2 = createResourceContainer(100, 120, screenWidth);
+  const resourceContainer2 = createResourceContainer(
+    stats.magic * 10,
+    120,
+    screenWidth
+  );
   resourceContainer2.x = screenWidth - resourceContainer2.width - 16;
   resourceContainer2.y = 100;
   resourcesContainer.addChild(resourceContainer2);
 
-  const resourceContainer3 = createResourceContainer(80, 120, screenWidth);
+  const resourceContainer3 = createResourceContainer(
+    stats.savvy * 10,
+    120,
+    screenWidth
+  );
   resourceContainer3.x = 12;
   resourceContainer3.y = 146;
   resourcesContainer.addChild(resourceContainer3);
-
-  const resourceContainer4 = createResourceContainer(40, 120, screenWidth);
-  resourceContainer4.x = screenWidth - resourceContainer4.width - 16;
-  resourceContainer4.y = 146;
-  resourcesContainer.addChild(resourceContainer4);
 
   return resourcesContainer;
 };

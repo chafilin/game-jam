@@ -61,11 +61,17 @@
           "imgSrc": "npc_img",
           "right": {
             "text": "Комиксы",
-            "nextCard": "7"
+            "nextCard": "7",
+            "statChanges": {
+              "savvy": 1
+            }
           },
           "left": {
             "text": "Велосипед",
-            "nextCard": "7"
+            "nextCard": "7",
+            "statChanges": {
+              "dexterity": 1
+            }
           }
         },
         "7": {
@@ -75,11 +81,17 @@
           "imgSrc": "npc_img",
           "right": {
             "text": "На площадке",
-            "nextCard": "8"
+            "nextCard": "8",
+            "statChanges": {
+              "dexterity": 1
+            }
           },
           "left": {
             "text": "В лего",
-            "nextCard": "8"
+            "nextCard": "8",
+            "statChanges": {
+              "savvy": 1
+            }
           }
         },
         "8": {

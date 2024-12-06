@@ -11,12 +11,22 @@ export type Card = {
   [Selection.Right]: {
     text: string;
     nextCard: string | null;
+    statChanges?: Partial<Stats>; // Optional stat changes
+    statRequirements?: Partial<Stats>; // Optional stat requirements
   };
   [Selection.Left]?: {
     text: string;
     nextCard: string | null;
+    statChanges?: Partial<Stats>;
+    statRequirements?: Partial<Stats>;
   };
   isLastCard?: boolean;
+};
+
+export type Stats = {
+  dexterity: number;
+  savvy: number;
+  magic: number;
 };
 
 export type ImgOptions = {
@@ -35,4 +45,8 @@ export type Level = {
   id: string;
   background: string;
   cards: Record<string, Card>;
+};
+
+export type Player = {
+  stats: Stats;
 };

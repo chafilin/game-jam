@@ -11,6 +11,11 @@ export const loadAssets = async () => {
   Assets.add({ alias: "sturgeon", src: "assets/sturgeon.png" });
   Assets.add({ alias: "cookie", src: "assets/cookie.png" });
 
+  // Add stat icons
+  // Assets.add({ alias: "dexterity_icon", src: "assets/dexterity_icon.png" });
+  // Assets.add({ alias: "savvy_icon", src: "assets/savvy_icon.png" });
+  // Assets.add({ alias: "magic_icon", src: "assets/magic_icon.png" });
+
   await Assets.load("background");
   await Assets.load("settings_button");
   await Assets.load("stat_icon");
@@ -19,4 +24,8 @@ export const loadAssets = async () => {
   await Assets.load("frog");
   await Assets.load("sturgeon");
   await Assets.load("cookie");
+
+  // await Assets.load("dexterity_icon");
+  // await Assets.load("savvy_icon");
+  // await Assets.load("magic_icon");
 };

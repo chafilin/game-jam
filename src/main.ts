@@ -3,7 +3,7 @@ import cardJson from "./cards.json";
 import "./style.css";
 import { loadAssets } from "./assets";
 import { createBackground, createHeader, createResources } from "./ui";
-import { Level } from "./types";
+import { Level, Stats } from "./types";
 import { LevelManager } from "./levelManager";
 import { createEncounter } from "./encounter";
 
@@ -42,23 +42,46 @@ const init = async () => {
   const header = createHeader(screenWidth);
   app.stage.addChild(header);
 
-  const resources = createResources(screenWidth);
+  const stats: Stats = {
+    dexterity: 0,
+    savvy: 0,
+    magic: 0,
+  };
+
+  const updateStats = (newStats: Stats) => {
+    // Update the existing stats object instead of reassigning
+    Object.assign(stats, newStats);
+    console.log("Action: Stats updated", stats);
+    app.stage.removeChild(resources);
+    resources = createResources(screenWidth, stats);
+    app.stage.addChild(resources);
+  };
+
+  let resources = createResources(screenWidth, stats);
   app.stage.addChild(resources);
 
+  // Calculate the total height occupied by header and resources
+  const usedHeight = header.height + resources.height;
+
   const encounterContainer = new Container();
+  // Adjust the encounterContainer position and size
+  encounterContainer.y = usedHeight;
+  encounterContainer.height = screenHeight - usedHeight;
   app.stage.addChild(encounterContainer);
 
   const renderLevel = (level: Level, cardId: string) => {
     encounterContainer.removeChildren();
     const encounter = createEncounter(
       screenWidth,
-      screenHeight,
+      encounterContainer.height, // Pass the updated height
       level.cards,
       onLevelComplete,
       cardId,
       (newCardId) => {
         currentCardId = newCardId;
-      }
+      },
+      stats,
+      updateStats
     );
     encounterContainer.addChild(encounter);
   };
@@ -87,7 +110,15 @@ const init = async () => {
     background.width = screenWidth;
     background.height = screenHeight;
     header.width = screenWidth;
-    resources.width = screenWidth;
+    app.stage.removeChild(resources);
+    resources = createResources(screenWidth, stats);
+    app.stage.addChild(resources);
+
+    // Recalculate used height and adjust encounterContainer
+    const usedHeight = header.height + resources.height;
+    encounterContainer.y = usedHeight;
+    encounterContainer.height = screenHeight - usedHeight;
+
     renderLevel(currentLevel, currentCardId);
   });
 };
