@@ -9,12 +9,13 @@ export type Card = {
   npcLine: string;
   [Selection.Accept]: {
     text: string;
-    nextCard: string;
+    nextCard: string | null;
   };
   [Selection.Decline]: {
-    text: string;
-    nextCard: string;
+    text: string | null;
+    nextCard: string | null;
   };
+  isLastCard?: boolean;
 };
 
 export type ImgOptions = {
@@ -22,4 +23,15 @@ export type ImgOptions = {
   y: number;
   width: number;
   height: number;
+};
+
+export type Game = {
+  currentCard: string;
+  cards: Record<string, Card>;
+};
+
+export type Level = {
+  id: string;
+  background: string;
+  cards: Record<string, Card>;
 };

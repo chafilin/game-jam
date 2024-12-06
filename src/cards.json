@@ -1,44 +1,95 @@
 {
-  "1": {
-    "imgSrc": "npc_img",
-    "npcName": "1",
-    "npcLine": "Здравствуйте, Ваше высочество. Дайте денег на пропитание, что вам стоит?",
-    "decline": { "text": "Пошёл вон!", "nextCard": 3 },
-    "accept": { "text": "Дать монетку", "nextCard": 2 }
-  },
-  "2": {
-    "imgSrc": "frog",
-    "npcName": "2",
-    "npcLine": "Я что, попаданец?",
-    "decline": { "text": "Cумасшедшая!", "nextCard": 3 },
-    "accept": { "text": "Выслушать", "nextCard": 4 }
-  },
-  "3": {
-    "imgSrc": "sturgeon",
-    "npcName": "3",
-    "npcLine": "Давай драться, если мужик",
-    "decline": { "text": "Вышвырнуть", "nextCard": 5 },
-    "accept": { "text": "Нападай!", "nextCard": 6 }
-  },
-  "4": {
-    "imgSrc": "npc_img",
-    "npcName": "4",
-    "npcLine": "Спасибо, Ваше высочество. Благослови вас Бог!",
-    "decline": { "text": "Пошёл вон!", "nextCard": 1 },
-    "accept": { "text": "Дать монетку", "nextCard": 2 }
-  },
-  "5": {
-    "imgSrc": "npc_img",
-    "npcName": "5",
-    "npcLine": "Здравствуйте, Ваше высочество. Дайте денег на пропитание, что вам стоит?",
-    "decline": { "text": "Пошёл вон!", "nextCard": 1 },
-    "accept": { "text": "Дать монетку", "nextCard": 2 }
-  },
-  "6": {
-    "imgSrc": "npc_img",
-    "npcName": "6",
-    "npcLine": "Здравствуйте, Ваше высочество. Дайте денег на пропитание, что вам стоит?",
-    "decline": { "text": "Пошёл вон!", "nextCard": 1 },
-    "accept": { "text": "Дать монетку", "nextCard": 2 }
-  }
+  "levels": [
+    {
+      "id": "level1",
+      "background": "background",
+      "cards": {
+        "1": {
+          "imgSrc": "npc_img",
+          "npcName": "1",
+          "npcLine": "Здравствуйте, Ваше высочество. Дайте денег на пропитание, что вам стоит?",
+          "decline": { "text": "Пошёл вон!", "nextCard": "3" },
+          "accept": { "text": "Дать монетку", "nextCard": "2" }
+        },
+        "2": {
+          "imgSrc": "frog",
+          "npcName": "2",
+          "npcLine": "Я что, попаданец?",
+          "decline": { "text": "Cумасшедшая!", "nextCard": "3" },
+          "accept": { "text": "Выслушать", "nextCard": "4" }
+        },
+        "3": {
+          "imgSrc": "sturgeon",
+          "npcName": "3",
+          "npcLine": "Давай драться, если мужик",
+          "decline": { "text": "Вышвырнуть", "nextCard": "5" },
+          "accept": { "text": "Нападай!", "nextCard": "6" }
+        },
+        "4": {
+          "imgSrc": "npc_img",
+          "npcName": "4",
+          "npcLine": "Спасибо, Ваше высочество. Благослови вас Бог!",
+          "decline": { "text": "Пошёл вон!", "nextCard": "1" },
+          "accept": { "text": "Дать монетку", "nextCard": "2" }
+        },
+        "5": {
+          "imgSrc": "npc_img",
+          "npcName": "5",
+          "npcLine": "Здравствуйте, Ваше высочество. Дайте денег на пропитание, что вам стоит?",
+          "decline": { "text": "Пошёл вон!", "nextCard": "1" },
+          "accept": { "text": "Дать монетку", "nextCard": "2" }
+        },
+        "6": {
+          "imgSrc": "npc_img",
+          "npcName": "6",
+          "npcLine": "Здравствуйте, Ваше высочество. Дайте денег на пропитание, что вам стоит?",
+          "decline": { "text": "Пошёл вон!", "nextCard": null },
+          "accept": { "text": "Дать монетку", "nextCard": "1" },
+          "isLastCard": true
+        }
+      }
+    },
+    {
+      "id": "testLevel1",
+      "background": "background",
+      "cards": {
+        "1": {
+          "imgSrc": "npc_img",
+          "npcName": "Test NPC 1",
+          "npcLine": "This is a test line for level 1.",
+          "decline": { "text": "Decline", "nextCard": "2" },
+          "accept": { "text": "Accept", "nextCard": "2" }
+        },
+        "2": {
+          "imgSrc": "npc_img",
+          "npcName": "Test NPC 2",
+          "npcLine": "This is another test line for level 1.",
+          "decline": { "text": "Decline", "nextCard": null },
+          "accept": { "text": "Accept", "nextCard": "1" },
+          "isLastCard": true
+        }
+      }
+    },
+    {
+      "id": "testLevel2",
+      "background": "background",
+      "cards": {
+        "1": {
+          "imgSrc": "npc_img",
+          "npcName": "Test NPC 3",
+          "npcLine": "This is a test line for level 2.",
+          "decline": { "text": "Decline", "nextCard": "2" },
+          "accept": { "text": "Accept", "nextCard": "2" }
+        },
+        "2": {
+          "imgSrc": "npc_img",
+          "npcName": "Test NPC 4",
+          "npcLine": "This is another test line for level 2.",
+          "decline": { "text": "Decline", "nextCard": null },
+          "accept": { "text": "Accept", "nextCard": "1" },
+          "isLastCard": true
+        }
+      }
+    }
+  ]
 }
