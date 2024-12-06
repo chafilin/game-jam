@@ -277,11 +277,11 @@ export const createCard = (
     if (isDragging) {
       const endPosition = event.x;
       if (endPosition - startPosition > cardContainer.width / 2) {
-        onSelection(Selection.Accept);
-        console.log("Action: Card accepted");
+        onSelection(Selection.Right);
+        console.log("Action: Card righted");
       } else if (endPosition - startPosition < -cardContainer.width / 2) {
-        onSelection(Selection.Decline);
-        console.log("Action: Card declined");
+        onSelection(Selection.Left);
+        console.log("Action: Card leftd");
       } else {
         cardContainer.x = screenWidth / 2 - cardContainer.width / 2;
         console.log("Action: Card drag cancelled");
@@ -300,7 +300,7 @@ export const createCard = (
 
   if (card.isLastCard) {
     const nextLevelButton = createButton(
-      card[Selection.Accept].text,
+      card[Selection.Right].text,
       35,
       cardContainer.height - 60,
       cardContainer.width - 70,
@@ -313,48 +313,48 @@ export const createCard = (
     );
     cardContainer.addChild(nextLevelButton);
   } else {
-    if (card[Selection.Decline] !== undefined) {
-      const declineButton = createButton(
-        card[Selection.Decline].text,
+    if (card[Selection.Left] !== undefined) {
+      const leftButton = createButton(
+        card[Selection.Left].text,
         10,
         cardContainer.height - 60,
         140,
         50,
-        "#AE1A2E",
+        "#176542",
         () => {
-          onSelection(Selection.Decline);
-          console.log("Action: Decline button clicked");
+          onSelection(Selection.Left);
+          console.log("Action: Left button clicked");
         }
       );
-      cardContainer.addChild(declineButton);
+      cardContainer.addChild(leftButton);
 
-      const acceptButton = createButton(
-        card[Selection.Accept].text,
+      const rightButton = createButton(
+        card[Selection.Right].text,
         screenWidth - 230,
         cardContainer.height - 60,
         140,
         50,
         "#176542",
         () => {
-          onSelection(Selection.Accept);
-          console.log("Action: Accept button clicked");
+          onSelection(Selection.Right);
+          console.log("Action: Right button clicked");
         }
       );
-      cardContainer.addChild(acceptButton);
+      cardContainer.addChild(rightButton);
     } else {
-      const acceptButton = createButton(
-        card[Selection.Accept].text,
+      const rightButton = createButton(
+        card[Selection.Right].text,
         35,
         cardContainer.height - 60,
         cardContainer.width - 70,
         50,
         "#176542",
         () => {
-          onSelection(Selection.Accept);
-          console.log("Action: Accept button clicked");
+          onSelection(Selection.Right);
+          console.log("Action: Right button clicked");
         }
       );
-      cardContainer.addChild(acceptButton);
+      cardContainer.addChild(rightButton);
     }
   }
 

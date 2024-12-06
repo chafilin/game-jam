@@ -1,17 +1,17 @@
 export enum Selection {
-  Accept = "accept",
-  Decline = "decline",
+  Right = "right",
+  Left = "left",
 }
 
 export type Card = {
   imgSrc: string;
   npcName: string;
   npcLine: string;
-  [Selection.Accept]: {
+  [Selection.Right]: {
     text: string;
     nextCard: string | null;
   };
-  [Selection.Decline]?: {
+  [Selection.Left]?: {
     text: string;
     nextCard: string | null;
   };
