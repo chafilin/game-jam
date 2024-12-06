@@ -34,21 +34,24 @@ const loadAssets = async () => {
 };
 
 // Create a new application
-const app = new Application();
-await app.init({
-  width: window.innerWidth,
-  height: window.innerHeight,
-  resolution: window.devicePixelRatio || 1,
-  autoDensity: true,
-  background: "#ffffff", // белый фон
-  resizeTo: window,
-});
+const createApp = async () => {
+  const app = new Application();
+  await app.init({
+    width: window.innerWidth,
+    height: window.innerHeight,
+    resolution: window.devicePixelRatio || 1,
+    autoDensity: true,
+    background: "#ffffff", // белый фон
+    resizeTo: window,
+  });
 
-// @ts-expect-error
-globalThis.__PIXI_APP__ = app;
+  // @ts-expect-error
+  globalThis.__PIXI_APP__ = app;
 
-// Append the application canvas to the document body
-document.body.appendChild(app.canvas);
+  // Append the application canvas to the document body
+  document.body.appendChild(app.canvas);
+  return app;
+};
 
 // Масштабирование под мобильные устройства
 const screenWidth = window.innerWidth;
@@ -61,7 +64,7 @@ const createBackground = (width: number, height: number) => {
   background.width = width;
   background.height = height;
 
-  app.stage.addChild(background);
+  return background;
 };
 
 const createHeader = (): Graphics => {
@@ -162,28 +165,30 @@ const createResourceContainer = (value: number, maxVlue: number): Container => {
 };
 
 const createResources = () => {
+  const resourcesContainer = new Container();
   const resourceContainer = createResourceContainer(50, 120);
   resourceContainer.x = 12;
   resourceContainer.y = 100;
-  app.stage.addChild(resourceContainer);
+  resourcesContainer.addChild(resourceContainer);
 
   // Resource_2
   const resourceContainer2 = createResourceContainer(100, 120);
   resourceContainer2.x = screenWidth - resourceContainer2.width - 16;
   resourceContainer2.y = 100;
-  app.stage.addChild(resourceContainer2);
+  resourcesContainer.addChild(resourceContainer2);
 
   // Resource_3
   const resourceContainer3 = createResourceContainer(80, 120);
   resourceContainer3.x = 12;
   resourceContainer3.y = 146;
-  app.stage.addChild(resourceContainer3);
+  resourcesContainer.addChild(resourceContainer3);
 
   // Resource_4
   const resourceContainer4 = createResourceContainer(40, 120);
   resourceContainer4.x = screenWidth - resourceContainer4.width - 16;
   resourceContainer4.y = 146;
-  app.stage.addChild(resourceContainer4);
+  resourcesContainer.addChild(resourceContainer4);
+  return resourcesContainer;
 };
 // Изображение персонажа НПС "NPC_img"
 
@@ -287,37 +292,6 @@ const createCard = (
     });
   });
 
-  cardContainer.on("pointermove", (event) => {
-    const currentPosition = event.x;
-    const offset = currentPosition - startPosition;
-    cardContainer.x = offset;
-
-    // Add rotation based on position
-    if (offset > 0) {
-      cardContainer.rotation = Math.min(offset / screenWidth, 0.1); // Rotate to the right
-    } else {
-      cardContainer.rotation = Math.max(offset / screenWidth, -0.1); // Rotate to the left
-    }
-  });
-
-  cardContainer.on("pointerup", (event) => {
-    const endPosition = event.x;
-
-    if (endPosition - startPosition > cardContainer.width / 2) {
-      onSelection(Selection.Accept);
-    } else if (endPosition - startPosition < -cardContainer.width / 2) {
-      onSelection(Selection.Decline);
-    } else {
-      cardContainer.x = screenWidth / 2 - cardContainer.width / 2;
-      cardContainer.rotation = 0; // Reset rotation
-    }
-  });
-
-  cardContainer.on("pointerupoutside", () => {
-    cardContainer.x = screenWidth / 2 - cardContainer.width / 2;
-    cardContainer.rotation = 0; // Reset rotation
-  });
-
   const declineButton = createButton(
     card[Selection.Decline].text,
     10,
@@ -362,7 +336,6 @@ const createButton = (
   button.fill();
   button.interactive = true;
   button.on("pointerdown", onClick);
-  app.stage.addChild(button);
 
   const buttonText = new Text({
     text,
@@ -412,12 +385,22 @@ const createEncounter = () => {
 
   // Initial card
   renderEncounter(encounter);
-  app.stage.addChild(encounterContainer);
+  return encounterContainer;
 };
 
-await loadAssets();
-createBackground(screenWidth, screenHeight);
-const header = createHeader();
-app.stage.addChild(header);
-createResources();
-createEncounter();
+const init = async () => {
+  await loadAssets();
+  const app = await createApp();
+
+  const background = createBackground(screenWidth, screenHeight);
+  app.stage.addChild(background);
+  const header = createHeader();
+  app.stage.addChild(header);
+  const resources = createResources();
+  app.stage.addChild(resources);
+
+  const encounter = createEncounter();
+  app.stage.addChild(encounter);
+};
+
+init();
