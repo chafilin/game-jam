@@ -266,8 +266,9 @@ const createCard = (
 
   // Add swipe to accept/decline
   cardContainer.interactive = true;
+  let startPosition = 0;
   cardContainer.on("pointerdown", (event) => {
-    const startPosition = event.x;
+    startPosition = event.x;
     cardContainer.on("pointermove", (event) => {
       const currentPosition = event.x;
       const offset = currentPosition - startPosition;
@@ -284,6 +285,37 @@ const createCard = (
         cardContainer.x = screenWidth / 2 - cardContainer.width / 2;
       }
     });
+  });
+
+  cardContainer.on("pointermove", (event) => {
+    const currentPosition = event.x;
+    const offset = currentPosition - startPosition;
+    cardContainer.x = offset;
+
+    // Add rotation based on position
+    if (offset > 0) {
+      cardContainer.rotation = Math.min(offset / screenWidth, 0.1); // Rotate to the right
+    } else {
+      cardContainer.rotation = Math.max(offset / screenWidth, -0.1); // Rotate to the left
+    }
+  });
+
+  cardContainer.on("pointerup", (event) => {
+    const endPosition = event.x;
+
+    if (endPosition - startPosition > cardContainer.width / 2) {
+      onSelection(Selection.Accept);
+    } else if (endPosition - startPosition < -cardContainer.width / 2) {
+      onSelection(Selection.Decline);
+    } else {
+      cardContainer.x = screenWidth / 2 - cardContainer.width / 2;
+      cardContainer.rotation = 0; // Reset rotation
+    }
+  });
+
+  cardContainer.on("pointerupoutside", () => {
+    cardContainer.x = screenWidth / 2 - cardContainer.width / 2;
+    cardContainer.rotation = 0; // Reset rotation
   });
 
   const declineButton = createButton(
