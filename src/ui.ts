@@ -300,10 +300,10 @@ export const createCard = (
 
   if (card.isLastCard) {
     const nextLevelButton = createButton(
-      "Next Level",
-      screenWidth / 2 - 70,
+      card[Selection.Accept].text,
+      35,
       cardContainer.height - 60,
-      140,
+      cardContainer.width - 70,
       50,
       "#0000FF",
       () => {
@@ -344,9 +344,9 @@ export const createCard = (
     } else {
       const acceptButton = createButton(
         card[Selection.Accept].text,
-        cardContainer.width / 2 - 70,
+        35,
         cardContainer.height - 60,
-        140,
+        cardContainer.width - 70,
         50,
         "#176542",
         () => {

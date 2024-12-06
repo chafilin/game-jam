@@ -5,87 +5,153 @@
       "background": "background",
       "cards": {
         "1": {
-          "imgSrc": "npc_img",
-          "npcName": "1",
-          "npcLine": "Здравствуйте, Ваше высочество. Дайте денег на пропитание, что вам стоит?",
-          "accept": { "text": "Дать монетку", "nextCard": "2" }
+          "npcName": "Narrator",
+          "npcLine": "Вы возвращаетесь из школы. Учёба в третьем классе даётся нелегко.",
+          "imgSrc": "frog",
+          "accept": {
+            "text": "Грустить",
+            "nextCard": "2"
+          }
         },
         "2": {
+          "npcName": "Narrator",
+          "npcLine": "Вместо хороших оценок вам дают замечания. И сегодня вы опять ничего не получили.",
           "imgSrc": "frog",
-          "npcName": "2",
-          "npcLine": "Я что, попаданец?",
-          "decline": { "text": "Cумасшедшая!", "nextCard": "3" },
-          "accept": { "text": "Выслушать", "nextCard": "4" }
+          "accept": {
+            "text": "Мечтать",
+            "nextCard": "3"
+          }
         },
         "3": {
-          "imgSrc": "sturgeon",
-          "npcName": "3",
-          "npcLine": "Давай драться, если мужик",
-          "decline": { "text": "Вышвырнуть", "nextCard": "5" },
-          "accept": { "text": "Нападай!", "nextCard": "6" }
+          "npcName": "Narrator",
+          "npcLine": "Вот бы наконец-то получить весёлого динозаврика или машинку.",
+          "imgSrc": "frog",
+          "accept": {
+            "text": "Мечтать дальше",
+            "nextCard": "4"
+          }
         },
         "4": {
-          "imgSrc": "npc_img",
-          "npcName": "4",
-          "npcLine": "Спасибо, Ваше высочество. Благослови вас Бог!",
-          "decline": { "text": "Пошёл вон!", "nextCard": "1" },
-          "accept": { "text": "Дать монетку", "nextCard": "2" }
+          "npcName": "Narrator",
+          "npcLine": "Но больше всего вы мечтаете о золотом люлиске. Он сияет на солнце словно сокровище.",
+          "imgSrc": "frog",
+          "accept": {
+            "text": "Учиться",
+            "nextCard": "5"
+          }
         },
         "5": {
-          "imgSrc": "npc_img",
-          "npcName": "5",
-          "npcLine": "Здравствуйте, Ваше высочество. Дайте денег на пропитание, что вам стоит?",
-          "decline": { "text": "Пошёл вон!", "nextCard": "1" },
-          "accept": { "text": "Дать монетку", "nextCard": "2" }
+          "npcName": "Narrator",
+          "npcLine": "Вы полны решимости и садитесь за уроки.",
+          "imgSrc": "frog",
+          "accept": {
+            "text": "Открыть 'Окружающий мир'",
+            "nextCard": "6"
+          },
+          "isLastCard": true
+        }
+      }
+    },
+    {
+      "id": "level2",
+      "background": "background",
+      "cards": {
+        "1": {
+          "npcName": "Narrator",
+          "npcLine": "Волга — река в Европейской части России.",
+          "imgSrc": "frog",
+          "accept": {
+            "text": "Читать",
+            "nextCard": "2"
+          }
+        },
+        "2": {
+          "npcName": "Narrator",
+          "npcLine": "По разнообразию рыбы Волга одна из богатейших рек. В реке водятся: сазан, судак, сом, щука, раки. В Волге живут такие осётры, белуги и севрюги.",
+          "imgSrc": "frog",
+          "accept": {
+            "text": "Читать дальше",
+            "nextCard": "3"
+          }
+        },
+        "3": {
+          "npcName": "Narrator",
+          "npcLine": "На берегах реки Волги можно встретить таких редких перелётных птиц, как кудрявый пеликан, большая белая цапля, фазан и многих других.",
+          "imgSrc": "frog",
+          "accept": {
+            "text": "Читать дальше",
+            "nextCard": "4"
+          }
+        },
+        "4": {
+          "npcName": "Narrator",
+          "npcLine": "В дельте Волги в тростниках обитают дикие кабаны.",
+          "imgSrc": "frog",
+          "accept": {
+            "text": "Читать дальше",
+            "nextCard": "5"
+          },
+          "isLastCard": true
+        }
+      }
+    },
+    {
+      "id": "level3",
+      "background": "background",
+      "cards": {
+        "1": {
+          "npcName": "Печенька",
+          "npcLine": "Ты готов к приключениям? Ради золотого люлиска придётся потопеть!",
+          "imgSrc": "frog",
+          "accept": {
+            "text": "Приключения?",
+            "nextCard": "2"
+          }
+        },
+        "2": {
+          "npcName": "Печенька",
+          "npcLine": "Да, но они опаснее, чем обычные приключения. Тебе понадобится помощь. Держи...",
+          "imgSrc": "frog",
+          "accept": {
+            "text": "Что это?",
+            "nextCard": "3"
+          }
+        },
+        "3": {
+          "npcName": "Печенька",
+          "npcLine": "Это магия! Теперь ты волшебник, Гарри!",
+          "imgSrc": "frog",
+          "accept": {
+            "text": "Я не Гарри",
+            "nextCard": "4"
+          }
+        },
+        "4": {
+          "npcName": "Печенька",
+          "npcLine": "Смотри, тут твои способности и пре��меты!",
+          "imgSrc": "frog",
+          "accept": {
+            "text": "Но зачем?",
+            "nextCard": "5"
+          }
+        },
+        "5": {
+          "npcName": "Печенька",
+          "npcLine": "Много вопросов и непростых выборов, влияющих на полосу кармы сверху.",
+          "imgSrc": "frog",
+          "accept": {
+            "text": "Карма?",
+            "nextCard": "6"
+          }
         },
         "6": {
-          "imgSrc": "npc_img",
-          "npcName": "6",
-          "npcLine": "Здравствуйте, Ваше высочество. Дайте денег на пропитание, что вам стоит?",
-          "decline": { "text": "Пошёл вон!", "nextCard": null },
-          "accept": { "text": "Дать монетку", "nextCard": "1" },
-          "isLastCard": true
-        }
-      }
-    },
-    {
-      "id": "testLevel1",
-      "background": "background",
-      "cards": {
-        "1": {
-          "imgSrc": "npc_img",
-          "npcName": "Test NPC 1",
-          "npcLine": "This is a test line for level 1.",
-          "decline": { "text": "Decline", "nextCard": "2" },
-          "accept": { "text": "Accept", "nextCard": "2" }
-        },
-        "2": {
-          "imgSrc": "npc_img",
-          "npcName": "Test NPC 2",
-          "npcLine": "This is another test line for level 1.",
-          "decline": { "text": "Decline", "nextCard": null },
-          "accept": { "text": "Accept", "nextCard": "1" },
-          "isLastCard": true
-        }
-      }
-    },
-    {
-      "id": "testLevel2",
-      "background": "background",
-      "cards": {
-        "1": {
-          "imgSrc": "npc_img",
-          "npcName": "Test NPC 3",
-          "npcLine": "This is a test line for level 2.",
-          "decline": { "text": "Decline", "nextCard": "2" },
-          "accept": { "text": "Accept", "nextCard": "2" }
-        },
-        "2": {
-          "imgSrc": "npc_img",
-          "npcName": "Test NPC 4",
-          "npcLine": "This is another test line for level 2.",
-          "decline": { "text": "Decline", "nextCard": null },
-          "accept": { "text": "Accept", "nextCard": "1" },
+          "npcName": "Печенька",
+          "npcLine": "Карма приведёт к тому или иному концу приключения. Удачи!",
+          "imgSrc": "frog",
+          "accept": {
+            "text": "Новая глава",
+            "nextCard": null
+          },
           "isLastCard": true
         }
       }
