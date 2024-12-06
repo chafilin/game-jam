@@ -8,8 +8,14 @@ import { LevelManager } from "./levelManager";
 import { createEncounter } from "./encounter";
 
 // Масштабирование под мобильные устройства
-const screenWidth = window.innerWidth;
-const screenHeight = window.innerHeight;
+let screenWidth = window.innerWidth;
+let screenHeight = window.innerHeight;
+
+// Adjust for Safari bottom toolbar
+const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+if (isSafari) {
+  screenHeight = window.innerHeight - 56; // Adjust height to account for the toolbar
+}
 
 // Load card data
 const LEVELS = cardJson.levels as unknown as Level[];
@@ -24,6 +30,7 @@ const init = async () => {
 
   const levelManager = new LevelManager(LEVELS);
   let currentLevel = levelManager.getCurrentLevel();
+  let currentCardId = "1";
 
   const background = createBackground(
     currentLevel.background,
@@ -41,13 +48,17 @@ const init = async () => {
   const encounterContainer = new Container();
   app.stage.addChild(encounterContainer);
 
-  const renderLevel = (level: Level) => {
+  const renderLevel = (level: Level, cardId: string) => {
     encounterContainer.removeChildren();
     const encounter = createEncounter(
       screenWidth,
       screenHeight,
       level.cards,
-      onLevelComplete
+      onLevelComplete,
+      cardId,
+      (newCardId) => {
+        currentCardId = newCardId;
+      }
     );
     encounterContainer.addChild(encounter);
   };
@@ -55,12 +66,30 @@ const init = async () => {
   const onLevelComplete = () => {
     levelManager.nextLevel();
     currentLevel = levelManager.getCurrentLevel();
+    currentCardId = "1";
     background.texture = Texture.from(currentLevel.background);
-    renderLevel(currentLevel);
+    renderLevel(currentLevel, "1");
     console.log(`Action: Level changed to ${currentLevel.id}`);
   };
 
-  renderLevel(currentLevel);
+  renderLevel(currentLevel, "1");
+
+  window.addEventListener("resize", () => {
+    app.renderer.resize(window.innerWidth, window.innerHeight);
+    screenWidth = window.innerWidth;
+    screenHeight = window.innerHeight;
+
+    // Adjust for Safari bottom toolbar
+    if (isSafari) {
+      screenHeight = window.innerHeight - 56;
+    }
+
+    background.width = screenWidth;
+    background.height = screenHeight;
+    header.width = screenWidth;
+    resources.width = screenWidth;
+    renderLevel(currentLevel, currentCardId);
+  });
 };
 
 const createApp = async () => {
@@ -83,9 +112,12 @@ const createApp = async () => {
 };
 
 const showLoader = (app: Application) => {
-  const loaderText = new Text("Loading...", {
-    fontSize: 36,
-    fill: "#000000",
+  const loaderText = new Text({
+    text: "Loading...",
+    style: {
+      fontSize: 36,
+      fill: "#000000",
+    },
   });
   loaderText.x = screenWidth / 2 - loaderText.width / 2;
   loaderText.y = screenHeight / 2 - loaderText.height / 2;

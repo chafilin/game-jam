@@ -29,9 +29,11 @@ export const createEncounter = (
   screenWidth: number,
   screenHeight: number,
   CARDS: Record<string, Card>,
-  onLevelComplete: () => void
+  onLevelComplete: () => void,
+  initialCardId: string,
+  saveCurrentCardId: (cardId: string) => void
 ): Container => {
-  let encounter = CARDS["1"];
+  let encounter = CARDS[initialCardId];
   const encounterContainer = new Container();
   encounterContainer.y = screenHeight / 3;
   encounterContainer.height = screenHeight;
@@ -56,6 +58,7 @@ export const createEncounter = (
     const nextCard = getNextCard(encounter, selection, CARDS);
     if (nextCard) {
       encounter = nextCard;
+      saveCurrentCardId(nextCard.id);
       console.log(`Action: Encounter changed to card ${encounter.npcName}`);
       renderEncounter(encounter);
     } else if (encounter.isLastCard) {

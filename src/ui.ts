@@ -71,6 +71,7 @@ const createCharacterButton = (screenWidth: number): Container => {
 // Create header container
 export const createHeader = (screenWidth: number): Container => {
   const header = new Container();
+  header.width = screenWidth; // Ensure header adjusts width
   const settingsButton = createSettingsButton();
   header.addChild(settingsButton);
 
@@ -126,6 +127,7 @@ const createResourceContainer = (
 // Create resources container
 export const createResources = (screenWidth: number): Container => {
   const resourcesContainer = new Container();
+  resourcesContainer.width = screenWidth; // Ensure resources adjust width
   const resourceContainer1 = createResourceContainer(50, 120, screenWidth);
   resourceContainer1.x = 12;
   resourceContainer1.y = 100;

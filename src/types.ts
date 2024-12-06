@@ -4,6 +4,7 @@ export enum Selection {
 }
 
 export type Card = {
+  id: string;
   imgSrc: string;
   npcName: string;
   npcLine: string;
