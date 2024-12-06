@@ -19,5 +19,8 @@
   "dependencies": {
     "pixi-filters": "^6.0.5",
     "pixi.js": "^8.5.2"
+  },
+  "optionalDependencies": {
+    "@rollup/rollup-linux-x64-gnu": "^4.28.0"
   }
 }
