@@ -184,7 +184,7 @@ const createButton = (
   const buttonContainer = new Container();
   const button = new Graphics();
   button.fill(color);
-  button.roundRect(x, y, width, height, 20);
+  button.roundRect(x, y, width, height + 20, 20); // Increase height by 20
   button.fill();
 
   buttonContainer.interactive = true;
@@ -194,14 +194,16 @@ const createButton = (
   const buttonText = new Text({
     text,
     style: {
-      fontSize: 20,
+      fontSize: 14,
       fill: "#ffffff",
       align: "center",
+      wordWrap: true,
+      wordWrapWidth: width - 20, // Wrap text if too long
     },
   });
 
   buttonText.x = x + width / 2 - buttonText.width / 2;
-  buttonText.y = y + height / 2 - buttonText.height / 2;
+  buttonText.y = y + (height + 20) / 2 - buttonText.height / 2; // Adjust for increased height
 
   buttonContainer.addChild(buttonText);
 
@@ -248,7 +250,7 @@ export const createCard = (
       fontSize: 20,
       fill: "#000000",
       wordWrap: true,
-      wordWrapWidth: cardBg.width - 20,
+      wordWrapWidth: cardContainer.width - 20,
     },
   });
   npcLine.x = 20;
@@ -279,7 +281,7 @@ export const createCard = (
       if (endPosition - startPosition > cardContainer.width / 2) {
         onSelection(Selection.Right);
         console.log("Action: Card righted");
-      } else if (endPosition - startPosition < -cardContainer.width / 2) {
+      } else if (endPosition - startPosition < cardContainer.width / 2) {
         onSelection(Selection.Left);
         console.log("Action: Card leftd");
       } else {
@@ -302,7 +304,7 @@ export const createCard = (
     const nextLevelButton = createButton(
       card[Selection.Right].text,
       35,
-      cardContainer.height - 60,
+      cardContainer.height - 80,
       cardContainer.width - 70,
       50,
       "#0000FF",
@@ -317,7 +319,7 @@ export const createCard = (
       const leftButton = createButton(
         card[Selection.Left].text,
         10,
-        cardContainer.height - 60,
+        cardContainer.height - 80,
         140,
         50,
         "#176542",
@@ -331,7 +333,7 @@ export const createCard = (
       const rightButton = createButton(
         card[Selection.Right].text,
         screenWidth - 230,
-        cardContainer.height - 60,
+        cardContainer.height - 80,
         140,
         50,
         "#176542",
@@ -345,7 +347,7 @@ export const createCard = (
       const rightButton = createButton(
         card[Selection.Right].text,
         35,
-        cardContainer.height - 60,
+        cardContainer.height - 80,
         cardContainer.width - 70,
         50,
         "#176542",
