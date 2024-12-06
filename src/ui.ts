@@ -269,49 +269,6 @@ export const createCard = (
   npcLine.y = 48;
   cardContainer.addChild(npcLine);
 
-  cardContainer.interactive = true;
-  let startPosition = 0;
-  let isDragging = false;
-
-  cardContainer.on("pointerdown", (event) => {
-    startPosition = event.x;
-    isDragging = true;
-    console.log("Action: Card drag started");
-  });
-
-  cardContainer.on("pointermove", (event) => {
-    if (isDragging) {
-      const currentPosition = event.x;
-      const offset = currentPosition - startPosition;
-      cardContainer.x = offset;
-    }
-  });
-
-  cardContainer.on("pointerup", (event) => {
-    if (isDragging) {
-      const endPosition = event.x;
-      if (endPosition - startPosition > cardContainer.width / 2) {
-        onSelection(Selection.Right);
-        console.log("Action: Card righted");
-      } else if (endPosition - startPosition < cardContainer.width / 2) {
-        onSelection(Selection.Left);
-        console.log("Action: Card leftd");
-      } else {
-        cardContainer.x = screenWidth / 2 - cardContainer.width / 2;
-        console.log("Action: Card drag cancelled");
-      }
-      isDragging = false;
-    }
-  });
-
-  cardContainer.on("pointerupoutside", () => {
-    if (isDragging) {
-      cardContainer.x = screenWidth / 2 - cardContainer.width / 2;
-      isDragging = false;
-      console.log("Action: Card drag cancelled outside");
-    }
-  });
-
   if (card.isLastCard) {
     const nextLevelButton = createButton(
       card[Selection.Right].text,

@@ -11,12 +11,6 @@ import { createEncounter } from "./encounter";
 let screenWidth = window.innerWidth;
 let screenHeight = window.innerHeight;
 
-// Adjust for Safari bottom toolbar
-const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
-if (isSafari) {
-  screenHeight = window.innerHeight - 56; // Adjust height to account for the toolbar
-}
-
 // Load card data
 const LEVELS = cardJson.levels as unknown as Level[];
 
@@ -60,20 +54,15 @@ const init = async () => {
   let resources = createResources(screenWidth, stats);
   app.stage.addChild(resources);
 
-  // Calculate the total height occupied by header and resources
-  const usedHeight = header.height + resources.height;
-
   const encounterContainer = new Container();
-  // Adjust the encounterContainer position and size
-  encounterContainer.y = usedHeight;
-  encounterContainer.height = screenHeight - usedHeight;
+
   app.stage.addChild(encounterContainer);
 
   const renderLevel = (level: Level, cardId: string) => {
     encounterContainer.removeChildren();
     const encounter = createEncounter(
       screenWidth,
-      encounterContainer.height, // Pass the updated height
+      screenHeight,
       level.cards,
       onLevelComplete,
       cardId,
@@ -101,11 +90,6 @@ const init = async () => {
     app.renderer.resize(window.innerWidth, window.innerHeight);
     screenWidth = window.innerWidth;
     screenHeight = window.innerHeight;
-
-    // Adjust for Safari bottom toolbar
-    if (isSafari) {
-      screenHeight = window.innerHeight - 56;
-    }
 
     background.width = screenWidth;
     background.height = screenHeight;

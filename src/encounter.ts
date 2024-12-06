@@ -27,7 +27,7 @@ const createNpc = (name: string, screenWidth: number): Container => {
 // Create encounter container
 export const createEncounter = (
   screenWidth: number,
-  containerHeight: number, // Receive the container height
+  screenHeight: number, // Receive the container height
   CARDS: Record<string, Card>,
   onLevelComplete: () => void,
   initialCardId: string,
@@ -37,12 +37,12 @@ export const createEncounter = (
 ): Container => {
   let encounter = CARDS[initialCardId];
   const encounterContainer = new Container();
-  encounterContainer.y = containerHeight + 20;
+  encounterContainer.y = screenHeight / 4;
 
   const renderEncounter = (card: Card) => {
     encounterContainer.removeChildren();
     const npc = createNpc(card.imgSrc, screenWidth);
-    npc.y = 40; // Position at the top of encounterContainer
+    npc.y = 0; // Position at the top of encounterContainer
     encounterContainer.addChild(npc);
 
     const cardStack = createCard(
@@ -53,7 +53,7 @@ export const createEncounter = (
     );
     cardStack.x = screenWidth / 2 - cardStack.width / 2;
     // Position cardStack below the NPC image with some spacing
-    cardStack.y = npc.height + 60;
+    cardStack.y = npc.height + 20;
     encounterContainer.addChild(cardStack);
   };
 
