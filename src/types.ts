@@ -11,8 +11,8 @@ export type Card = {
     text: string;
     nextCard: string | null;
   };
-  [Selection.Decline]: {
-    text: string | null;
+  [Selection.Decline]?: {
+    text: string;
     nextCard: string | null;
   };
   isLastCard?: boolean;

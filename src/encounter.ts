@@ -8,7 +8,7 @@ const getNextCard = (
   selection: Selection,
   CARDS: Record<string, Card>
 ): Card | null => {
-  if (!currentCard[selection].nextCard) {
+  if (!currentCard[selection]?.nextCard) {
     return null;
   }
   return CARDS[currentCard[selection].nextCard];

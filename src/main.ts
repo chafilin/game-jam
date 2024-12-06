@@ -1,4 +1,4 @@
-import { Application, Container, Texture } from "pixi.js";
+import { Application, Container, Texture, Text } from "pixi.js";
 import cardJson from "./cards.json";
 import "./style.css";
 import { loadAssets } from "./assets";
@@ -16,8 +16,11 @@ const LEVELS = cardJson.levels as unknown as Level[];
 
 // Initialize the game
 const init = async () => {
-  await loadAssets();
   const app = await createApp();
+  showLoader(app);
+
+  await loadAssets();
+  hideLoader(app);
 
   const levelManager = new LevelManager(LEVELS);
   let currentLevel = levelManager.getCurrentLevel();
@@ -71,12 +74,26 @@ const createApp = async () => {
     resizeTo: document.body,
   });
 
-  // @ts-expect-error
+  // @ts-expect-error add the application to the global scope
   globalThis.__PIXI_APP__ = app;
 
   // Append the application canvas to the document body
   document.body.appendChild(app.canvas);
   return app;
+};
+
+const showLoader = (app: Application) => {
+  const loaderText = new Text("Loading...", {
+    fontSize: 36,
+    fill: "#000000",
+  });
+  loaderText.x = screenWidth / 2 - loaderText.width / 2;
+  loaderText.y = screenHeight / 2 - loaderText.height / 2;
+  app.stage.addChild(loaderText);
+};
+
+const hideLoader = (app: Application) => {
+  app.stage.removeChildren();
 };
 
 init();

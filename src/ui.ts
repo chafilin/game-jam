@@ -313,33 +313,49 @@ export const createCard = (
     );
     cardContainer.addChild(nextLevelButton);
   } else {
-    const declineButton = createButton(
-      card[Selection.Decline].text ?? "Decline",
-      10,
-      cardContainer.height - 60,
-      140,
-      50,
-      "#AE1A2E",
-      () => {
-        onSelection(Selection.Decline);
-        console.log("Action: Decline button clicked");
-      }
-    );
-    cardContainer.addChild(declineButton);
+    if (card[Selection.Decline] !== undefined) {
+      const declineButton = createButton(
+        card[Selection.Decline].text,
+        10,
+        cardContainer.height - 60,
+        140,
+        50,
+        "#AE1A2E",
+        () => {
+          onSelection(Selection.Decline);
+          console.log("Action: Decline button clicked");
+        }
+      );
+      cardContainer.addChild(declineButton);
 
-    const acceptButton = createButton(
-      card[Selection.Accept].text,
-      screenWidth - 230,
-      cardContainer.height - 60,
-      140,
-      50,
-      "#176542",
-      () => {
-        onSelection(Selection.Accept);
-        console.log("Action: Accept button clicked");
-      }
-    );
-    cardContainer.addChild(acceptButton);
+      const acceptButton = createButton(
+        card[Selection.Accept].text,
+        screenWidth - 230,
+        cardContainer.height - 60,
+        140,
+        50,
+        "#176542",
+        () => {
+          onSelection(Selection.Accept);
+          console.log("Action: Accept button clicked");
+        }
+      );
+      cardContainer.addChild(acceptButton);
+    } else {
+      const acceptButton = createButton(
+        card[Selection.Accept].text,
+        cardContainer.width / 2 - 70,
+        cardContainer.height - 60,
+        140,
+        50,
+        "#176542",
+        () => {
+          onSelection(Selection.Accept);
+          console.log("Action: Accept button clicked");
+        }
+      );
+      cardContainer.addChild(acceptButton);
+    }
   }
 
   return cardContainer;
