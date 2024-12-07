@@ -124,7 +124,7 @@
               "right": {
                 "text": "Учиться",
                 "success": {
-                  "nextLevel": "level2"
+                  "nextPart": "level1_part2"
                 }
               },
               "left": {
