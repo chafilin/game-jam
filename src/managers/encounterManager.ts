@@ -1,4 +1,10 @@
-import { Card, Selection, Stats, Effect } from "../types/types";
+import {
+  Card,
+  Selection,
+  Stats,
+  Effect,
+  NextDestination,
+} from "../types/types";
 
 export class EncounterManager {
   private encounter: Card;
@@ -6,7 +12,7 @@ export class EncounterManager {
   private stats: Stats;
   private updateStats: (newStats: Stats) => void;
   private saveCurrentCardId: (cardId: string) => void;
-  private onLevelComplete: (nextLevelId?: string) => void;
+  private onLevelComplete: (destination?: NextDestination) => void;
   private currentLevelId: string;
 
   constructor(
@@ -15,7 +21,7 @@ export class EncounterManager {
     stats: Stats,
     updateStats: (newStats: Stats) => void,
     saveCurrentCardId: (cardId: string) => void,
-    onLevelComplete: (nextLevelId?: string) => void,
+    onLevelComplete: (destination?: NextDestination) => void,
     currentLevelId: string
   ) {
     this.cards = cards;
@@ -37,8 +43,11 @@ export class EncounterManager {
       this.updateStats(newStats);
     }
 
-    if (effect.nextLevel) {
-      this.onLevelComplete(effect.nextLevel);
+    if (effect.nextLevel || effect.nextPart) {
+      const destination: NextDestination = {};
+      if (effect.nextLevel) destination.levelId = effect.nextLevel;
+      if (effect.nextPart) destination.partId = effect.nextPart;
+      this.onLevelComplete(destination);
       return null;
     }
 
@@ -58,7 +67,6 @@ export class EncounterManager {
 
   public changeEncounter(selection: Selection): Card | null {
     const selectionData = this.encounter[selection];
-    console.log("stats", this.stats);
 
     if (selectionData?.requirements) {
       const meetsRequirements = Object.entries(

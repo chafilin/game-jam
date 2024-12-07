@@ -7,6 +7,7 @@ export type Effect = {
   stats?: Partial<Stats>;
   nextCard?: string;
   nextLevel?: string;
+  nextPart?: string;
 };
 
 export type SelectionData = {
@@ -43,12 +44,23 @@ export type Game = {
   cards: Record<string, Card>;
 };
 
-export type Level = {
+export type Part = {
   id: string;
   background: string;
   cards: Record<string, Card>;
 };
 
+export type Level = {
+  id: string;
+  background: string;
+  parts?: Part[];
+};
+
 export type Player = {
   stats: Stats;
 };
+
+export interface NextDestination {
+  levelId?: string;
+  partId?: string;
+}

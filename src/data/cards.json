@@ -3,658 +3,669 @@
     {
       "id": "level1",
       "background": "background",
-      "cards": {
-        "1": {
-          "id": "1",
-          "npcName": "Narrator",
-          "npcLine": "Ты возвращаешься из школы. Учёба в третьем классе даётся нелегко.",
-          "imgSrc": "npc_img",
-          "right": {
-            "text": "Грустить",
-            "success": {
-              "nextCard": "2"
-            }
-          }
-        },
-        "2": {
-          "id": "2",
-          "npcName": "Narrator",
-          "npcLine": "Вместо хороших оценок вам дают наклейки. И сегодня ты опять ничего не получил.",
-          "imgSrc": "npc_img",
-          "right": {
-            "text": "Мечтать",
-            "success": {
-              "nextCard": "3"
-            }
-          }
-        },
-        "3": {
-          "id": "3",
-          "npcName": "Narrator",
-          "npcLine": "Вот бы наконец-то получить весёлого динозаврика или машинку.",
-          "imgSrc": "npc_img",
-          "right": {
-            "text": "Мечтать",
-            "success": {
-              "nextCard": "4"
-            }
-          }
-        },
-        "4": {
-          "id": "4",
-          "npcName": "Narrator",
-          "npcLine": "Но больше всего ты мечтаешь о золотом плюсике! Он сияет на солнце словно сокровище.",
-          "imgSrc": "npc_img",
-          "right": {
-            "text": "Мечтать…",
-            "success": {
-              "nextCard": "5"
-            }
-          }
-        },
-        "5": {
-          "id": "5",
-          "npcName": "Narrator",
-          "npcLine": "Как бы хотелось получить этот золотой плюсик.",
-          "imgSrc": "npc_img",
-          "right": {
-            "text": "С другой стороны…",
-            "success": {
-              "nextCard": "6"
-            }
-          }
-        },
-        "6": {
-          "id": "6",
-          "npcName": "Narrator",
-          "npcLine": "Вместо учёбы можно было бы заняться своими любимыми делами…",
-          "imgSrc": "npc_img",
-          "right": {
-            "text": "Комиксы",
-            "success": {
-              "nextCard": "7",
-              "stats": {
-                "savvy": 1
+      "parts": [
+        {
+          "id": "level1_part1",
+          "background": "background",
+          "cards": {
+            "1": {
+              "id": "1",
+              "npcName": "Narrator",
+              "npcLine": "Ты возвращаешься из школы. Учёба в третьем классе даётся нелегко.",
+              "imgSrc": "npc_img",
+              "right": {
+                "text": "Грустить",
+                "success": {
+                  "nextCard": "2"
+                }
+              }
+            },
+            "2": {
+              "id": "2",
+              "npcName": "Narrator",
+              "npcLine": "Вместо хороших оценок вам дают наклейки. И сегодня ты опять ничего не получил.",
+              "imgSrc": "npc_img",
+              "right": {
+                "text": "Мечтать",
+                "success": {
+                  "nextCard": "3"
+                }
+              }
+            },
+            "3": {
+              "id": "3",
+              "npcName": "Narrator",
+              "npcLine": "Вот бы наконец-то получить весёлого динозаврика или машинку.",
+              "imgSrc": "npc_img",
+              "right": {
+                "text": "Мечтать",
+                "success": {
+                  "nextCard": "4"
+                }
+              }
+            },
+            "4": {
+              "id": "4",
+              "npcName": "Narrator",
+              "npcLine": "Но больше всего ты мечтаешь о золотом плюсике! Он сияет на солнце словно сокровище.",
+              "imgSrc": "npc_img",
+              "right": {
+                "text": "Мечтать…",
+                "success": {
+                  "nextCard": "5"
+                }
+              }
+            },
+            "5": {
+              "id": "5",
+              "npcName": "Narrator",
+              "npcLine": "Как бы хотелось получить этот золотой плюсик.",
+              "imgSrc": "npc_img",
+              "right": {
+                "text": "С другой стороны…",
+                "success": {
+                  "nextCard": "6"
+                }
+              }
+            },
+            "6": {
+              "id": "6",
+              "npcName": "Narrator",
+              "npcLine": "Вместо учёбы можно было бы заняться своими любимыми делами…",
+              "imgSrc": "npc_img",
+              "right": {
+                "text": "Комиксы",
+                "success": {
+                  "nextCard": "7",
+                  "stats": {
+                    "savvy": 1
+                  }
+                }
+              },
+              "left": {
+                "text": "Велосипед",
+                "success": {
+                  "nextCard": "7",
+                  "stats": {
+                    "dexterity": 1
+                  }
+                }
+              }
+            },
+            "7": {
+              "id": "7",
+              "npcName": "Narrator",
+              "npcLine": "Или поиграть…",
+              "imgSrc": "npc_img",
+              "right": {
+                "text": "На площадке",
+                "success": {
+                  "nextCard": "8",
+                  "stats": {
+                    "dexterity": 1
+                  }
+                }
+              },
+              "left": {
+                "text": "В лего",
+                "success": {
+                  "nextCard": "8",
+                  "stats": {
+                    "savvy": 1
+                  }
+                }
+              }
+            },
+            "8": {
+              "id": "8",
+              "npcName": "Narrator",
+              "npcLine": "Но легендарная наклейка так и манит. Может, всё же поучиться?",
+              "imgSrc": "npc_img",
+              "right": {
+                "text": "Учиться",
+                "success": {
+                  "nextLevel": "level2"
+                }
+              },
+              "left": {
+                "text": "Лень",
+                "success": {
+                  "nextCard": "1"
+                }
               }
             }
-          },
-          "left": {
-            "text": "Велосипед",
-            "success": {
-              "nextCard": "7",
-              "stats": {
-                "dexterity": 1
+          }
+        },
+        {
+          "id": "level1_part2",
+          "background": "background",
+          "cards": {
+            "1": {
+              "id": "1",
+              "npcName": "Narrator",
+              "npcLine": "Ты полон решимости и садишься за уроки.",
+              "imgSrc": "npc_img",
+              "right": {
+                "text": "Открыть \"Окружающий мир\"",
+                "success": {
+                  "nextCard": "2"
+                }
+              }
+            },
+            "2": {
+              "id": "2",
+              "npcName": "Narrator",
+              "npcLine": "Волга — река в Европейской части России.",
+              "imgSrc": "npc_img",
+              "right": {
+                "text": "Читать",
+                "success": {
+                  "nextCard": "3"
+                }
+              }
+            },
+            "3": {
+              "id": "3",
+              "npcName": "Narrator",
+              "npcLine": "По разнообразию рыбы Волга одна из богатейших рек. В реке водятся: сазан, окунь, лещ, сом, судак, щука и ерш. В Волге живут также осётры, белуги и севрюги.",
+              "imgSrc": "npc_img",
+              "right": {
+                "text": "Читать дальше",
+                "success": {
+                  "nextCard": "4"
+                }
+              }
+            },
+            "4": {
+              "id": "4",
+              "npcName": "Narrator",
+              "npcLine": "На берегах реки можно увидеть таких редких и красивых птиц, как кудрявый пеликан, большая белая цапля, фазан и многих других.",
+              "imgSrc": "npc_img",
+              "right": {
+                "text": "Читать…",
+                "success": {
+                  "nextCard": "5"
+                }
+              }
+            },
+            "5": {
+              "id": "5",
+              "npcName": "Narrator",
+              "npcLine": "В дельте Волги в тростниках обитают дикие кабаны…",
+              "imgSrc": "npc_img",
+              "right": {
+                "text": "Читать…",
+                "success": {
+                  "nextCard": "6"
+                }
+              }
+            },
+            "6": {
+              "id": "6",
+              "npcName": "Narrator",
+              "npcLine": "…насекомые, змеи и лягушки…",
+              "imgSrc": "npc_img",
+              "right": {
+                "text": "Читать…",
+                "success": {
+                  "nextCard": "7"
+                }
+              }
+            },
+            "7": {
+              "id": "7",
+              "npcName": "Narrator",
+              "npcLine": "…печенька…",
+              "imgSrc": "npc_img",
+              "right": {
+                "text": "Печенька?",
+                "success": {
+                  "nextCard": null
+                }
               }
             }
           }
         },
-        "7": {
-          "id": "7",
-          "npcName": "Narrator",
-          "npcLine": "Или поиграть…",
-          "imgSrc": "npc_img",
-          "right": {
-            "text": "На площадке",
-            "success": {
-              "nextCard": "8",
-              "stats": {
-                "dexterity": 1
+        {
+          "id": "level1_part3",
+          "background": "background",
+          "cards": {
+            "1": {
+              "id": "1",
+              "npcName": "Печенька",
+              "npcLine": "Ты готов к приключениям? Ради золотого плюсика придётся попотеть!",
+              "imgSrc": "cookie",
+              "right": {
+                "text": "Приключениям?",
+                "success": {
+                  "nextCard": "2"
+                }
               }
-            }
-          },
-          "left": {
-            "text": "В лего",
-            "success": {
-              "nextCard": "8",
-              "stats": {
-                "savvy": 1
+            },
+            "2": {
+              "id": "2",
+              "npcName": "Печенька",
+              "npcLine": "Да, но они опаснее обычных приключений. Тебе понадобится помощь. Вот, держи…",
+              "imgSrc": "cookie",
+              "right": {
+                "text": "Что это?",
+                "success": {
+                  "nextCard": "3"
+                }
               }
-            }
-          }
-        },
-        "8": {
-          "id": "8",
-          "npcName": "Narrator",
-          "npcLine": "Но легендарная наклейка так и манит. Может, всё же поучиться?",
-          "imgSrc": "npc_img",
-          "right": {
-            "text": "Учиться",
-            "success": {
-              "nextLevel": "level2"
-            }
-          },
-          "left": {
-            "text": "Лень",
-            "success": {
-              "nextCard": "1"
+            },
+            "3": {
+              "id": "3",
+              "npcName": "Печенька",
+              "npcLine": "Это магия! Теперь ты волшебник, Гарри!",
+              "imgSrc": "cookie",
+              "right": {
+                "text": "Я не Гарри",
+                "success": {
+                  "nextCard": "4"
+                }
+              }
+            },
+            "4": {
+              "id": "4",
+              "npcName": "Печенька",
+              "npcLine": "Смотри, тут твои навыки и предметы!\n(Показать на кнопку)",
+              "imgSrc": "cookie",
+              "right": {
+                "text": "Но зачем?",
+                "success": {
+                  "nextCard": "5"
+                }
+              }
+            },
+            "5": {
+              "id": "5",
+              "npcName": "Печенька",
+              "npcLine": "Они пригодятся! Тебя ждёт множество непростых выборов. А выборы влияют на полоску кармы сверху.\n(Показать на полоску)",
+              "imgSrc": "cookie",
+              "right": {
+                "text": "Карма?",
+                "success": {
+                  "nextCard": "6"
+                }
+              }
+            },
+            "6": {
+              "id": "6",
+              "npcName": "Печенька",
+              "npcLine": "Карма приведёт к той или иной развязке. Удачи!",
+              "imgSrc": "cookie",
+              "right": {
+                "text": "Подожди!",
+                "success": {
+                  "nextLevel": "level2"
+                }
+              }
             }
           }
         }
-      }
+      ]
     },
     {
       "id": "level2",
       "background": "background",
-      "cards": {
-        "1": {
-          "id": "1",
-          "npcName": "Narrator",
-          "npcLine": "Ты полон решимости и садишься за уроки.",
-          "imgSrc": "npc_img",
-          "right": {
-            "text": "Открыть “Окружающий мир”",
-            "success": {
-              "nextCard": "2"
-            }
-          }
-        },
-        "2": {
-          "id": "2",
-          "npcName": "Narrator",
-          "npcLine": "Волга — река в Европейской части России.",
-          "imgSrc": "npc_img",
-          "right": {
-            "text": "Читать",
-            "success": {
-              "nextCard": "3"
-            }
-          }
-        },
-        "3": {
-          "id": "3",
-          "npcName": "Narrator",
-          "npcLine": "По разнообразию рыбы Волга одна из богатейших рек. В реке водятся: сазан, окунь, лещ, сом, судак, щука и ерш. В Волге живут также осётры, белуги и севрюги.",
-          "imgSrc": "npc_img",
-          "right": {
-            "text": "Читать дальше",
-            "success": {
-              "nextCard": "4"
-            }
-          }
-        },
-        "4": {
-          "id": "4",
-          "npcName": "Narrator",
-          "npcLine": "На берегах реки можно увидеть таких редких и красивых птиц, как кудрявый пеликан, большая белая цапля, фазан и многих других.",
-          "imgSrc": "npc_img",
-          "right": {
-            "text": "Читать…",
-            "success": {
-              "nextCard": "5"
-            }
-          }
-        },
-        "5": {
-          "id": "5",
-          "npcName": "Narrator",
-          "npcLine": "В дельте Волги в тростниках обитают дикие кабаны…",
-          "imgSrc": "npc_img",
-          "right": {
-            "text": "Читать…",
-            "success": {
-              "nextCard": "6"
-            }
-          }
-        },
-        "6": {
-          "id": "6",
-          "npcName": "Narrator",
-          "npcLine": "…насекомые, змеи и лягушки…",
-          "imgSrc": "npc_img",
-          "right": {
-            "text": "Читать…",
-            "success": {
-              "nextCard": "7"
-            }
-          }
-        },
-        "7": {
-          "id": "7",
-          "npcName": "Narrator",
-          "npcLine": "…печенька…",
-          "imgSrc": "npc_img",
-          "right": {
-            "text": "Печенька?",
-            "success": {
-              "nextCard": null
+      "parts": [
+        {
+          "id": "level2_part1",
+          "background": "background",
+          "cards": {
+            "1": {
+              "id": "1",
+              "npcName": "Narrator",
+              "npcLine": "Ты стоишь возле широкой реки. Перед тобой каменный город с высокими стенами и башнями, прямо как в мультиках.",
+              "imgSrc": "npc_img",
+              "right": {
+                "text": "Оглядеться",
+                "success": {
+                  "nextCard": "2"
+                }
+              },
+              "left": {
+                "text": "Идти в город",
+                "success": {
+                  "nextCard": "3"
+                }
+              }
+            },
+            "2": {
+              "id": "2",
+              "npcName": "Narrator",
+              "npcLine": "Вдоль реки ты видишь луга, а далеко за ними густой лес.",
+              "imgSrc": "npc_img",
+              "right": {
+                "text": "Идти в город",
+                "success": {
+                  "nextCard": "3"
+                }
+              }
+            },
+            "3": {
+              "id": "3",
+              "npcName": "Narrator",
+              "npcLine": "У ворот никого нет. Проходя внутрь, ты слышишь множество криков.",
+              "imgSrc": "npc_img",
+              "right": {
+                "text": "Идти на крики",
+                "success": {
+                  "nextCard": "4"
+                }
+              }
+            },
+            "4": {
+              "id": "4",
+              "npcName": "Narrator",
+              "npcLine": "Под опрокинутой телегой сидит девочка с лицом лягушки. Она плачет.",
+              "imgSrc": "npc_img",
+              "right": {
+                "text": "Спросить про лицо",
+                "success": {
+                  "nextCard": "8"
+                }
+              },
+              "left": {
+                "text": "Что случилось?",
+                "success": {
+                  "nextCard": "5"
+                }
+              }
+            },
+            "5": {
+              "id": "5",
+              "npcName": "Лягушка",
+              "npcLine": "Стрекоза страшная! И я потерялась.",
+              "imgSrc": "frog",
+              "right": {
+                "text": "Стрекозы не страшные",
+                "success": {
+                  "nextCard": "7"
+                }
+              },
+              "left": {
+                "text": "Помочь",
+                "success": {
+                  "nextCard": "6"
+                }
+              }
+            },
+            "6": {
+              "id": "6",
+              "npcName": "Narrator",
+              "npcLine": "Ты помогаешь девочке найти дом. В благодарность она вручает тебе монетку.",
+              "imgSrc": "npc_img",
+              "right": {
+                "text": "Идти дальше",
+                "success": {
+                  "nextCard": "9"
+                }
+              }
+            },
+            "7": {
+              "id": "7",
+              "npcName": "Narrator",
+              "npcLine": "Девочка удивлённо на тебя смотрит.",
+              "imgSrc": "npc_img",
+              "left": {
+                "text": "Помочь",
+                "success": {
+                  "nextCard": "6"
+                }
+              },
+              "right": {
+                "text": "Идти дальше",
+                "success": {
+                  "nextCard": "9"
+                }
+              }
+            },
+            "8": {
+              "id": "8",
+              "npcName": "Narrator",
+              "npcLine": "Девочка не отвечает. Но ты замечаешь, что и руки, и ноги у неё тоже лягушачьи.",
+              "imgSrc": "npc_img",
+              "right": {
+                "text": "Идти дальше",
+                "success": {
+                  "nextCard": "9"
+                }
+              },
+              "left": {
+                "text": "Что случилось?",
+                "success": {
+                  "nextCard": "5"
+                }
+              }
+            },
+            "9": {
+              "id": "9",
+              "npcName": "Narrator",
+              "npcLine": "Ты выходишь на площадь и видишь стрекозу размером с дом. Вокруг раскиданы люди в доспехах.",
+              "imgSrc": "npc_img",
+              "right": {
+                "text": "Приглядеться",
+                "success": {
+                  "nextCard": "10"
+                }
+              }
+            },
+            "10": {
+              "id": "10",
+              "npcName": "Narrator",
+              "npcLine": "Недалеко от чудовища стоит паренёк. Похоже, его пытается защитить женщина в доспехах, но она слишком сильно ранена.",
+              "imgSrc": "npc_img",
+              "right": {
+                "text": "Помочь",
+                "success": {
+                  "nextCard": "11"
+                }
+              },
+              "left": {
+                "text": "Сбежать",
+                "success": {
+                  "nextCard": "19"
+                }
+              }
+            },
+            "11": {
+              "id": "11",
+              "npcName": "Narrator",
+              "npcLine": "Кажется, Печенька говорил, что я теперь волшебник?",
+              "imgSrc": "npc_img",
+              "right": {
+                "text": "Камень",
+                "success": {
+                  "nextCard": "17"
+                }
+              },
+              "left": {
+                "text": "Магия",
+                "success": {
+                  "nextCard": "12"
+                }
+              }
+            },
+            "12": {
+              "id": "12",
+              "npcName": "Narrator",
+              "npcLine": "Ты творишь магическую вспышку — и она срабатывает! Стрекоза временно слепнет, а паренёк и рыцарь прячутся за угол дома.",
+              "imgSrc": "npc_img",
+              "right": {
+                "text": "Атаковать",
+                "success": {
+                  "nextCard": "13"
+                }
+              },
+              "left": {
+                "text": "Сбежать",
+                "success": {
+                  "nextCard": "18"
+                }
+              }
+            },
+            "13": {
+              "id": "13",
+              "npcName": "Narrator",
+              "npcLine": "Перенапряжение даёт о себе знать. Эта атака будет сложнее.\n(Испытание навыка)",
+              "imgSrc": "npc_img",
+              "right": {
+                "text": "Камень",
+                "success": {
+                  "nextCard": "15"
+                }
+              },
+              "left": {
+                "text": "Магия",
+                "success": {
+                  "nextCard": "14"
+                }
+              }
+            },
+            "14": {
+              "id": "14",
+              "npcName": "Narrator",
+              "npcLine": "Стрела бьётся о крепкий хитин Стрекозы. Монстр замирает, изучая тебя своими огромными глазами.",
+              "imgSrc": "npc_img",
+              "right": {
+                "text": "Атаковать",
+                "success": {
+                  "nextCard": "21"
+                }
+              },
+              "left": {
+                "text": "Рассмотреть",
+                "success": {
+                  "nextCard": "16"
+                }
+              }
+            },
+            "15": {
+              "id": "15",
+              "npcName": "Narrator",
+              "npcLine": "Камень попадает, но отскакивает от крепкого хитина Стрекозы. Монстр замирает, изучая тебя своими огромными глазами.",
+              "imgSrc": "npc_img",
+              "right": {
+                "text": "Атаковать",
+                "success": {
+                  "nextCard": "21"
+                }
+              },
+              "left": {
+                "text": "Рассмотреть",
+                "success": {
+                  "nextCard": "16"
+                }
+              }
+            },
+            "16": {
+              "id": "16",
+              "npcName": "Narrator",
+              "npcLine": "Что-то красное на шее.\nРана? Или в чешуе что-то застряло?\nТы не успеваешь рассмотреть: огромное создание поворачивается и улетает.",
+              "imgSrc": "npc_img",
+              "right": {
+                "text": "Отдышаться",
+                "success": {
+                  "nextCard": null
+                }
+              }
+            },
+            "17": {
+              "id": "17",
+              "npcName": "Narrator",
+              "npcLine": "Ты метко запускаешь камень прямо в глаз Стрекозе. Этого достаточно, чтобы она отвлеклась на тебя.",
+              "imgSrc": "npc_img",
+              "right": {
+                "text": "Сбежать",
+                "success": {
+                  "nextCard": "18"
+                }
+              },
+              "left": {
+                "text": "Атаковать",
+                "success": {
+                  "nextCard": "13"
+                }
+              }
+            },
+            "18": {
+              "id": "18",
+              "npcName": "Narrator",
+              "npcLine": "Чудовище стремительно нагоняет тебя. Нужно спрятаться!",
+              "imgSrc": "npc_img",
+              "right": {
+                "text": "В узкий переулок",
+                "success": {
+                  "nextCard": null
+                }
+              },
+              "left": {
+                "text": "В дом",
+                "success": {
+                  "nextCard": null
+                }
+              }
+            },
+            "19": {
+              "id": "19",
+              "npcName": "Narrator",
+              "npcLine": "Убегая, ты слышишь, как на площади что-то шипит и взрывается.",
+              "imgSrc": "npc_img",
+              "right": {
+                "text": "В дом",
+                "success": {
+                  "nextCard": null
+                }
+              },
+              "left": {
+                "text": "Из города",
+                "success": {
+                  "nextCard": "20"
+                }
+              }
+            },
+            "20": {
+              "id": "20",
+              "npcName": "Narrator",
+              "npcLine": "У ворот тебя накрывает тень Стрекозы. Чудовище пролетает над лугами и скрывается в кроне леса.",
+              "imgSrc": "npc_img",
+              "right": {
+                "text": "Отдышаться",
+                "success": {
+                  "nextCard": null
+                }
+              }
+            },
+            "21": {
+              "id": "21",
+              "npcName": "Narrator",
+              "npcLine": "Готовое к твоей атаке, чудовище уворачивается. В мгновение оно оказывается рядом.",
+              "imgSrc": "npc_img",
+              "right": {
+                "text": "Готовиться к смерти",
+                "success": {
+                  "nextCard": "22"
+                }
+              }
+            },
+            "22": {
+              "id": "22",
+              "npcName": "Narrator",
+              "npcLine": "Слышится взрыв, и Стрекозу относит в сторону. Она ошарашено хватает лапами пустоту. Сквозь пыль ты различаешь спасённого тобой паренька, который тянет тебя за собой в укрытие.",
+              "imgSrc": "npc_img",
+              "right": {
+                "text": "Конец",
+                "success": {
+                  "nextCard": null
+                }
+              },
+              "isLastCard": true
             }
           }
         }
-      }
-    },
-    {
-      "id": "level3",
-      "background": "background",
-      "cards": {
-        "1": {
-          "id": "1",
-          "npcName": "Печенька",
-          "npcLine": "Ты готов к приключениям? Ради золотого плюсика придётся попотеть!",
-          "imgSrc": "cookie",
-          "right": {
-            "text": "Приключениям?",
-            "success": {
-              "nextCard": "2"
-            }
-          }
-        },
-        "2": {
-          "id": "2",
-          "npcName": "Печенька",
-          "npcLine": "Да, но они опаснее обычных приключений. Тебе понадобится помощь. Вот, держи…",
-          "imgSrc": "cookie",
-          "right": {
-            "text": "Что это?",
-            "success": {
-              "nextCard": "3"
-            }
-          }
-        },
-        "3": {
-          "id": "3",
-          "npcName": "Печенька",
-          "npcLine": "Это магия! Теперь ты волшебник, Гарри!",
-          "imgSrc": "cookie",
-          "right": {
-            "text": "Я не Гарри",
-            "success": {
-              "nextCard": "4"
-            }
-          }
-        },
-        "4": {
-          "id": "4",
-          "npcName": "Печенька",
-          "npcLine": "Смотри, тут твои навыки и предметы!\n(Показать на кнопку)",
-          "imgSrc": "cookie",
-          "right": {
-            "text": "Но зачем?",
-            "success": {
-              "nextCard": "5"
-            }
-          }
-        },
-        "5": {
-          "id": "5",
-          "npcName": "Печенька",
-          "npcLine": "Они пригодятся! Тебя ждёт множество непростых выборов. А выборы влияют на полоску кармы сверху.\n(Показать на полоску)",
-          "imgSrc": "cookie",
-          "right": {
-            "text": "Карма?",
-            "success": {
-              "nextCard": "6"
-            }
-          }
-        },
-        "6": {
-          "id": "6",
-          "npcName": "Печенька",
-          "npcLine": "Карма приведёт к той или иной развязке. Удачи!",
-          "imgSrc": "cookie",
-          "right": {
-            "text": "Подожди!",
-            "success": {
-              "nextCard": null
-            }
-          },
-          "isLastCard": true
-        }
-      }
-    },
-    {
-      "id": "level4",
-      "background": "background",
-      "cards": {
-        "1": {
-          "id": "1",
-          "npcName": "Narrator",
-          "npcLine": "Ты стоишь возле широкой реки. Перед тобой каменный город с высокими стенами и башнями, прямо как в мультиках.",
-          "imgSrc": "npc_img",
-          "right": {
-            "text": "Оглядеться",
-            "success": {
-              "nextCard": "2"
-            }
-          },
-          "left": {
-            "text": "Идти в город",
-            "success": {
-              "nextCard": "3"
-            }
-          }
-        },
-        "2": {
-          "id": "2",
-          "npcName": "Narrator",
-          "npcLine": "Вдоль реки ты видишь луга, а далеко за ними густой лес.",
-          "imgSrc": "npc_img",
-          "right": {
-            "text": "Идти в город",
-            "success": {
-              "nextCard": "3"
-            }
-          }
-        },
-        "3": {
-          "id": "3",
-          "npcName": "Narrator",
-          "npcLine": "У ворот никого нет. Проходя внутрь, ты слышишь множество криков.",
-          "imgSrc": "npc_img",
-          "right": {
-            "text": "Идти на крики",
-            "success": {
-              "nextCard": "4"
-            }
-          }
-        },
-        "4": {
-          "id": "4",
-          "npcName": "Narrator",
-          "npcLine": "Под опрокинутой телегой сидит девочка с лицом лягушки. Она плачет.",
-          "imgSrc": "npc_img",
-          "right": {
-            "text": "Спросить про лицо",
-            "success": {
-              "nextCard": "8"
-            }
-          },
-          "left": {
-            "text": "Что случилось?",
-            "success": {
-              "nextCard": "5"
-            }
-          }
-        },
-        "5": {
-          "id": "5",
-          "npcName": "Лягушка",
-          "npcLine": "Стрекоза страшная! И я потерялась.",
-          "imgSrc": "frog",
-          "right": {
-            "text": "Стрекозы не страшные",
-            "success": {
-              "nextCard": "7"
-            }
-          },
-          "left": {
-            "text": "Помочь",
-            "success": {
-              "nextCard": "6"
-            }
-          }
-        },
-        "6": {
-          "id": "6",
-          "npcName": "Narrator",
-          "npcLine": "Ты помогаешь девочке найти дом. В благодарность она вручает тебе монетку.",
-          "imgSrc": "npc_img",
-          "right": {
-            "text": "Идти дальше",
-            "success": {
-              "nextCard": "9"
-            }
-          }
-        },
-        "7": {
-          "id": "7",
-          "npcName": "Narrator",
-          "npcLine": "Девочка удивлённо на тебя смотрит.",
-          "imgSrc": "npc_img",
-          "left": {
-            "text": "Помочь",
-            "success": {
-              "nextCard": "6"
-            }
-          },
-          "right": {
-            "text": "Идти дальше",
-            "success": {
-              "nextCard": "9"
-            }
-          }
-        },
-        "8": {
-          "id": "8",
-          "npcName": "Narrator",
-          "npcLine": "Девочка не отвечает. Но ты замечаешь, что и руки, и ноги у неё тоже лягушачьи.",
-          "imgSrc": "npc_img",
-          "right": {
-            "text": "Идти дальше",
-            "success": {
-              "nextCard": "9"
-            }
-          },
-          "left": {
-            "text": "Что случилось?",
-            "success": {
-              "nextCard": "5"
-            }
-          }
-        },
-        "9": {
-          "id": "9",
-          "npcName": "Narrator",
-          "npcLine": "Ты выходишь на площадь и видишь стрекозу размером с дом. Вокруг раскиданы люди в доспехах.",
-          "imgSrc": "npc_img",
-          "right": {
-            "text": "Приглядеться",
-            "success": {
-              "nextCard": "10"
-            }
-          }
-        },
-        "10": {
-          "id": "10",
-          "npcName": "Narrator",
-          "npcLine": "Недалеко от чудовища стоит паренёк. Похоже, его пытается защитить женщина в доспехах, но она слишком сильно ранена.",
-          "imgSrc": "npc_img",
-          "right": {
-            "text": "Помочь",
-            "success": {
-              "nextCard": "11"
-            }
-          },
-          "left": {
-            "text": "Сбежать",
-            "success": {
-              "nextCard": "19"
-            }
-          }
-        },
-        "11": {
-          "id": "11",
-          "npcName": "Narrator",
-          "npcLine": "Кажется, Печенька говорил, что я теперь волшебник?",
-          "imgSrc": "npc_img",
-          "right": {
-            "text": "Камень",
-            "success": {
-              "nextCard": "17"
-            }
-          },
-          "left": {
-            "text": "Магия",
-            "success": {
-              "nextCard": "12"
-            }
-          }
-        },
-        "12": {
-          "id": "12",
-          "npcName": "Narrator",
-          "npcLine": "Ты творишь магическую вспышку — и она срабатывает! Стрекоза временно слепнет, а паренёк и рыцарь прячутся за угол дома.",
-          "imgSrc": "npc_img",
-          "right": {
-            "text": "Атаковать",
-            "success": {
-              "nextCard": "13"
-            }
-          },
-          "left": {
-            "text": "Сбежать",
-            "success": {
-              "nextCard": "18"
-            }
-          }
-        },
-        "13": {
-          "id": "13",
-          "npcName": "Narrator",
-          "npcLine": "Перенапряжение даёт о себе знать. Эта атака будет сложнее.\n(Испытание навыка)",
-          "imgSrc": "npc_img",
-          "right": {
-            "text": "Камень",
-            "success": {
-              "nextCard": "15"
-            }
-          },
-          "left": {
-            "text": "Магия",
-            "success": {
-              "nextCard": "14"
-            }
-          }
-        },
-        "14": {
-          "id": "14",
-          "npcName": "Narrator",
-          "npcLine": "Стрела бьётся о крепкий хитин Стрекозы. Монстр замирает, изучая тебя своими огромными глазами.",
-          "imgSrc": "npc_img",
-          "right": {
-            "text": "Атаковать",
-            "success": {
-              "nextCard": "21"
-            }
-          },
-          "left": {
-            "text": "Рассмотреть",
-            "success": {
-              "nextCard": "16"
-            }
-          }
-        },
-        "15": {
-          "id": "15",
-          "npcName": "Narrator",
-          "npcLine": "Камень попадает, но отскакивает от крепкого хитина Стрекозы. Монстр замирает, изучая тебя своими огромными глазами.",
-          "imgSrc": "npc_img",
-          "right": {
-            "text": "Атаковать",
-            "success": {
-              "nextCard": "21"
-            }
-          },
-          "left": {
-            "text": "Рассмотреть",
-            "success": {
-              "nextCard": "16"
-            }
-          }
-        },
-        "16": {
-          "id": "16",
-          "npcName": "Narrator",
-          "npcLine": "Что-то красное на шее.\nРана? Или в чешуе что-то застряло?\nТы не успеваешь рассмотреть: огромное создание поворачивается и улетает.",
-          "imgSrc": "npc_img",
-          "right": {
-            "text": "Отдышаться",
-            "success": {
-              "nextCard": null
-            }
-          }
-        },
-        "17": {
-          "id": "17",
-          "npcName": "Narrator",
-          "npcLine": "Ты метко запускаешь камень прямо в глаз Стрекозе. Этого достаточно, чтобы она отвлеклась на тебя.",
-          "imgSrc": "npc_img",
-          "right": {
-            "text": "Сбежать",
-            "success": {
-              "nextCard": "18"
-            }
-          },
-          "left": {
-            "text": "Атаковать",
-            "success": {
-              "nextCard": "13"
-            }
-          }
-        },
-        "18": {
-          "id": "18",
-          "npcName": "Narrator",
-          "npcLine": "Чудовище стремительно нагоняет тебя. Нужно спрятаться!",
-          "imgSrc": "npc_img",
-          "right": {
-            "text": "В узкий переулок",
-            "success": {
-              "nextCard": null
-            }
-          },
-          "left": {
-            "text": "В дом",
-            "success": {
-              "nextCard": null
-            }
-          }
-        },
-        "19": {
-          "id": "19",
-          "npcName": "Narrator",
-          "npcLine": "Убегая, ты слышишь, как на площади что-то шипит и взрывается.",
-          "imgSrc": "npc_img",
-          "right": {
-            "text": "В дом",
-            "success": {
-              "nextCard": null
-            }
-          },
-          "left": {
-            "text": "Из города",
-            "success": {
-              "nextCard": "20"
-            }
-          }
-        },
-        "20": {
-          "id": "20",
-          "npcName": "Narrator",
-          "npcLine": "У ворот тебя накрывает тень Стрекозы. Чудовище пролетает над лугами и скрывается в кроне леса.",
-          "imgSrc": "npc_img",
-          "right": {
-            "text": "Отдышаться",
-            "success": {
-              "nextCard": null
-            }
-          }
-        },
-        "21": {
-          "id": "21",
-          "npcName": "Narrator",
-          "npcLine": "Готовое к твоей атаке, чудовище уворачивается. В мгновение оно оказывается рядом.",
-          "imgSrc": "npc_img",
-          "right": {
-            "text": "Готовиться к смерти",
-            "success": {
-              "nextCard": "22"
-            }
-          }
-        },
-        "22": {
-          "id": "22",
-          "npcName": "Narrator",
-          "npcLine": "Слышится взрыв, и Стрекозу относит в сторону. Она ошарашено хватает лапами пустоту. Сквозь пыль ты различаешь спасённого тобой паренька, который тянет тебя за собой в укрытие.",
-          "imgSrc": "npc_img",
-          "right": {
-            "text": "Конец",
-            "success": {
-              "nextCard": null
-            }
-          },
-          "isLastCard": true
-        }
-      }
+      ]
     }
   ]
 }
