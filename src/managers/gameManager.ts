@@ -7,6 +7,7 @@ import { createMenu } from "../ui/menu";
 import { createHeader } from "../ui/components/Header";
 import { createResources } from "../ui/components/Resources";
 import { EncounterManager } from "./encounterManager";
+import { SaveManager } from "./saveManager";
 
 export class GameManager {
   private app: Application;
@@ -20,9 +21,9 @@ export class GameManager {
   private header: Container;
   private resources: Container;
   private encounterContainer: Container;
-  private readonly PROGRESS_KEY = "gameProgress";
   private menu: Container;
   private encounterManager?: EncounterManager;
+  private saveManager: SaveManager;
 
   constructor(
     app: Application,
@@ -34,18 +35,20 @@ export class GameManager {
     this.levelManager = new LevelManager(levels);
     this.screenWidth = screenWidth;
     this.screenHeight = screenHeight;
+    this.saveManager = new SaveManager();
 
     // Load saved progress
-    const savedProgress = this.loadProgress();
+    const savedProgress = this.saveManager.loadProgress();
     if (savedProgress) {
       this.levelManager.setCurrentLevel(savedProgress.levelId);
       this.currentLevel = this.levelManager.getCurrentLevel();
+      this.currentCardId = savedProgress.cardId;
+      this.stats = savedProgress.stats;
     } else {
       this.currentLevel = this.levelManager.getCurrentLevel();
+      this.currentCardId = "1";
+      this.stats = { dexterity: 0, savvy: 0, magic: 0 };
     }
-
-    this.currentCardId = savedProgress?.cardId || "1";
-    this.stats = savedProgress?.stats || { dexterity: 0, savvy: 0, magic: 0 };
 
     this.background = createBackground(
       this.levelManager.getCurrentBackground(),
@@ -99,19 +102,11 @@ export class GameManager {
   private saveProgress() {
     const progress = {
       levelId: this.currentLevel.id,
-      cardId: "1",
+      cardId: this.currentCardId,
       stats: this.stats,
     };
-    localStorage.setItem(this.PROGRESS_KEY, JSON.stringify(progress));
+    this.saveManager.saveProgress(progress);
     console.log("Action: Progress saved", progress);
-  }
-
-  private loadProgress() {
-    const saved = localStorage.getItem(this.PROGRESS_KEY);
-    if (saved) {
-      return JSON.parse(saved);
-    }
-    return null;
   }
 
   private updateStats = (newStats: Stats) => {
@@ -170,7 +165,7 @@ export class GameManager {
   };
 
   public resetProgress() {
-    localStorage.removeItem(this.PROGRESS_KEY);
+    this.saveManager.resetProgress();
     this.levelManager.setCurrentLevel(this.levelManager.getFirstLevelId());
     this.currentLevel = this.levelManager.getCurrentLevel();
     this.currentCardId = "1";
