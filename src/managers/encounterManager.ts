@@ -11,7 +11,6 @@ export class EncounterManager {
   private cards: Record<string, Card>;
   private stats: Stats;
   private updateStats: (newStats: Stats) => void;
-  private saveCurrentCardId: (cardId: string) => void;
   private onLevelComplete: (destination?: NextDestination) => void;
 
   constructor(
@@ -19,14 +18,12 @@ export class EncounterManager {
     initialCardId: string,
     stats: Stats,
     updateStats: (newStats: Stats) => void,
-    saveCurrentCardId: (cardId: string) => void,
     onLevelComplete: (destination?: NextDestination) => void
   ) {
     this.cards = cards;
     this.encounter = cards[initialCardId];
     this.stats = stats;
     this.updateStats = updateStats;
-    this.saveCurrentCardId = saveCurrentCardId;
     this.onLevelComplete = onLevelComplete;
   }
 
@@ -34,23 +31,22 @@ export class EncounterManager {
     if (effect.stats) {
       const newStats = { ...this.stats };
       Object.entries(effect.stats).forEach(([key, value]) => {
-        console.log(`Action: ${key} changed by ${value}`);
         newStats[key as keyof Stats] += value;
       });
       this.updateStats(newStats);
     }
 
     if (effect.nextLevel || effect.nextPart) {
-      const destination: NextDestination = {};
-      if (effect.nextLevel) destination.levelId = effect.nextLevel;
-      if (effect.nextPart) destination.partId = effect.nextPart;
-      this.onLevelComplete(destination);
+      this.onLevelComplete(
+        effect.nextLevel
+          ? { levelId: effect.nextLevel }
+          : { partId: effect.nextPart }
+      );
       return null;
     }
 
     if (effect.nextCard) {
       this.encounter = this.cards[effect.nextCard];
-      this.saveCurrentCardId(this.encounter.id);
       return this.encounter;
     }
 
@@ -60,19 +56,14 @@ export class EncounterManager {
 
   public changeEncounter(selection: Selection): Card | null {
     const selectionData = this.encounter[selection];
+    if (!selectionData) return null;
 
-    if (selectionData?.requirements) {
-      const meetsRequirements = Object.entries(
-        selectionData.requirements
-      ).every(([key, value]) => this.stats[key as keyof Stats] >= value);
+    const meetsRequirements = Object.entries(
+      selectionData.requirements || {}
+    ).every(([key, value]) => this.stats[key as keyof Stats] >= value);
 
-      if (!meetsRequirements && selectionData.failure) {
-        return this.handleEffect(selectionData.failure);
-      }
-    }
-
-    if (!selectionData) {
-      return null;
+    if (!meetsRequirements && selectionData.failure) {
+      return this.handleEffect(selectionData.failure);
     }
 
     return this.handleEffect(selectionData.success);

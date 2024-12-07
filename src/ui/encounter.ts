@@ -7,19 +7,17 @@ import { createCard } from "./components/Card";
 export const createEncounter = (
   screenWidth: number,
   screenHeight: number,
-  CARDS: Record<string, Card>,
-  onLevelComplete: (destination?: NextDestination) => void,
+  cards: Record<string, Card>,
   initialCardId: string,
-  saveCurrentCardId: (cardId: string) => void,
   stats: Stats,
-  updateStats: (newStats: Stats) => void
+  updateStats: (newStats: Stats) => void,
+  onLevelComplete: (destination?: NextDestination) => void
 ): Container => {
   const encounterManager = new EncounterManager(
-    CARDS,
+    cards,
     initialCardId,
     stats,
     updateStats,
-    saveCurrentCardId,
     onLevelComplete
   );
 

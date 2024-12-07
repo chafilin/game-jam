@@ -2,8 +2,8 @@ import { Card, Level, Part } from "../types/types";
 
 export class LevelManager {
   private levels: Level[];
-  private currentLevelIndex: number = 0;
-  private currentPartIndex: number = 0;
+  private currentLevelIndex = 0;
+  private currentPartIndex = 0;
 
   constructor(levels: Level[]) {
     this.levels = levels;
@@ -13,26 +13,27 @@ export class LevelManager {
     return this.levels[this.currentLevelIndex];
   }
 
-  getCurrentPart(): Part {
+  getCurrentPart(): Part | null {
     const level = this.getCurrentLevel();
-    if (!level.parts || level.parts.length === 0) {
-      throw new Error(`Level ${level.id} has no parts`);
-    }
-    return level.parts[this.currentPartIndex];
+    return level.parts ? level.parts[this.currentPartIndex] : null;
   }
 
   getCurrentBackground(): string {
-    return this.getCurrentPart().background;
+    return (
+      this.getCurrentPart()?.background || this.getCurrentLevel().background
+    );
   }
 
   getCurrentCards(): Record<string, Card> {
-    return this.getCurrentPart().cards;
+    return this.getCurrentPart()?.cards || {};
   }
 
   nextLevel(): void {
     if (this.currentLevelIndex < this.levels.length - 1) {
       this.currentLevelIndex++;
       this.currentPartIndex = 0;
+    } else {
+      this.currentLevelIndex = 0; // Loop back to the first level if needed
     }
   }
 
@@ -46,24 +47,24 @@ export class LevelManager {
   }
 
   setCurrentLevel(levelId: string): void {
-    const levelIndex = this.levels.findIndex((level) => level.id === levelId);
-    if (levelIndex !== -1) {
-      this.currentLevelIndex = levelIndex;
+    const index = this.levels.findIndex((level) => level.id === levelId);
+    if (index !== -1) {
+      this.currentLevelIndex = index;
       this.currentPartIndex = 0;
+    }
+  }
+
+  setCurrentPart(partId: string): void {
+    const level = this.getCurrentLevel();
+    if (level.parts) {
+      const index = level.parts.findIndex((part) => part.id === partId);
+      if (index !== -1) {
+        this.currentPartIndex = index;
+      }
     }
   }
 
   getFirstLevelId(): string {
     return this.levels[0].id;
-  }
-
-  setCurrentPart(partId: string): void {
-    const level = this.getCurrentLevel();
-    if (!level.parts) return;
-
-    const partIndex = level.parts.findIndex((part) => part.id === partId);
-    if (partIndex !== -1) {
-      this.currentPartIndex = partIndex;
-    }
   }
 }

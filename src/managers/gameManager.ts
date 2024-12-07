@@ -38,13 +38,12 @@ export class GameManager {
     if (savedProgress) {
       this.levelManager.setCurrentLevel(savedProgress.levelId);
       this.currentLevel = this.levelManager.getCurrentLevel();
-      this.currentCardId = savedProgress.cardId;
-      this.stats = savedProgress.stats;
     } else {
       this.currentLevel = this.levelManager.getCurrentLevel();
-      this.currentCardId = "1";
-      this.stats = { dexterity: 0, savvy: 0, magic: 0 };
     }
+
+    this.currentCardId = savedProgress?.cardId || "1";
+    this.stats = savedProgress?.stats || { dexterity: 0, savvy: 0, magic: 0 };
 
     this.background = createBackground(
       this.levelManager.getCurrentBackground(),
@@ -124,22 +123,20 @@ export class GameManager {
   private renderLevel(cardId: string) {
     this.encounterContainer.removeChildren();
     const cards = this.levelManager.getCurrentCards();
+
     const encounter = createEncounter(
       this.screenWidth,
       this.screenHeight,
       cards,
-      this.onLevelComplete,
       cardId,
-      (newCardId) => {
-        this.currentCardId = newCardId;
-        this.saveProgress();
-      },
       this.stats,
-      this.updateStats
+      this.updateStats,
+      this.onLevelComplete
     );
+
     this.encounterContainer.addChild(encounter);
 
-    // Update background based on current part
+    // Update background
     this.background.texture = Texture.from(
       this.levelManager.getCurrentBackground()
     );
@@ -149,31 +146,21 @@ export class GameManager {
     levelId?: string;
     partId?: string;
   }) => {
-    if (destination?.levelId) {
-      this.levelManager.setCurrentLevel(destination.levelId);
+    if (destination) {
+      if (destination.levelId) {
+        this.levelManager.setCurrentLevel(destination.levelId);
+      }
       if (destination.partId) {
         this.levelManager.setCurrentPart(destination.partId);
       }
-    } else if (destination?.partId) {
-      this.levelManager.setCurrentPart(destination.partId);
     } else {
-      const currentLevel = this.levelManager.getCurrentLevel();
-      if (
-        currentLevel.parts &&
-        this.levelManager.getCurrentPart().id !==
-          currentLevel.parts[currentLevel.parts.length - 1].id
-      ) {
-        this.levelManager.nextPart();
-      } else {
-        this.levelManager.nextLevel();
-      }
+      this.levelManager.nextPart();
     }
 
     this.currentLevel = this.levelManager.getCurrentLevel();
     this.currentCardId = "1";
-    this.renderLevel("1");
+    this.renderLevel(this.currentCardId);
     this.saveProgress();
-    console.log(`Action: Level changed to ${this.currentLevel.id}`);
   };
 
   public resetProgress() {
