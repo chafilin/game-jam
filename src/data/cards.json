@@ -130,7 +130,12 @@
               "left": {
                 "text": "Лень",
                 "success": {
-                  "nextCard": "1"
+                  "nextCard": "1",
+                  "stats": {
+                    "savvy": 0,
+                    "dexterity": 0,
+                    "magic": 0
+                  }
                 }
               }
             }

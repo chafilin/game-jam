@@ -14,8 +14,6 @@ export class GameManager {
   private levelManager: LevelManager;
   private screenWidth: number;
   private screenHeight: number;
-  private currentLevel: Level;
-  private currentCardId: string;
   private stats: Stats;
   private background: Sprite;
   private header: Container;
@@ -41,12 +39,11 @@ export class GameManager {
     const savedProgress = this.saveManager.loadProgress();
     if (savedProgress) {
       this.levelManager.setCurrentLevel(savedProgress.levelId);
-      this.currentLevel = this.levelManager.getCurrentLevel();
-      this.currentCardId = savedProgress.cardId;
+      this.levelManager.setCurrentCardId(savedProgress.cardId);
       this.stats = savedProgress.stats;
     } else {
-      this.currentLevel = this.levelManager.getCurrentLevel();
-      this.currentCardId = "1";
+      this.levelManager.setCurrentLevel(this.levelManager.getFirstLevelId());
+      this.levelManager.setCurrentCardId("1");
       this.stats = { dexterity: 0, savvy: 0, magic: 0 };
     }
 
@@ -74,7 +71,7 @@ export class GameManager {
   }
 
   start() {
-    this.renderLevel(this.currentCardId);
+    this.renderLevel();
   }
 
   resize(screenWidth: number, screenHeight: number) {
@@ -96,13 +93,13 @@ export class GameManager {
     this.menu.visible = false;
     this.app.stage.addChild(this.menu);
 
-    this.renderLevel(this.currentCardId);
+    this.renderLevel();
   }
 
   private saveProgress() {
     const progress = {
-      levelId: this.currentLevel.id,
-      cardId: this.currentCardId,
+      levelId: this.levelManager.getCurrentLevel().id,
+      cardId: this.levelManager.getCurrentCardId(),
       stats: this.stats,
     };
     this.saveManager.saveProgress(progress);
@@ -117,16 +114,18 @@ export class GameManager {
     this.app.stage.addChild(this.resources);
   };
 
-  private renderLevel(cardId: string) {
+  private renderLevel() {
     this.encounterContainer.removeChildren();
     const cards = this.levelManager.getCurrentCards();
+    const cardId = this.levelManager.getCurrentCardId();
 
     this.encounterManager = new EncounterManager(
       cards,
       cardId,
       this.stats,
       this.updateStats,
-      this.onLevelComplete
+      this.onLevelComplete,
+      this.levelManager
     );
 
     const encounter = createEncounter(
@@ -158,20 +157,18 @@ export class GameManager {
       this.levelManager.nextPart();
     }
 
-    this.currentLevel = this.levelManager.getCurrentLevel();
-    this.currentCardId = "1";
-    this.renderLevel(this.currentCardId);
+    this.levelManager.setCurrentCardId("1");
+    this.renderLevel();
     this.saveProgress();
   };
 
   public resetProgress() {
     this.saveManager.resetProgress();
     this.levelManager.setCurrentLevel(this.levelManager.getFirstLevelId());
-    this.currentLevel = this.levelManager.getCurrentLevel();
-    this.currentCardId = "1";
+    this.levelManager.setCurrentCardId("1");
     this.stats = { dexterity: 0, savvy: 0, magic: 0 };
     this.updateStats(this.stats);
-    this.renderLevel(this.currentCardId);
+    this.renderLevel();
     console.log("Action: Progress reset");
   }
 }
