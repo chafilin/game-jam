@@ -1,11 +1,10 @@
-import { Application, Container, Texture, Text } from "pixi.js";
-import cardJson from "./cards.json";
+import { Application, Container, Text } from "pixi.js";
+import cardJson from "./data/cards.json";
 import "./style.css";
-import { loadAssets } from "./assets";
-import { createBackground, createHeader, createResources } from "./ui";
-import { Level, Stats } from "./types";
-import { LevelManager } from "./levelManager";
-import { createEncounter } from "./encounter";
+import { loadAssets } from "./utils/assets";
+import { Level } from "./types/types";
+
+import { GameManager } from "./managers/gameManager";
 
 // Масштабирование под мобильные устройства
 let screenWidth = window.innerWidth;
@@ -22,92 +21,18 @@ const init = async () => {
   await loadAssets();
   hideLoader(app);
 
-  const levelManager = new LevelManager(LEVELS);
-  let currentLevel = levelManager.getCurrentLevel();
-  let currentCardId = "1";
-
-  const background = createBackground(
-    currentLevel.background,
-    screenWidth,
-    screenHeight
-  );
-  app.stage.addChild(background);
-
-  const header = createHeader(screenWidth);
-  app.stage.addChild(header);
-
-  const stats: Stats = {
-    dexterity: 0,
-    savvy: 0,
-    magic: 0,
-  };
-
-  const updateStats = (newStats: Stats) => {
-    // Update the existing stats object instead of reassigning
-    Object.assign(stats, newStats);
-    console.log("Action: Stats updated", stats);
-    app.stage.removeChild(resources);
-    resources = createResources(screenWidth, stats);
-    app.stage.addChild(resources);
-  };
-
-  let resources = createResources(screenWidth, stats);
-  app.stage.addChild(resources);
-
-  const encounterContainer = new Container();
-
-  app.stage.addChild(encounterContainer);
-
-  const renderLevel = (level: Level, cardId: string) => {
-    encounterContainer.removeChildren();
-    const encounter = createEncounter(
-      screenWidth,
-      screenHeight,
-      level.cards,
-      onLevelComplete,
-      cardId,
-      (newCardId) => {
-        currentCardId = newCardId;
-      },
-      stats,
-      updateStats
-    );
-    encounterContainer.addChild(encounter);
-  };
-
-  const onLevelComplete = () => {
-    levelManager.nextLevel();
-    currentLevel = levelManager.getCurrentLevel();
-    currentCardId = "1";
-    background.texture = Texture.from(currentLevel.background);
-    renderLevel(currentLevel, "1");
-    console.log(`Action: Level changed to ${currentLevel.id}`);
-  };
-
-  renderLevel(currentLevel, "1");
+  const gameManager = new GameManager(app, LEVELS, screenWidth, screenHeight);
+  gameManager.start();
 
   window.addEventListener("resize", () => {
     app.renderer.resize(window.innerWidth, window.innerHeight);
     screenWidth = window.innerWidth;
     screenHeight = window.innerHeight;
-
-    background.width = screenWidth;
-    background.height = screenHeight;
-    header.width = screenWidth;
-    app.stage.removeChild(resources);
-    resources = createResources(screenWidth, stats);
-    app.stage.addChild(resources);
-
-    // Recalculate used height and adjust encounterContainer
-    const usedHeight = header.height + resources.height;
-    encounterContainer.y = usedHeight;
-    encounterContainer.height = screenHeight - usedHeight;
-
-    renderLevel(currentLevel, currentCardId);
+    gameManager.resize(screenWidth, screenHeight);
   });
 };
 
-const createApp = async () => {
+const createApp = async (): Promise<Application> => {
   const app = new Application();
   await app.init({
     width: window.innerWidth,
@@ -126,7 +51,9 @@ const createApp = async () => {
   return app;
 };
 
-const showLoader = (app: Application) => {
+const showLoader = (app: Application): void => {
+  const loaderContainer = new Container();
+  loaderContainer.name = "loader";
   const loaderText = new Text({
     text: "Loading...",
     style: {
@@ -134,13 +61,17 @@ const showLoader = (app: Application) => {
       fill: "#000000",
     },
   });
-  loaderText.x = screenWidth / 2 - loaderText.width / 2;
-  loaderText.y = screenHeight / 2 - loaderText.height / 2;
-  app.stage.addChild(loaderText);
+  loaderText.anchor.set(0.5);
+  loaderText.position.set(screenWidth / 2, screenHeight / 2);
+  loaderContainer.addChild(loaderText);
+  app.stage.addChild(loaderContainer);
 };
 
-const hideLoader = (app: Application) => {
-  app.stage.removeChildren();
+const hideLoader = (app: Application): void => {
+  const loader = app.stage.getChildByName("loader");
+  if (loader) {
+    app.stage.removeChild(loader);
+  }
 };
 
 init();

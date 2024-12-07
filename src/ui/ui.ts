@@ -1,6 +1,6 @@
 import { Graphics, Sprite, Texture, Text, Container } from "pixi.js";
 import { DropShadowFilter } from "pixi-filters";
-import { Card, ImgOptions, Selection, Stats } from "./types";
+import { Card, ImgOptions, Selection, Stats } from "../types/types";
 
 // Create background sprite
 export const createBackground = (
