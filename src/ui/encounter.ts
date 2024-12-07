@@ -1,5 +1,5 @@
 import { Container } from "pixi.js";
-import { Stats, Card, Selection, NextDestination } from "../types/types";
+import { Card, Selection } from "../types/types";
 import { EncounterManager } from "../managers/encounterManager";
 import { createImage } from "./components/Image";
 import { createCard } from "./components/Card";
@@ -7,20 +7,8 @@ import { createCard } from "./components/Card";
 export const createEncounter = (
   screenWidth: number,
   screenHeight: number,
-  cards: Record<string, Card>,
-  initialCardId: string,
-  stats: Stats,
-  updateStats: (newStats: Stats) => void,
-  onLevelComplete: (destination?: NextDestination) => void
+  encounterManager: EncounterManager
 ): Container => {
-  const encounterManager = new EncounterManager(
-    cards,
-    initialCardId,
-    stats,
-    updateStats,
-    onLevelComplete
-  );
-
   const encounterContainer = new Container();
   encounterContainer.y = screenHeight / 4;
 

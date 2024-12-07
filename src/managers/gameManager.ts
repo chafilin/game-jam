@@ -6,6 +6,7 @@ import { createEncounter } from "../ui/encounter";
 import { createMenu } from "../ui/menu";
 import { createHeader } from "../ui/components/Header";
 import { createResources } from "../ui/components/Resources";
+import { EncounterManager } from "./encounterManager";
 
 export class GameManager {
   private app: Application;
@@ -21,6 +22,7 @@ export class GameManager {
   private encounterContainer: Container;
   private readonly PROGRESS_KEY = "gameProgress";
   private menu: Container;
+  private encounterManager?: EncounterManager;
 
   constructor(
     app: Application,
@@ -124,14 +126,18 @@ export class GameManager {
     this.encounterContainer.removeChildren();
     const cards = this.levelManager.getCurrentCards();
 
-    const encounter = createEncounter(
-      this.screenWidth,
-      this.screenHeight,
+    this.encounterManager = new EncounterManager(
       cards,
       cardId,
       this.stats,
       this.updateStats,
       this.onLevelComplete
+    );
+
+    const encounter = createEncounter(
+      this.screenWidth,
+      this.screenHeight,
+      this.encounterManager
     );
 
     this.encounterContainer.addChild(encounter);
@@ -169,6 +175,7 @@ export class GameManager {
     this.currentLevel = this.levelManager.getCurrentLevel();
     this.currentCardId = "1";
     this.stats = { dexterity: 0, savvy: 0, magic: 0 };
+    this.updateStats(this.stats);
     this.renderLevel(this.currentCardId);
     console.log("Action: Progress reset");
   }
