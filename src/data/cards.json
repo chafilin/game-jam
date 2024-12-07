@@ -11,7 +11,9 @@
           "imgSrc": "npc_img",
           "right": {
             "text": "Грустить",
-            "nextCard": "2"
+            "success": {
+              "nextCard": "2"
+            }
           }
         },
         "2": {
@@ -21,7 +23,9 @@
           "imgSrc": "npc_img",
           "right": {
             "text": "Мечтать",
-            "nextCard": "3"
+            "success": {
+              "nextCard": "3"
+            }
           }
         },
         "3": {
@@ -31,7 +35,9 @@
           "imgSrc": "npc_img",
           "right": {
             "text": "Мечтать",
-            "nextCard": "4"
+            "success": {
+              "nextCard": "4"
+            }
           }
         },
         "4": {
@@ -41,7 +47,9 @@
           "imgSrc": "npc_img",
           "right": {
             "text": "Мечтать…",
-            "nextCard": "5"
+            "success": {
+              "nextCard": "5"
+            }
           }
         },
         "5": {
@@ -51,7 +59,9 @@
           "imgSrc": "npc_img",
           "right": {
             "text": "С другой стороны…",
-            "nextCard": "6"
+            "success": {
+              "nextCard": "6"
+            }
           }
         },
         "6": {
@@ -61,16 +71,20 @@
           "imgSrc": "npc_img",
           "right": {
             "text": "Комиксы",
-            "nextCard": "7",
-            "statChanges": {
-              "savvy": 1
+            "success": {
+              "nextCard": "7",
+              "stats": {
+                "savvy": 1
+              }
             }
           },
           "left": {
             "text": "Велосипед",
-            "nextCard": "7",
-            "statChanges": {
-              "dexterity": 1
+            "success": {
+              "nextCard": "7",
+              "stats": {
+                "dexterity": 1
+              }
             }
           }
         },
@@ -81,16 +95,20 @@
           "imgSrc": "npc_img",
           "right": {
             "text": "На площадке",
-            "nextCard": "8",
-            "statChanges": {
-              "dexterity": 1
+            "success": {
+              "nextCard": "8",
+              "stats": {
+                "dexterity": 1
+              }
             }
           },
           "left": {
             "text": "В лего",
-            "nextCard": "8",
-            "statChanges": {
-              "savvy": 1
+            "success": {
+              "nextCard": "8",
+              "stats": {
+                "savvy": 1
+              }
             }
           }
         },
@@ -101,11 +119,15 @@
           "imgSrc": "npc_img",
           "right": {
             "text": "Учиться",
-            "nextCard": null
+            "success": {
+              "nextLevel": "level2"
+            }
           },
           "left": {
             "text": "Лень",
-            "nextCard": "1"
+            "success": {
+              "nextCard": "1"
+            }
           }
         }
       }
@@ -121,7 +143,9 @@
           "imgSrc": "npc_img",
           "right": {
             "text": "Открыть “Окружающий мир”",
-            "nextCard": "2"
+            "success": {
+              "nextCard": "2"
+            }
           }
         },
         "2": {
@@ -131,7 +155,9 @@
           "imgSrc": "npc_img",
           "right": {
             "text": "Читать",
-            "nextCard": "3"
+            "success": {
+              "nextCard": "3"
+            }
           }
         },
         "3": {
@@ -141,7 +167,9 @@
           "imgSrc": "npc_img",
           "right": {
             "text": "Читать дальше",
-            "nextCard": "4"
+            "success": {
+              "nextCard": "4"
+            }
           }
         },
         "4": {
@@ -151,7 +179,9 @@
           "imgSrc": "npc_img",
           "right": {
             "text": "Читать…",
-            "nextCard": "5"
+            "success": {
+              "nextCard": "5"
+            }
           }
         },
         "5": {
@@ -161,7 +191,9 @@
           "imgSrc": "npc_img",
           "right": {
             "text": "Читать…",
-            "nextCard": "6"
+            "success": {
+              "nextCard": "6"
+            }
           }
         },
         "6": {
@@ -171,7 +203,9 @@
           "imgSrc": "npc_img",
           "right": {
             "text": "Читать…",
-            "nextCard": "7"
+            "success": {
+              "nextCard": "7"
+            }
           }
         },
         "7": {
@@ -181,7 +215,9 @@
           "imgSrc": "npc_img",
           "right": {
             "text": "Печенька?",
-            "nextCard": null
+            "success": {
+              "nextCard": null
+            }
           }
         }
       }
@@ -197,7 +233,9 @@
           "imgSrc": "cookie",
           "right": {
             "text": "Приключениям?",
-            "nextCard": "2"
+            "success": {
+              "nextCard": "2"
+            }
           }
         },
         "2": {
@@ -207,7 +245,9 @@
           "imgSrc": "cookie",
           "right": {
             "text": "Что это?",
-            "nextCard": "3"
+            "success": {
+              "nextCard": "3"
+            }
           }
         },
         "3": {
@@ -217,7 +257,9 @@
           "imgSrc": "cookie",
           "right": {
             "text": "Я не Гарри",
-            "nextCard": "4"
+            "success": {
+              "nextCard": "4"
+            }
           }
         },
         "4": {
@@ -227,7 +269,9 @@
           "imgSrc": "cookie",
           "right": {
             "text": "Но зачем?",
-            "nextCard": "5"
+            "success": {
+              "nextCard": "5"
+            }
           }
         },
         "5": {
@@ -237,7 +281,9 @@
           "imgSrc": "cookie",
           "right": {
             "text": "Карма?",
-            "nextCard": "6"
+            "success": {
+              "nextCard": "6"
+            }
           }
         },
         "6": {
@@ -247,7 +293,9 @@
           "imgSrc": "cookie",
           "right": {
             "text": "Подожди!",
-            "nextCard": null
+            "success": {
+              "nextCard": null
+            }
           },
           "isLastCard": true
         }
@@ -264,11 +312,15 @@
           "imgSrc": "npc_img",
           "right": {
             "text": "Оглядеться",
-            "nextCard": "2"
+            "success": {
+              "nextCard": "2"
+            }
           },
           "left": {
             "text": "Идти в город",
-            "nextCard": "3"
+            "success": {
+              "nextCard": "3"
+            }
           }
         },
         "2": {
@@ -278,7 +330,9 @@
           "imgSrc": "npc_img",
           "right": {
             "text": "Идти в город",
-            "nextCard": "3"
+            "success": {
+              "nextCard": "3"
+            }
           }
         },
         "3": {
@@ -288,7 +342,9 @@
           "imgSrc": "npc_img",
           "right": {
             "text": "Идти на крики",
-            "nextCard": "4"
+            "success": {
+              "nextCard": "4"
+            }
           }
         },
         "4": {
@@ -298,11 +354,15 @@
           "imgSrc": "npc_img",
           "right": {
             "text": "Спросить про лицо",
-            "nextCard": "8"
+            "success": {
+              "nextCard": "8"
+            }
           },
           "left": {
             "text": "Что случилось?",
-            "nextCard": "5"
+            "success": {
+              "nextCard": "5"
+            }
           }
         },
         "5": {
@@ -312,11 +372,15 @@
           "imgSrc": "frog",
           "right": {
             "text": "Стрекозы не страшные",
-            "nextCard": "7"
+            "success": {
+              "nextCard": "7"
+            }
           },
           "left": {
             "text": "Помочь",
-            "nextCard": "6"
+            "success": {
+              "nextCard": "6"
+            }
           }
         },
         "6": {
@@ -326,7 +390,9 @@
           "imgSrc": "npc_img",
           "right": {
             "text": "Идти дальше",
-            "nextCard": "9"
+            "success": {
+              "nextCard": "9"
+            }
           }
         },
         "7": {
@@ -336,11 +402,15 @@
           "imgSrc": "npc_img",
           "left": {
             "text": "Помочь",
-            "nextCard": "6"
+            "success": {
+              "nextCard": "6"
+            }
           },
           "right": {
             "text": "Идти дальше",
-            "nextCard": "9"
+            "success": {
+              "nextCard": "9"
+            }
           }
         },
         "8": {
@@ -350,11 +420,15 @@
           "imgSrc": "npc_img",
           "right": {
             "text": "Идти дальше",
-            "nextCard": "9"
+            "success": {
+              "nextCard": "9"
+            }
           },
           "left": {
             "text": "Что случилось?",
-            "nextCard": "5"
+            "success": {
+              "nextCard": "5"
+            }
           }
         },
         "9": {
@@ -364,7 +438,9 @@
           "imgSrc": "npc_img",
           "right": {
             "text": "Приглядеться",
-            "nextCard": "10"
+            "success": {
+              "nextCard": "10"
+            }
           }
         },
         "10": {
@@ -374,11 +450,15 @@
           "imgSrc": "npc_img",
           "right": {
             "text": "Помочь",
-            "nextCard": "11"
+            "success": {
+              "nextCard": "11"
+            }
           },
           "left": {
             "text": "Сбежать",
-            "nextCard": "19"
+            "success": {
+              "nextCard": "19"
+            }
           }
         },
         "11": {
@@ -388,11 +468,15 @@
           "imgSrc": "npc_img",
           "right": {
             "text": "Камень",
-            "nextCard": "17"
+            "success": {
+              "nextCard": "17"
+            }
           },
           "left": {
             "text": "Магия",
-            "nextCard": "12"
+            "success": {
+              "nextCard": "12"
+            }
           }
         },
         "12": {
@@ -402,11 +486,15 @@
           "imgSrc": "npc_img",
           "right": {
             "text": "Атаковать",
-            "nextCard": "13"
+            "success": {
+              "nextCard": "13"
+            }
           },
           "left": {
             "text": "Сбежать",
-            "nextCard": "18"
+            "success": {
+              "nextCard": "18"
+            }
           }
         },
         "13": {
@@ -416,11 +504,15 @@
           "imgSrc": "npc_img",
           "right": {
             "text": "Камень",
-            "nextCard": "15"
+            "success": {
+              "nextCard": "15"
+            }
           },
           "left": {
             "text": "Магия",
-            "nextCard": "14"
+            "success": {
+              "nextCard": "14"
+            }
           }
         },
         "14": {
@@ -430,11 +522,15 @@
           "imgSrc": "npc_img",
           "right": {
             "text": "Атаковать",
-            "nextCard": "21"
+            "success": {
+              "nextCard": "21"
+            }
           },
           "left": {
             "text": "Рассмотреть",
-            "nextCard": "16"
+            "success": {
+              "nextCard": "16"
+            }
           }
         },
         "15": {
@@ -444,11 +540,15 @@
           "imgSrc": "npc_img",
           "right": {
             "text": "Атаковать",
-            "nextCard": "21"
+            "success": {
+              "nextCard": "21"
+            }
           },
           "left": {
             "text": "Рассмотреть",
-            "nextCard": "16"
+            "success": {
+              "nextCard": "16"
+            }
           }
         },
         "16": {
@@ -458,7 +558,9 @@
           "imgSrc": "npc_img",
           "right": {
             "text": "Отдышаться",
-            "nextCard": null
+            "success": {
+              "nextCard": null
+            }
           }
         },
         "17": {
@@ -468,11 +570,15 @@
           "imgSrc": "npc_img",
           "right": {
             "text": "Сбежать",
-            "nextCard": "18"
+            "success": {
+              "nextCard": "18"
+            }
           },
           "left": {
             "text": "Атаковать",
-            "nextCard": "13"
+            "success": {
+              "nextCard": "13"
+            }
           }
         },
         "18": {
@@ -482,11 +588,15 @@
           "imgSrc": "npc_img",
           "right": {
             "text": "В узкий переулок",
-            "nextCard": null
+            "success": {
+              "nextCard": null
+            }
           },
           "left": {
             "text": "В дом",
-            "nextCard": null
+            "success": {
+              "nextCard": null
+            }
           }
         },
         "19": {
@@ -496,11 +606,15 @@
           "imgSrc": "npc_img",
           "right": {
             "text": "В дом",
-            "nextCard": null
+            "success": {
+              "nextCard": null
+            }
           },
           "left": {
             "text": "Из города",
-            "nextCard": "20"
+            "success": {
+              "nextCard": "20"
+            }
           }
         },
         "20": {
@@ -510,7 +624,9 @@
           "imgSrc": "npc_img",
           "right": {
             "text": "Отдышаться",
-            "nextCard": null
+            "success": {
+              "nextCard": null
+            }
           }
         },
         "21": {
@@ -520,7 +636,9 @@
           "imgSrc": "npc_img",
           "right": {
             "text": "Готовиться к смерти",
-            "nextCard": "22"
+            "success": {
+              "nextCard": "22"
+            }
           }
         },
         "22": {
@@ -530,7 +648,9 @@
           "imgSrc": "npc_img",
           "right": {
             "text": "Конец",
-            "nextCard": null
+            "success": {
+              "nextCard": null
+            }
           },
           "isLastCard": true
         }

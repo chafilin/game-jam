@@ -1,17 +1,19 @@
 import { Container } from "pixi.js";
 import { Stats, Card, Selection } from "../types/types";
 import { EncounterManager } from "../managers/encounterManager";
-import { createCard, createImage } from "./ui";
+import { createImage } from "./image";
+import { createCard } from "./components/Card";
 
 export const createEncounter = (
   screenWidth: number,
   screenHeight: number,
   CARDS: Record<string, Card>,
-  onLevelComplete: () => void,
+  onLevelComplete: (nextLevelId?: string) => void,
   initialCardId: string,
   saveCurrentCardId: (cardId: string) => void,
   stats: Stats,
-  updateStats: (newStats: Stats) => void
+  updateStats: (newStats: Stats) => void,
+  currentLevelId: string
 ): Container => {
   const encounterManager = new EncounterManager(
     CARDS,
@@ -19,7 +21,8 @@ export const createEncounter = (
     stats,
     updateStats,
     saveCurrentCardId,
-    onLevelComplete
+    onLevelComplete,
+    currentLevelId
   );
 
   const encounterContainer = new Container();
@@ -36,12 +39,7 @@ export const createEncounter = (
     npc.y = 0;
     encounterContainer.addChild(npc);
 
-    const cardStack = createCard(
-      card,
-      changeEncounter,
-      screenWidth,
-      onLevelComplete
-    );
+    const cardStack = createCard(card, changeEncounter, screenWidth);
     cardStack.x = screenWidth / 2 - cardStack.width / 2;
     cardStack.y = npc.height + 20;
     encounterContainer.addChild(cardStack);

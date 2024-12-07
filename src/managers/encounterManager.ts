@@ -1,4 +1,4 @@
-import { Card, Selection, SelectionData, Stats } from "../types/types";
+import { Card, Selection, Stats, Effect } from "../types/types";
 
 export class EncounterManager {
   private encounter: Card;
@@ -7,6 +7,7 @@ export class EncounterManager {
   private updateStats: (newStats: Stats) => void;
   private saveCurrentCardId: (cardId: string) => void;
   private onLevelComplete: (nextLevelId?: string) => void;
+  private currentLevelId: string;
 
   constructor(
     cards: Record<string, Card>,
@@ -14,7 +15,8 @@ export class EncounterManager {
     stats: Stats,
     updateStats: (newStats: Stats) => void,
     saveCurrentCardId: (cardId: string) => void,
-    onLevelComplete: (nextLevelId?: string) => void
+    onLevelComplete: (nextLevelId?: string) => void,
+    currentLevelId: string
   ) {
     this.cards = cards;
     this.encounter = cards[initialCardId];
@@ -22,93 +24,57 @@ export class EncounterManager {
     this.updateStats = updateStats;
     this.saveCurrentCardId = saveCurrentCardId;
     this.onLevelComplete = onLevelComplete;
+    this.currentLevelId = currentLevelId;
   }
 
-  private getNextCard(currentCard: Card, selection: Selection): Card | null {
-    if (!currentCard[selection]?.nextCard) {
+  private handleEffect(effect: Effect): Card | null {
+    if (effect.stats) {
+      const newStats = { ...this.stats };
+      Object.entries(effect.stats).forEach(([key, value]) => {
+        console.log(`Action: ${key} changed by ${value}`);
+        newStats[key as keyof Stats] += value;
+      });
+      this.updateStats(newStats);
+    }
+
+    if (effect.nextLevel) {
+      this.onLevelComplete(effect.nextLevel);
       return null;
     }
-    return this.cards[currentCard[selection].nextCard];
-  }
 
-  private checkStatRequirements(selectionData: SelectionData): boolean {
-    if (!selectionData.statRequirements) {
-      return true;
-    }
-    return Object.entries(selectionData.statRequirements).every(
-      ([key, value]) => this.stats[key as keyof Stats] >= value
-    );
-  }
+    if (effect.nextCard) {
+      if (effect.nextCard === "1" && this.currentLevelId === "level1") {
+        this.updateStats({ dexterity: 0, savvy: 0, magic: 0 });
+      }
 
-  private handleStatChanges(selectionData: SelectionData): void {
-    const newStats = { ...this.stats };
-    if (!selectionData.statChanges) {
-      return;
-    }
-    Object.entries(selectionData.statChanges).forEach(([key, value]) => {
-      console.log(`Action: ${key} changed by ${value}`);
-      newStats[key as keyof Stats] += value;
-    });
-    this.updateStats(newStats);
-  }
-
-  private handleFailure(selectionData: SelectionData): Card | null {
-    if (selectionData?.failureCard) {
-      this.encounter = this.cards[selectionData.failureCard];
+      this.encounter = this.cards[effect.nextCard];
       this.saveCurrentCardId(this.encounter.id);
-      console.log(
-        `Action: Encounter changed to failure card ${this.encounter.id}`
-      );
       return this.encounter;
-    } else if (selectionData?.failureLevel !== undefined) {
-      this.onLevelComplete(selectionData.failureLevel);
-      console.log("Action: Level completed due to stat failure");
-      return null;
     }
-    console.log(
-      "Stat requirements not met",
-      selectionData.statRequirements,
-      this.stats
-    );
-    return null;
-  }
 
-  private handleNextCard(selection: Selection): Card | null {
-    const nextCard = this.getNextCard(this.encounter, selection);
-    if (nextCard) {
-      this.encounter = nextCard;
-      this.saveCurrentCardId(nextCard.id);
-      console.log(
-        `Action: Encounter changed to card ${this.encounter.npcName}`
-      );
-      return this.encounter;
-    } else if (this.encounter.isLastCard) {
-      this.onLevelComplete();
-      console.log("Action: Level completed");
-      return null;
-    } else {
-      this.onLevelComplete();
-      console.log("Action: Level completed");
-      return null;
-    }
+    this.onLevelComplete();
+    return null;
   }
 
   public changeEncounter(selection: Selection): Card | null {
     const selectionData = this.encounter[selection];
     console.log("stats", this.stats);
 
-    if (
-      selectionData?.statRequirements &&
-      !this.checkStatRequirements(selectionData)
-    ) {
-      return this.handleFailure(selectionData);
+    if (selectionData?.requirements) {
+      const meetsRequirements = Object.entries(
+        selectionData.requirements
+      ).every(([key, value]) => this.stats[key as keyof Stats] >= value);
+
+      if (!meetsRequirements && selectionData.failure) {
+        return this.handleEffect(selectionData.failure);
+      }
     }
 
-    if (selectionData?.statChanges) {
-      this.handleStatChanges(selectionData);
+    if (!selectionData) {
+      return null;
     }
 
-    return this.handleNextCard(selection);
+    return this.handleEffect(selectionData.success);
   }
 
   public getCurrentEncounter(): Card {

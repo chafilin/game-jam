@@ -1,7 +1,7 @@
 import { Assets } from "pixi.js";
 
 // Load assets required for the game
-export const loadAssets = async () => {
+export const loadAssets = async (onProgress?: (progress: number) => void) => {
   const assetList = [
     { alias: "background", src: "assets/bgtest.png" },
     { alias: "settings_button", src: "assets/settings_icon.png" },
@@ -20,5 +20,11 @@ export const loadAssets = async () => {
     Assets.add(asset);
   }
 
-  await Promise.all(assetList.map((asset) => Assets.load(asset.alias)));
+  // Load all assets with progress tracking
+  await Assets.load(
+    assetList.map((asset) => asset.alias),
+    (progress) => {
+      onProgress?.(progress * 100); // Convert to percentage
+    }
+  );
 };

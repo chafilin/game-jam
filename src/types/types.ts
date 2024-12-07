@@ -3,13 +3,17 @@ export enum Selection {
   Left = "left",
 }
 
+export type Effect = {
+  stats?: Partial<Stats>;
+  nextCard?: string;
+  nextLevel?: string;
+};
+
 export type SelectionData = {
   text: string;
-  nextCard: string | null;
-  statChanges?: Partial<Stats>;
-  statRequirements?: Partial<Stats>;
-  failureCard?: string;
-  failureLevel?: string;
+  requirements?: Partial<Stats>;
+  success: Effect;
+  failure?: Effect;
 };
 
 export type Card = {
@@ -19,7 +23,6 @@ export type Card = {
   npcLine: string;
   [Selection.Right]: SelectionData;
   [Selection.Left]?: SelectionData;
-  isLastCard?: boolean;
 };
 
 export type Stats = {

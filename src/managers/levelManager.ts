@@ -31,4 +31,8 @@ export class LevelManager {
       this.currentLevelIndex = levelIndex;
     }
   }
+
+  getFirstLevelId(): string {
+    return this.levels[0].id;
+  }
 }
