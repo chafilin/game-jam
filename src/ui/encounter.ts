@@ -1,7 +1,7 @@
 import { Container } from "pixi.js";
 import { Stats, Card, Selection, NextDestination } from "../types/types";
 import { EncounterManager } from "../managers/encounterManager";
-import { createImage } from "./image";
+import { createImage } from "./components/Image";
 import { createCard } from "./components/Card";
 
 export const createEncounter = (
@@ -12,8 +12,7 @@ export const createEncounter = (
   initialCardId: string,
   saveCurrentCardId: (cardId: string) => void,
   stats: Stats,
-  updateStats: (newStats: Stats) => void,
-  currentLevelId: string
+  updateStats: (newStats: Stats) => void
 ): Container => {
   const encounterManager = new EncounterManager(
     CARDS,
@@ -21,8 +20,7 @@ export const createEncounter = (
     stats,
     updateStats,
     saveCurrentCardId,
-    onLevelComplete,
-    currentLevelId
+    onLevelComplete
   );
 
   const encounterContainer = new Container();

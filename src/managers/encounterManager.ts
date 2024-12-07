@@ -13,7 +13,6 @@ export class EncounterManager {
   private updateStats: (newStats: Stats) => void;
   private saveCurrentCardId: (cardId: string) => void;
   private onLevelComplete: (destination?: NextDestination) => void;
-  private currentLevelId: string;
 
   constructor(
     cards: Record<string, Card>,
@@ -21,8 +20,7 @@ export class EncounterManager {
     stats: Stats,
     updateStats: (newStats: Stats) => void,
     saveCurrentCardId: (cardId: string) => void,
-    onLevelComplete: (destination?: NextDestination) => void,
-    currentLevelId: string
+    onLevelComplete: (destination?: NextDestination) => void
   ) {
     this.cards = cards;
     this.encounter = cards[initialCardId];
@@ -30,7 +28,6 @@ export class EncounterManager {
     this.updateStats = updateStats;
     this.saveCurrentCardId = saveCurrentCardId;
     this.onLevelComplete = onLevelComplete;
-    this.currentLevelId = currentLevelId;
   }
 
   private handleEffect(effect: Effect): Card | null {
@@ -52,10 +49,6 @@ export class EncounterManager {
     }
 
     if (effect.nextCard) {
-      if (effect.nextCard === "1" && this.currentLevelId === "level1") {
-        this.updateStats({ dexterity: 0, savvy: 0, magic: 0 });
-      }
-
       this.encounter = this.cards[effect.nextCard];
       this.saveCurrentCardId(this.encounter.id);
       return this.encounter;

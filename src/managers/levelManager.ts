@@ -2,13 +2,11 @@ import { Card, Level, Part } from "../types/types";
 
 export class LevelManager {
   private levels: Level[];
-  private currentLevelIndex: number;
-  private currentPartIndex: number;
+  private currentLevelIndex: number = 0;
+  private currentPartIndex: number = 0;
 
   constructor(levels: Level[]) {
     this.levels = levels;
-    this.currentLevelIndex = 0;
-    this.currentPartIndex = 0;
   }
 
   getCurrentLevel(): Level {

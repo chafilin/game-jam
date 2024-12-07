@@ -39,11 +39,6 @@ export type ImgOptions = {
   height: number;
 };
 
-export type Game = {
-  currentCard: string;
-  cards: Record<string, Card>;
-};
-
 export type Part = {
   id: string;
   background: string;
@@ -54,10 +49,6 @@ export type Level = {
   id: string;
   background: string;
   parts?: Part[];
-};
-
-export type Player = {
-  stats: Stats;
 };
 
 export interface NextDestination {

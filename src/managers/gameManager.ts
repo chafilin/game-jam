@@ -1,5 +1,5 @@
 import { Application, Container, Sprite, Texture } from "pixi.js";
-import { createBackground } from "../ui/image";
+import { createBackground } from "../ui/components/Image";
 import { Level, Stats } from "../types/types";
 import { LevelManager } from "./levelManager";
 import { createEncounter } from "../ui/encounter";
@@ -70,7 +70,7 @@ export class GameManager {
   }
 
   start() {
-    this.renderLevel(this.currentLevel, this.currentCardId);
+    this.renderLevel(this.currentCardId);
   }
 
   resize(screenWidth: number, screenHeight: number) {
@@ -92,7 +92,7 @@ export class GameManager {
     this.menu.visible = false;
     this.app.stage.addChild(this.menu);
 
-    this.renderLevel(this.currentLevel, this.currentCardId);
+    this.renderLevel(this.currentCardId);
   }
 
   private saveProgress() {
@@ -121,7 +121,7 @@ export class GameManager {
     this.app.stage.addChild(this.resources);
   };
 
-  private renderLevel(level: Level, cardId: string) {
+  private renderLevel(cardId: string) {
     this.encounterContainer.removeChildren();
     const cards = this.levelManager.getCurrentCards();
     const encounter = createEncounter(
@@ -135,8 +135,7 @@ export class GameManager {
         this.saveProgress();
       },
       this.stats,
-      this.updateStats,
-      level.id
+      this.updateStats
     );
     this.encounterContainer.addChild(encounter);
 
@@ -172,7 +171,7 @@ export class GameManager {
 
     this.currentLevel = this.levelManager.getCurrentLevel();
     this.currentCardId = "1";
-    this.renderLevel(this.currentLevel, "1");
+    this.renderLevel("1");
     this.saveProgress();
     console.log(`Action: Level changed to ${this.currentLevel.id}`);
   };
@@ -183,7 +182,7 @@ export class GameManager {
     this.currentLevel = this.levelManager.getCurrentLevel();
     this.currentCardId = "1";
     this.stats = { dexterity: 0, savvy: 0, magic: 0 };
-    this.renderLevel(this.currentLevel, this.currentCardId);
+    this.renderLevel(this.currentCardId);
     console.log("Action: Progress reset");
   }
 }

@@ -1,4 +1,5 @@
 import { Container, Graphics, Text } from "pixi.js";
+import { createButton } from "./components/Button";
 
 export const createMenu = (
   screenWidth: number,
@@ -33,24 +34,24 @@ export const createMenu = (
   menuContainer.addChild(title);
 
   // Reset Progress Button
-  const resetButton = createMenuButton(
+  const resetButton = createButton(
     "Reset Progress",
     screenWidth / 2 - 100,
     screenHeight / 2 - 20,
     200,
-    40,
+    20,
     "#FF4444",
     onResetProgress
   );
   menuContainer.addChild(resetButton);
 
   // Close Button
-  const closeButton = createMenuButton(
+  const closeButton = createButton(
     "Close",
     screenWidth / 2 - 100,
     screenHeight / 2 + 40,
     200,
-    40,
+    20,
     "#176542",
     () => {
       menuContainer.visible = false;
@@ -59,41 +60,4 @@ export const createMenu = (
   menuContainer.addChild(closeButton);
 
   return menuContainer;
-};
-
-const createMenuButton = (
-  text: string,
-  x: number,
-  y: number,
-  width: number,
-  height: number,
-  color: string,
-  onClick: () => void
-): Container => {
-  const buttonContainer = new Container();
-
-  const button = new Graphics();
-  button.roundRect(0, 0, width, height, 8);
-  button.fill({ color });
-  buttonContainer.addChild(button);
-
-  const buttonText = new Text({
-    text,
-    style: {
-      fontSize: 16,
-      fill: "#FFFFFF",
-      align: "center",
-    },
-  });
-  buttonText.x = width / 2 - buttonText.width / 2;
-  buttonText.y = height / 2 - buttonText.height / 2;
-  buttonContainer.addChild(buttonText);
-
-  buttonContainer.x = x;
-  buttonContainer.y = y;
-  buttonContainer.eventMode = "static";
-  buttonContainer.cursor = "pointer";
-  buttonContainer.on("pointerdown", onClick);
-
-  return buttonContainer;
 };
