@@ -87,8 +87,12 @@ export class GameManager {
     this.encounterContainer.addChild(encounter);
   }
 
-  private onLevelComplete() {
-    this.levelManager.nextLevel();
+  private onLevelComplete(nextLevelId?: string) {
+    if (nextLevelId) {
+      this.levelManager.setCurrentLevel(nextLevelId);
+    } else {
+      this.levelManager.nextLevel();
+    }
     this.currentLevel = this.levelManager.getCurrentLevel();
     this.currentCardId = "1";
     this.background.texture = Texture.from(this.currentLevel.background);

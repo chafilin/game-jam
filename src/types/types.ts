@@ -3,23 +3,22 @@ export enum Selection {
   Left = "left",
 }
 
+export type SelectionData = {
+  text: string;
+  nextCard: string | null;
+  statChanges?: Partial<Stats>;
+  statRequirements?: Partial<Stats>;
+  failureCard?: string;
+  failureLevel?: string;
+};
+
 export type Card = {
   id: string;
   imgSrc: string;
   npcName: string;
   npcLine: string;
-  [Selection.Right]: {
-    text: string;
-    nextCard: string | null;
-    statChanges?: Partial<Stats>; // Optional stat changes
-    statRequirements?: Partial<Stats>; // Optional stat requirements
-  };
-  [Selection.Left]?: {
-    text: string;
-    nextCard: string | null;
-    statChanges?: Partial<Stats>;
-    statRequirements?: Partial<Stats>;
-  };
+  [Selection.Right]: SelectionData;
+  [Selection.Left]?: SelectionData;
   isLastCard?: boolean;
 };
 

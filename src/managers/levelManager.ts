@@ -24,4 +24,11 @@ export class LevelManager {
       this.currentLevelIndex--;
     }
   }
+
+  setCurrentLevel(levelId: string): void {
+    const levelIndex = this.levels.findIndex((level) => level.id === levelId);
+    if (levelIndex !== -1) {
+      this.currentLevelIndex = levelIndex;
+    }
+  }
 }
