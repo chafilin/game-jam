@@ -23,7 +23,7 @@ export const createInventory = (
 
   // Inventory panel
   const panel = new Graphics();
-  panel.roundRect(screenWidth / 2 - 200, screenHeight / 2 - 250, 400, 500, 10);
+  panel.roundRect(10, screenHeight / 2 - 250, screenWidth - 20, 500, 10);
   panel.fill({ color: "#ffffff" });
   inventoryContainer.addChild(panel);
 
@@ -92,7 +92,7 @@ export const createInventory = (
     text: "×",
     style: { fontSize: 32, fill: "#000000" },
   });
-  closeButton.x = screenWidth / 2 + 170;
+  closeButton.x = screenWidth - 40;
   closeButton.y = screenHeight / 2 - 240;
   closeButton.eventMode = "static";
   closeButton.cursor = "pointer";

@@ -101,17 +101,23 @@ export class EncounterManager {
 
     const meetsRequirements = Object.entries(
       selectionData.requirements || {}
-    ).every(
-      ([key, value]) => this.stats[key as keyof Stats] + rollD20() >= value
-    );
+    ).every(([key, value]) => {
+      const stat = this.stats[key as keyof Stats];
+      const check = stat + rollD20() >= value;
+      console.log("Stat:", stat);
+      console.log("Requirements", key, value);
+      console.log("Requirements check", check);
+      return check;
+    });
 
     let nextEncounter;
 
     if (!meetsRequirements && selectionData.failure) {
       nextEncounter = this.handleEffect(selectionData.failure);
+    } else {
+      nextEncounter = this.handleEffect(selectionData.success);
     }
 
-    nextEncounter = this.handleEffect(selectionData.success);
     this.updateBackground(
       nextEncounter?.background || this.levelManager.getCurrentBackground()
     );

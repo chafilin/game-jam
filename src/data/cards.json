@@ -1485,10 +1485,10 @@
               "background": "insidehouse",
               "npcs": [
                 {
-                  "imgSrc": "desman"
+                  "imgSrc": "knight"
                 },
                 {
-                  "imgSrc": "knight"
+                  "imgSrc": "desman"
                 }
               ],
               "right": {
@@ -1511,10 +1511,10 @@
               "background": "insidehouse",
               "npcs": [
                 {
-                  "imgSrc": "desman"
+                  "imgSrc": "knight"
                 },
                 {
-                  "imgSrc": "knight"
+                  "imgSrc": "desman"
                 }
               ],
               "right": {
@@ -1537,10 +1537,10 @@
               "background": "insidehouse",
               "npcs": [
                 {
-                  "imgSrc": "desman"
+                  "imgSrc": "knight"
                 },
                 {
-                  "imgSrc": "knight"
+                  "imgSrc": "desman"
                 }
               ],
               "right": {
@@ -1567,10 +1567,10 @@
               "background": "insidehouse",
               "npcs": [
                 {
-                  "imgSrc": "desman"
+                  "imgSrc": "knight"
                 },
                 {
-                  "imgSrc": "knight"
+                  "imgSrc": "desman"
                 }
               ],
               "right": {
@@ -1587,10 +1587,10 @@
               "background": "insidehouse",
               "npcs": [
                 {
-                  "imgSrc": "desman"
+                  "imgSrc": "knight"
                 },
                 {
-                  "imgSrc": "knight"
+                  "imgSrc": "desman"
                 }
               ],
               "right": {
@@ -1607,10 +1607,10 @@
               "background": "townsquare",
               "npcs": [
                 {
-                  "imgSrc": "desman"
+                  "imgSrc": "knight"
                 },
                 {
-                  "imgSrc": "knight"
+                  "imgSrc": "desman"
                 }
               ],
               "right": {
@@ -1633,10 +1633,10 @@
               "background": "townsquare",
               "npcs": [
                 {
-                  "imgSrc": "desman"
+                  "imgSrc": "knight"
                 },
                 {
-                  "imgSrc": "knight"
+                  "imgSrc": "desman"
                 }
               ],
               "right": {
@@ -1659,10 +1659,10 @@
               "background": "townsquare",
               "npcs": [
                 {
-                  "imgSrc": "desman"
+                  "imgSrc": "knight"
                 },
                 {
-                  "imgSrc": "knight"
+                  "imgSrc": "desman"
                 }
               ],
               "right": {
@@ -1679,10 +1679,10 @@
               "background": "townsquare",
               "npcs": [
                 {
-                  "imgSrc": "desman"
+                  "imgSrc": "knight"
                 },
                 {
-                  "imgSrc": "knight"
+                  "imgSrc": "desman"
                 }
               ],
               "right": {
@@ -1694,15 +1694,15 @@
             },
             "54": {
               "id": "54",
-              "npcName": "54",
+              "npcName": "Выхухольд",
               "npcLine": "Агрессивный хищник, да. Появилось 4 недели назад. Могу предположить, что ещё 4 недели город не выдержит. Могу я тоже задать вопрос?",
               "background": "townsquare",
               "npcs": [
                 {
-                  "imgSrc": "desman"
+                  "imgSrc": "knight"
                 },
                 {
-                  "imgSrc": "knight"
+                  "imgSrc": "desman"
                 }
               ],
               "right": {
@@ -1728,10 +1728,10 @@
               "background": "townsquare",
               "npcs": [
                 {
-                  "imgSrc": "desman"
+                  "imgSrc": "knight"
                 },
                 {
-                  "imgSrc": "knight"
+                  "imgSrc": "desman"
                 }
               ],
               "right": {
@@ -1757,10 +1757,10 @@
               "background": "townsquare",
               "npcs": [
                 {
-                  "imgSrc": "desman"
+                  "imgSrc": "knight"
                 },
                 {
-                  "imgSrc": "knight"
+                  "imgSrc": "desman"
                 }
               ],
               "right": {
@@ -3251,590 +3251,590 @@
                     "nextCard": "127"
                   }
                 }
-              },
-              "126": {
-                "id": "125",
-                "npcName": "Мужчина",
-                "npcLine": "Знал, уже бы с ней разобрался. Даже не думай об этом, малой: живее будешь. Не детское это дело.",
-                "background": "townandriver",
-                "npcs": [
-                  {
-                    "imgSrc": "ban"
+              }
+            },
+            "126": {
+              "id": "125",
+              "npcName": "Мужчина",
+              "npcLine": "Знал, уже бы с ней разобрался. Даже не думай об этом, малой: живее будешь. Не детское это дело.",
+              "background": "townandriver",
+              "npcs": [
+                {
+                  "imgSrc": "ban"
+                }
+              ],
+              "right": {
+                "text": "Кто вы?",
+                "success": {
+                  "nextCard": "127"
+                }
+              }
+            },
+            "127": {
+              "id": "127",
+              "npcName": "Бан",
+              "npcLine": "Я — Бан, местный кузнец. А ты откуда, паренёк?",
+              "background": "townandriver",
+              "npcs": [
+                {
+                  "imgSrc": "ban"
+                }
+              ],
+              "right": {
+                "text": "Сказать правду",
+                "success": {
+                  "nextCard": "128",
+                  "stats": {
+                    "karma": 1
                   }
-                ],
-                "right": {
-                  "text": "Кто вы?",
+                },
+                "left": {
+                  "text": "Соврать",
+                  "requirements": {
+                    "savvy": 12
+                  },
                   "success": {
-                    "nextCard": "127"
+                    "nextCard": "142",
+                    "stats": {
+                      "savvy": 2
+                    }
+                  },
+                  "failure": {
+                    "nextCard": "140",
+                    "stats": {
+                      "savvy": 1
+                    }
                   }
                 }
-              },
-              "127": {
-                "id": "127",
-                "npcName": "Бан",
-                "npcLine": "Я — Бан, местный кузнец. А ты откуда, паренёк?",
-                "background": "townandriver",
-                "npcs": [
-                  {
-                    "imgSrc": "ban"
+              }
+            },
+            "128": {
+              "id": "128",
+              "npcName": "",
+              "npcLine": "Ты рассказываешь свою историю. Бан слушает тебя с доброй улыбкой.",
+              "background": "townandriver",
+              "npcs": [
+                {
+                  "imgSrc": "ban"
+                }
+              ],
+              "right": {
+                "text": "Такие вот дела…",
+                "success": {
+                  "nextCard": "129"
+                }
+              }
+            },
+            "129": {
+              "id": "129",
+              "npcName": "Бан",
+              "npcLine": "Сам не знаю почему, но я тебе верю. Так ты, получается, волшебник?",
+              "background": "townandriver",
+              "npcs": [
+                {
+                  "imgSrc": "ban"
+                }
+              ],
+              "right": {
+                "text": "Попробовать",
+                "success": {
+                  "nextCard": "130",
+                  "stats": {
+                    "magic": 1
                   }
-                ],
-                "right": {
-                  "text": "Сказать правду",
+                },
+                "left": {
+                  "text": "Нет",
                   "success": {
-                    "nextCard": "128",
+                    "nextCard": "132"
+                  }
+                }
+              }
+            },
+            "130": {
+              "id": "130",
+              "npcName": "",
+              "npcLine": "К своему удивлению, у тебя получается сотворить сияние в руке. Неужели это правда? Ты волшебник?",
+              "background": "townandriver",
+              "npcs": [
+                {
+                  "imgSrc": "ban"
+                }
+              ],
+              "right": {
+                "text": "Получилось!",
+                "success": {
+                  "nextCard": "131"
+                }
+              }
+            },
+            "131": {
+              "id": "131",
+              "npcName": "Бан",
+              "npcLine": "Сделаю вид, что не видел этого. И не советую тебе говорить кому-нибудь. У нас в городе волшебников не жалуют.",
+              "background": "townandriver",
+              "npcs": [
+                {
+                  "imgSrc": "ban"
+                }
+              ],
+              "right": {
+                "text": "Почему?",
+                "success": {
+                  "nextCard": "133"
+                }
+              }
+            },
+            "132": {
+              "id": "132",
+              "npcName": "Бан",
+              "npcLine": "Ну и хорошо: у нас волшебники не водятся, их не особо жалуют.",
+              "background": "townandriver",
+              "npcs": [
+                {
+                  "imgSrc": "ban"
+                }
+              ],
+              "right": {
+                "text": "Почему?",
+                "success": {
+                  "nextCard": "133"
+                }
+              }
+            },
+            "133": {
+              "id": "133",
+              "npcName": "Бан",
+              "npcLine": "Зависть, что же ещё. Магии не научишься… она либо есть, либо нет.",
+              "background": "townandriver",
+              "npcs": [
+                {
+                  "imgSrc": "ban"
+                }
+              ],
+              "right": {
+                "text": "Понял",
+                "success": {
+                  "nextCard": "134"
+                },
+                "left": {
+                  "text": "Это неправильно",
+                  "success": {
+                    "nextCard": "135",
                     "stats": {
                       "karma": 1
                     }
-                  },
-                  "left": {
-                    "text": "Соврать",
-                    "requirements": {
-                      "savvy": 12
-                    },
-                    "success": {
-                      "nextCard": "142",
-                      "stats": {
-                        "savvy": 2
-                      }
-                    },
-                    "failure": {
-                      "nextCard": "140",
-                      "stats": {
-                        "savvy": 1
-                      }
-                    }
                   }
                 }
-              },
-              "128": {
-                "id": "128",
-                "npcName": "",
-                "npcLine": "Ты рассказываешь свою историю. Бан слушает тебя с доброй улыбкой.",
-                "background": "townandriver",
-                "npcs": [
-                  {
-                    "imgSrc": "ban"
-                  }
-                ],
-                "right": {
-                  "text": "Такие вот дела…",
+              }
+            },
+            "134": {
+              "id": "134",
+              "npcName": "Бан",
+              "npcLine": "Вот и отлично! Тебе есть, где переночевать, малой?",
+              "background": "townandriver",
+              "npcs": [
+                {
+                  "imgSrc": "ban"
+                }
+              ],
+              "right": {
+                "text": "У меня нет дома",
+                "success": {
+                  "nextCard": "136"
+                },
+                "left": {
+                  "text": "Соврать",
                   "success": {
-                    "nextCard": "129"
+                    "nextCard": "148"
                   }
                 }
-              },
-              "129": {
-                "id": "129",
-                "npcName": "Бан",
-                "npcLine": "Сам не знаю почему, но я тебе верю. Так ты, получается, волшебник?",
-                "background": "townandriver",
-                "npcs": [
-                  {
-                    "imgSrc": "ban"
-                  }
-                ],
-                "right": {
-                  "text": "Попробовать",
+              }
+            },
+            "135": {
+              "id": "135",
+              "npcName": "Бан",
+              "npcLine": "Согласен, но таковы нынче люди. Тебе есть, где переночевать, малой?",
+              "background": "townandriver",
+              "npcs": [
+                {
+                  "imgSrc": "ban"
+                }
+              ],
+              "right": {
+                "text": "У меня нет дома",
+                "success": {
+                  "nextCard": "136"
+                },
+                "left": {
+                  "text": "Соврать",
                   "success": {
-                    "nextCard": "130",
-                    "stats": {
-                      "magic": 1
-                    }
-                  },
-                  "left": {
-                    "text": "Нет",
-                    "success": {
-                      "nextCard": "132"
-                    }
+                    "nextCard": "148"
                   }
                 }
-              },
-              "130": {
-                "id": "130",
-                "npcName": "",
-                "npcLine": "К своему удивлению, у тебя получается сотворить сияние в руке. Неужели это правда? Ты волшебник?",
-                "background": "townandriver",
-                "npcs": [
-                  {
-                    "imgSrc": "ban"
-                  }
-                ],
-                "right": {
-                  "text": "Получилось!",
+              }
+            },
+            "136": {
+              "id": "136",
+              "npcName": "Бан",
+              "npcLine": "Тогда милости прошу ко мне в берлогу. Мягкие перина не обещаю, но готовлю я вкусно!",
+              "background": "townandriver",
+              "npcs": [
+                {
+                  "imgSrc": "ban"
+                }
+              ],
+              "right": {
+                "text": "Просто так?",
+                "success": {
+                  "nextCard": "137"
+                },
+                "left": {
+                  "text": "Отказаться",
                   "success": {
-                    "nextCard": "131"
+                    "nextCard": "148"
                   }
                 }
-              },
-              "131": {
-                "id": "131",
-                "npcName": "Бан",
-                "npcLine": "Сделаю вид, что не видел этого. И не советую тебе говорить кому-нибудь. У нас в городе волшебников не жалуют.",
-                "background": "townandriver",
-                "npcs": [
-                  {
-                    "imgSrc": "ban"
-                  }
-                ],
-                "right": {
-                  "text": "Почему?",
+              }
+            },
+            "137": {
+              "id": "137",
+              "npcName": "Бан",
+              "npcLine": "Тебе пришлось нелегко, пацан. Я буду рад помочь.",
+              "background": "townandriver",
+              "npcs": [
+                {
+                  "imgSrc": "ban"
+                }
+              ],
+              "right": {
+                "text": "Согласиться",
+                "success": {
+                  "nextCard": "138"
+                },
+                "left": {
+                  "text": "Отказаться",
                   "success": {
-                    "nextCard": "133"
+                    "nextCard": "148"
                   }
                 }
-              },
-              "132": {
-                "id": "132",
-                "npcName": "Бан",
-                "npcLine": "Ну и хорошо: у нас волшебники не водятся, их не особо жалуют.",
-                "background": "townandriver",
-                "npcs": [
-                  {
-                    "imgSrc": "ban"
-                  }
-                ],
-                "right": {
-                  "text": "Почему?",
+              }
+            },
+            "138": {
+              "id": "138",
+              "npcName": "",
+              "npcLine": "Ты обустраиваешься в большом каменном доме Бана. Огромная кухня полна разных котелков, сковородок и приправ. И он действительно отлично готовит.",
+              "background": "insidehouse",
+              "npcs": [
+                {
+                  "imgSrc": "ban"
+                }
+              ],
+              "right": {
+                "text": "Отдохнуть",
+                "success": {
+                  "nextCard": "139"
+                }
+              }
+            },
+            "139": {
+              "id": "139",
+              "npcName": "",
+              "npcLine": "Тебе хорошо живётся у Бана. Он не просит ничего взамен и только рад т��оей компании. Чем займешься в свободное время?",
+              "background": "insidehouse",
+              "npcs": [
+                {
+                  "imgSrc": "ban"
+                }
+              ],
+              "right": {
+                "text": "Продолжение следует",
+                "success": {
+                  "nextCard": null
+                },
+                "isLastCard": true
+              }
+            },
+            "140": {
+              "id": "140",
+              "npcName": "",
+              "npcLine": "Ты притворяешься обычным путешественником. Выходит не очень складно. Бан, кажется, не заметил.",
+              "background": "townandriver",
+              "npcs": [
+                {
+                  "imgSrc": "ban"
+                }
+              ],
+              "right": {
+                "text": "Такие вот дела…",
+                "success": {
+                  "nextCard": "141"
+                }
+              }
+            },
+            "141": {
+              "id": "141",
+              "npcName": "Бан",
+              "npcLine": "Тебе есть где ночевать, юный путешественник?",
+              "background": "townandriver",
+              "npcs": [
+                {
+                  "imgSrc": "ban"
+                }
+              ],
+              "right": {
+                "text": "У меня нет дома",
+                "success": {
+                  "nextCard": "136"
+                },
+                "left": {
+                  "text": "Соврать",
                   "success": {
-                    "nextCard": "133"
+                    "nextCard": "148"
                   }
                 }
-              },
-              "133": {
-                "id": "133",
-                "npcName": "Бан",
-                "npcLine": "Зависть, что же ещё. Магии не научишься… она либо есть, либо нет.",
-                "background": "townandriver",
-                "npcs": [
-                  {
-                    "imgSrc": "ban"
-                  }
-                ],
-                "right": {
-                  "text": "Понял",
-                  "success": {
-                    "nextCard": "134"
-                  },
-                  "left": {
-                    "text": "Это неправильно",
-                    "success": {
-                      "nextCard": "135",
-                      "stats": {
-                        "karma": 1
-                      }
-                    }
-                  }
+              }
+            },
+            "142": {
+              "id": "142",
+              "npcName": "",
+              "npcLine": "Ты врёшь про свои путешествия, получается так складно, что ты и сам себе почти поверил.",
+              "background": "townandriver",
+              "npcs": [
+                {
+                  "imgSrc": "ban"
                 }
-              },
-              "134": {
-                "id": "134",
-                "npcName": "Бан",
-                "npcLine": "Вот и отлично! Тебе есть, где переночевать, малой?",
-                "background": "townandriver",
-                "npcs": [
-                  {
-                    "imgSrc": "ban"
-                  }
-                ],
-                "right": {
-                  "text": "У меня нет дома",
-                  "success": {
-                    "nextCard": "136"
-                  },
-                  "left": {
-                    "text": "Соврать",
-                    "success": {
-                      "nextCard": "148"
-                    }
-                  }
+              ],
+              "right": {
+                "text": "Такие вот дела…",
+                "success": {
+                  "nextCard": "143"
                 }
-              },
-              "135": {
-                "id": "135",
-                "npcName": "Бан",
-                "npcLine": "Согласен, но таковы нынче люди. Тебе есть, где переночевать, малой?",
-                "background": "townandriver",
-                "npcs": [
-                  {
-                    "imgSrc": "ban"
-                  }
-                ],
-                "right": {
-                  "text": "У меня нет дома",
-                  "success": {
-                    "nextCard": "136"
-                  },
-                  "left": {
-                    "text": "Соврать",
-                    "success": {
-                      "nextCard": "148"
-                    }
-                  }
+              }
+            },
+            "143": {
+              "id": "143",
+              "npcName": "Бан",
+              "npcLine": "Не думал, что встречу такого юного путешественника. Заходи ко мне в лавку, если что-нибудь понадобится!\n(Он уходит)",
+              "background": "townandriver",
+              "npcs": [
+                {
+                  "imgSrc": "ban"
                 }
-              },
-              "136": {
-                "id": "136",
-                "npcName": "Бан",
-                "npcLine": "Тогда милости прошу ко мне в берлогу. Мягкие перина не обещаю, но готовлю я вкусно!",
-                "background": "townandriver",
-                "npcs": [
-                  {
-                    "imgSrc": "ban"
-                  }
-                ],
-                "right": {
-                  "text": "Просто так?",
-                  "success": {
-                    "nextCard": "137"
-                  },
-                  "left": {
-                    "text": "Отказаться",
-                    "success": {
-                      "nextCard": "148"
-                    }
-                  }
-                }
-              },
-              "137": {
-                "id": "137",
-                "npcName": "Бан",
-                "npcLine": "Тебе пришлось нелегко, пацан. Я буду рад помочь.",
-                "background": "townandriver",
-                "npcs": [
-                  {
-                    "imgSrc": "ban"
-                  }
-                ],
-                "right": {
-                  "text": "Согласиться",
-                  "success": {
-                    "nextCard": "138"
-                  },
-                  "left": {
-                    "text": "Отказаться",
-                    "success": {
-                      "nextCard": "148"
-                    }
-                  }
-                }
-              },
-              "138": {
-                "id": "138",
-                "npcName": "",
-                "npcLine": "Ты обустраиваешься в большом каменном доме Бана. Огромная кухня полна разных котелков, сковородок и приправ. И он действительно отлично готовит.",
-                "background": "insidehouse",
-                "npcs": [
-                  {
-                    "imgSrc": "ban"
-                  }
-                ],
-                "right": {
-                  "text": "Отдохнуть",
-                  "success": {
-                    "nextCard": "139"
-                  }
-                }
-              },
-              "139": {
-                "id": "139",
-                "npcName": "",
-                "npcLine": "Тебе хорошо живётся у Бана. Он не просит ничего взамен и только рад т��оей компании. Чем займешься в свободное время?",
-                "background": "insidehouse",
-                "npcs": [
-                  {
-                    "imgSrc": "ban"
-                  }
-                ],
-                "right": {
-                  "text": "Продолжение следует",
-                  "success": {
-                    "nextCard": null
-                  },
-                  "isLastCard": true
-                }
-              },
-              "140": {
-                "id": "140",
-                "npcName": "",
-                "npcLine": "Ты притворяешься обычным путешественником. Выходит не очень складно. Бан, кажется, не заметил.",
-                "background": "townandriver",
-                "npcs": [
-                  {
-                    "imgSrc": "ban"
-                  }
-                ],
-                "right": {
-                  "text": "Такие вот дела…",
-                  "success": {
-                    "nextCard": "141"
-                  }
-                }
-              },
-              "141": {
-                "id": "141",
-                "npcName": "Бан",
-                "npcLine": "Тебе есть где ночевать, юный путешественник?",
-                "background": "townandriver",
-                "npcs": [
-                  {
-                    "imgSrc": "ban"
-                  }
-                ],
-                "right": {
-                  "text": "У меня нет дома",
-                  "success": {
-                    "nextCard": "136"
-                  },
-                  "left": {
-                    "text": "Соврать",
-                    "success": {
-                      "nextCard": "148"
-                    }
-                  }
-                }
-              },
-              "142": {
-                "id": "142",
-                "npcName": "",
-                "npcLine": "Ты врёшь про свои путешествия, получается так складно, что ты и сам себе почти поверил.",
-                "background": "townandriver",
-                "npcs": [
-                  {
-                    "imgSrc": "ban"
-                  }
-                ],
-                "right": {
-                  "text": "Такие вот дела…",
-                  "success": {
-                    "nextCard": "143"
-                  }
-                }
-              },
-              "143": {
-                "id": "143",
-                "npcName": "Бан",
-                "npcLine": "Не думал, что встречу такого юного путешественника. Заходи ко мне в лавку, если что-нибудь понадобится!\n(Он уходит)",
-                "background": "townandriver",
-                "npcs": [
-                  {
-                    "imgSrc": "ban"
-                  }
-                ],
-                "right": {
-                  "text": "Погодите",
-                  "success": {
-                    "nextCard": "144"
-                  },
-                  "left": {
-                    "text": "Бродить по улицам",
-                    "success": {
-                      "nextCard": "146"
-                    }
-                  }
-                }
-              },
-              "144": {
-                "id": "144",
-                "npcName": "",
-                "npcLine": "Бан терпеливо улыбается и ждёт.",
-                "background": "townandriver",
-                "npcs": [
-                  {
-                    "imgSrc": "ban"
-                  }
-                ],
-                "right": {
-                  "text": "У меня нет дома",
-                  "success": {
-                    "nextCard": "149"
-                  },
-                  "left": {
-                    "text": "Совет",
-                    "success": {
-                      "nextCard": "145"
-                    }
-                  }
-                }
-              },
-              "145": {
-                "id": "145",
-                "npcName": "Бан",
-                "npcLine": "Совет? Почувствуешь ветер, прячься. Лучше быть живым трусом, чем мёртвым храбрецом.\n(Улыбается)",
-                "background": "townandriver",
-                "npcs": [
-                  {
-                    "imgSrc": "ban"
-                  }
-                ],
-                "right": {
+              ],
+              "right": {
+                "text": "Погодите",
+                "success": {
+                  "nextCard": "144"
+                },
+                "left": {
                   "text": "Бродить по улицам",
                   "success": {
                     "nextCard": "146"
                   }
                 }
-              },
-              "146": {
-                "id": "146",
-                "npcName": "",
-                "npcLine": "Ты устал и в отчаянии стучишься кому-то в дом…",
-                "background": "alley",
-                "npcs": [
-                  {
-                    "imgSrc": ""
-                  }
-                ],
-                "right": {
-                  "text": "Помогите",
+              }
+            },
+            "144": {
+              "id": "144",
+              "npcName": "",
+              "npcLine": "Бан терпеливо улыбается и ждёт.",
+              "background": "townandriver",
+              "npcs": [
+                {
+                  "imgSrc": "ban"
+                }
+              ],
+              "right": {
+                "text": "У меня нет дома",
+                "success": {
+                  "nextCard": "149"
+                },
+                "left": {
+                  "text": "Совет",
                   "success": {
-                    "nextCard": "147"
+                    "nextCard": "145"
                   }
                 }
-              },
-              "147": {
-                "id": "147",
-                "npcName": "",
-                "npcLine": "Это оказался дом людей-ежей. Они кажутся доброжелательными и даже не против твоей компании.",
-                "background": "insidehouse",
-                "npcs": [
-                  {
-                    "imgSrc": ""
-                  }
-                ],
-                "right": {
-                  "text": "Спать…",
-                  "success": {
-                    "nextCard": "33"
-                  }
+              }
+            },
+            "145": {
+              "id": "145",
+              "npcName": "Бан",
+              "npcLine": "Совет? Почувствуешь ветер, прячься. Лучше быть живым трусом, чем мёртвым храбрецом.\n(Улыбается)",
+              "background": "townandriver",
+              "npcs": [
+                {
+                  "imgSrc": "ban"
                 }
-              },
-              "148": {
-                "id": "148",
-                "npcName": "Бан",
-                "npcLine": "Если что нужно будет, заходи вко мне в лавку. Был рад знакомству, парень!",
-                "background": "townandriver",
-                "npcs": [
-                  {
-                    "imgSrc": "ban"
-                  }
-                ],
-                "right": {
+              ],
+              "right": {
+                "text": "Бродить по улицам",
+                "success": {
+                  "nextCard": "146"
+                }
+              }
+            },
+            "146": {
+              "id": "146",
+              "npcName": "",
+              "npcLine": "Ты устал и в отчаянии стучишься кому-то в дом…",
+              "background": "alley",
+              "npcs": [
+                {
+                  "imgSrc": ""
+                }
+              ],
+              "right": {
+                "text": "Помогите",
+                "success": {
+                  "nextCard": "147"
+                }
+              }
+            },
+            "147": {
+              "id": "147",
+              "npcName": "",
+              "npcLine": "Это оказался дом людей-ежей. Они кажутся доброжелательными и даже не против твоей компании.",
+              "background": "insidehouse",
+              "npcs": [
+                {
+                  "imgSrc": ""
+                }
+              ],
+              "right": {
+                "text": "Спать…",
+                "success": {
+                  "nextCard": "33"
+                }
+              }
+            },
+            "148": {
+              "id": "148",
+              "npcName": "Бан",
+              "npcLine": "Если что нужно будет, заходи вко мне в лавку. Был рад знакомству, парень!",
+              "background": "townandriver",
+              "npcs": [
+                {
+                  "imgSrc": "ban"
+                }
+              ],
+              "right": {
+                "text": "Бродить по улицам",
+                "success": {
+                  "nextCard": "146"
+                }
+              }
+            },
+            "149": {
+              "id": "149",
+              "npcName": "Бан",
+              "npcLine": "Можешь пожить у меня в лавке взамен на работу.",
+              "background": "townandriver",
+              "npcs": [
+                {
+                  "imgSrc": "ban"
+                }
+              ],
+              "right": {
+                "text": "Хорошо",
+                "success": {
+                  "nextCard": "150"
+                },
+                "left": {
                   "text": "Бродить по улицам",
                   "success": {
                     "nextCard": "146"
                   }
                 }
-              },
-              "149": {
-                "id": "149",
-                "npcName": "Бан",
-                "npcLine": "Можешь пожить у меня в лавке взамен на работу.",
-                "background": "townandriver",
-                "npcs": [
-                  {
-                    "imgSrc": "ban"
-                  }
-                ],
-                "right": {
-                  "text": "Хорошо",
-                  "success": {
-                    "nextCard": "150"
-                  },
-                  "left": {
-                    "text": "Бродить по улицам",
-                    "success": {
-                      "nextCard": "146"
-                    }
+              }
+            },
+            "150": {
+              "id": "150",
+              "npcName": "",
+              "npcLine": "В лавке Бана много товаров: вёдра и гвозди, мечи и щиты. Есть тут и вещи, незнакомые тебе. В подвале стоит кузня.",
+              "background": "insidehouse",
+              "npcs": [
+                {
+                  "imgSrc": "ban"
+                }
+              ],
+              "right": {
+                "text": "Работать",
+                "success": {
+                  "nextCard": "151",
+                  "stats": {
+                    "dexterity": 1
                   }
                 }
-              },
-              "150": {
-                "id": "150",
-                "npcName": "",
-                "npcLine": "В лавке Бана много товаров: вёдра и гвозди, мечи и щиты. Есть тут и вещи, незнакомые тебе. В подвале стоит кузня.",
-                "background": "insidehouse",
-                "npcs": [
-                  {
-                    "imgSrc": "ban"
-                  }
-                ],
-                "right": {
-                  "text": "Работать",
-                  "success": {
-                    "nextCard": "151",
-                    "stats": {
-                      "dexterity": 1
-                    }
-                  }
+              }
+            },
+            "151": {
+              "id": "151",
+              "npcName": "",
+              "npcLine": "Ты убираешься и помогаешь продавать товары. Взамен получаешь еду и ночлег на сене в кузне. Тяжело, но ты справляешься.",
+              "background": "insidehouse",
+              "npcs": [
+                {
+                  "imgSrc": "ban"
                 }
-              },
-              "151": {
-                "id": "151",
-                "npcName": "",
-                "npcLine": "Ты убираешься и помогаешь продавать товары. Взамен получаешь еду и ночлег на сене в кузне. Тяжело, но ты справляешься.",
-                "background": "insidehouse",
-                "npcs": [
-                  {
-                    "imgSrc": "ban"
-                  }
-                ],
-                "right": {
-                  "text": "Продолжение следует",
-                  "success": {
-                    "nextCard": null
-                  },
-                  "isLastCard": true
+              ],
+              "right": {
+                "text": "Продолжение следует",
+                "success": {
+                  "nextCard": null
+                },
+                "isLastCard": true
+              }
+            },
+            "152": {
+              "id": "152",
+              "npcName": "",
+              "npcLine": "Ты заходишь в лавку кузнеца. Здесь много товаров: вёдра и гвозди, мечи и щиты. Есть и вещи, незнакомые тебе. Мужчина-кабан за прилавком широко улыбается.",
+              "background": "insidehouse",
+              "npcs": [
+                {
+                  "imgSrc": "ban"
                 }
-              },
-              "152": {
-                "id": "152",
-                "npcName": "",
-                "npcLine": "Ты заходишь в лавку кузнеца. Здесь много товаров: вёдра и гвозди, мечи и щиты. Есть и вещи, незнакомые тебе. Мужчина-кабан за прилавком широко улыбается.",
-                "background": "insidehouse",
-                "npcs": [
-                  {
-                    "imgSrc": "ban"
-                  }
-                ],
-                "right": {
-                  "text": "Слушать",
-                  "success": {
-                    "nextCard": "153"
-                  }
+              ],
+              "right": {
+                "text": "Слушать",
+                "success": {
+                  "nextCard": "153"
                 }
-              },
-              "153": {
-                "id": "153",
-                "npcName": "Бан",
-                "npcLine": "Добро пожаловать в лавку кузнеца Бана! Чем могу помочь?",
-                "background": "insidehouse",
-                "npcs": [
-                  {
-                    "imgSrc": "ban"
-                  }
-                ],
-                "right": {
-                  "text": "Ночлег",
-                  "success": {
-                    "nextCard": "154"
-                  }
+              }
+            },
+            "153": {
+              "id": "153",
+              "npcName": "Бан",
+              "npcLine": "Добро пожаловать в лавку кузнеца Бана! Чем могу помочь?",
+              "background": "insidehouse",
+              "npcs": [
+                {
+                  "imgSrc": "ban"
                 }
-              },
-              "154": {
-                "id": "154",
-                "npcName": "Бан",
-                "npcLine": "Можешь пожить у меня в лавке взамен на работу.",
-                "background": "insidehouse",
-                "npcs": [
-                  {
-                    "imgSrc": "ban"
-                  }
-                ],
-                "right": {
-                  "text": "У меня нет выбора…",
-                  "success": {
-                    "nextCard": "150"
-                  }
+              ],
+              "right": {
+                "text": "Ночлег",
+                "success": {
+                  "nextCard": "154"
+                }
+              }
+            },
+            "154": {
+              "id": "154",
+              "npcName": "Бан",
+              "npcLine": "Можешь пожить у меня в лавке взамен на работу.",
+              "background": "insidehouse",
+              "npcs": [
+                {
+                  "imgSrc": "ban"
+                }
+              ],
+              "right": {
+                "text": "У меня нет выбора…",
+                "success": {
+                  "nextCard": "150"
                 }
               }
             }

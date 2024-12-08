@@ -43,7 +43,7 @@ export const createCard = (
       fontSize: 20,
       fill: "#000000",
       wordWrap: true,
-      wordWrapWidth: cardContainer.width - 20,
+      wordWrapWidth: cardContainer.width - 25,
     },
   });
   npcLine.x = 20;
