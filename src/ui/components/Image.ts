@@ -1,7 +1,8 @@
-import { Sprite, Texture } from "pixi.js";
+import { Sprite, Texture, BlurFilter } from "pixi.js";
+
 import { ImgOptions } from "../../types/types";
 
-// Create background sprite
+// Create background sprite with blur effect
 export const createBackground = (
   textureSrc: string,
   width: number,
@@ -9,6 +10,8 @@ export const createBackground = (
 ): Sprite => {
   const texture = Texture.from(textureSrc);
   const background = new Sprite(texture);
+  const blurFilter = new BlurFilter();
+  background.filters = [blurFilter];
   background.width = width;
   background.height = height;
   return background;

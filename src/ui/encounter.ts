@@ -11,20 +11,32 @@ export const createEncounter = (
 ): Container => {
   const encounterContainer = new Container();
   encounterContainer.y = screenHeight / 4;
+
   const renderEncounter = (card: Card) => {
     encounterContainer.removeChildren();
-    const npc = createImage(card.imgSrc, {
-      x: screenWidth / 2 - 110,
-      y: 0,
-      width: 220,
-      height: 248,
-    });
-    npc.y = 0;
-    encounterContainer.addChild(npc);
 
+    // Calculate total width needed for all NPCs
+    const npcWidth = 200;
+    const spacing = 10;
+    const totalWidth =
+      card.npcs.length * npcWidth + (card.npcs.length - 1) * spacing;
+    const startX = screenWidth / 2 - totalWidth / 2;
+
+    // Create and position each NPC
+    card.npcs.forEach((npc, index) => {
+      const npcSprite = createImage(npc.imgSrc, {
+        x: startX + index * (npcWidth + spacing),
+        y: 0,
+        width: npcWidth,
+        height: 220,
+      });
+      encounterContainer.addChild(npcSprite);
+    });
+
+    // Position card below NPCs
     const cardStack = createCard(card, changeEncounter, screenWidth);
     cardStack.x = screenWidth / 2 - cardStack.width / 2;
-    cardStack.y = npc.height + 20;
+    cardStack.y = 248 + 20; // Height of NPCs + spacing
     encounterContainer.addChild(cardStack);
   };
 

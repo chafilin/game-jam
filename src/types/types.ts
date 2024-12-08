@@ -20,9 +20,13 @@ export type SelectionData = {
   failure?: Effect;
 };
 
+export type NpcData = {
+  imgSrc: string;
+};
+
 export type Card = {
   id: string;
-  imgSrc: string;
+  npcs: NpcData[];
   npcName: string;
   npcLine: string;
   [Selection.Right]: SelectionData;
