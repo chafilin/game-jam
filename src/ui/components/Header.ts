@@ -1,10 +1,12 @@
-import { Container, Graphics, Sprite, Text, Texture } from "pixi.js";
+import { Container, Sprite, Texture } from "pixi.js";
+
+const ICON_SIZE = 88;
 
 const createSettingsButton = (onClick: () => void): Sprite => {
-  const sb_texture = Texture.from("settings_button");
+  const sb_texture = Texture.from("settings");
   const settingsButton = new Sprite(sb_texture);
-  settingsButton.width = 56;
-  settingsButton.height = 56;
+  settingsButton.width = ICON_SIZE;
+  settingsButton.height = ICON_SIZE;
   settingsButton.x = 16;
   settingsButton.y = 16;
   settingsButton.eventMode = "static";
@@ -21,32 +23,18 @@ const createCharacterButton = (
   screenWidth: number,
   onCharacterClick: () => void
 ): Container => {
-  const characterButton = new Container();
-  const charBg = new Graphics();
-  charBg.roundRect(0, 0, 120, 56, 10);
-  charBg.fill({ color: "#ffffff" });
-  characterButton.addChild(charBg);
-
-  // const stat_icon_texture = Texture.from("stat_icon");
-  // const stat_icon = new Sprite(stat_icon_texture);
-  // stat_icon.width = 50;
-  // stat_icon.height = 50;
-  // characterButton.addChild(stat_icon);
-
-  const characterStatus = new Text({
-    text: "Персонаж",
-    style: {
-      fontSize: 18,
-      fill: "#000000",
-      align: "left",
-    },
-  });
-  characterStatus.x = charBg.width / 2 - characterStatus.width / 2;
-  characterStatus.y = charBg.height / 2 - characterStatus.height / 2;
+  const player_texture = Texture.from("player");
+  const characterButton = new Sprite(player_texture);
+  characterButton.width = ICON_SIZE;
+  characterButton.height = ICON_SIZE;
+  characterButton.x = screenWidth - 16 - characterButton.width;
+  characterButton.y = 16;
+  characterButton.eventMode = "static";
+  characterButton.cursor = "pointer";
 
   characterButton.x = screenWidth - 16 - characterButton.width;
   characterButton.y = 16;
-  characterButton.addChild(characterStatus);
+
   characterButton.interactive = true;
   characterButton.on("pointerdown", () => {
     console.log("Character button clicked");

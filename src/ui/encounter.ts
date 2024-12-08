@@ -10,7 +10,7 @@ export const createEncounter = (
   encounterManager: EncounterManager
 ): Container => {
   const encounterContainer = new Container();
-  encounterContainer.y = screenHeight / 4;
+  encounterContainer.y = screenHeight / 5;
 
   const renderEncounter = (card: Card) => {
     encounterContainer.removeChildren();
