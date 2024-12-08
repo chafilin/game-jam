@@ -41,7 +41,14 @@ export class EncounterManager {
         if (value === 0) {
           newStats[key as keyof Stats] = 0;
         } else {
-          newStats[key as keyof Stats] += value;
+          const newValue = newStats[key as keyof Stats] + value;
+          if (newValue > 120) {
+            newStats[key as keyof Stats] = 120;
+          } else if (newValue < 0) {
+            newStats[key as keyof Stats] = 0;
+          } else {
+            newStats[key as keyof Stats] += value;
+          }
         }
       });
       this.updateStats(newStats);

@@ -1,26 +1,32 @@
 import { Application } from "pixi.js";
-import cardJson from "./data/cards.json";
 import "./style.css";
 import { loadAssets } from "./utils/assets";
 import { Level } from "./types/types";
-import { GameManager } from "./managers/gameManager";
 import { createLoader, updateLoader } from "./ui/components/Loader";
+import { GameManager } from "./managers/gameManager";
 
-// Масштабирование под мобильные устройства
+// Screen scaling for mobile devices
 let screenWidth = window.innerWidth;
 let screenHeight = window.innerHeight;
 
-// Load card data
-const LEVELS = cardJson.levels as unknown as Level[];
+// Load card data dynamically
+const loadLevels = async (): Promise<Level[]> => {
+  const cardData = await import("./data/cards.json");
+  return cardData.default.levels as Level[];
+};
 
 // Initialize the game
 const init = async () => {
   const app = await createApp();
   const loader = createLoader(app, screenWidth, screenHeight);
 
-  await loadAssets((progress) => {
-    updateLoader(loader, progress);
-  });
+  // Load assets and card data in parallel
+  const [, LEVELS] = await Promise.all([
+    loadAssets((progress) => {
+      updateLoader(loader, progress);
+    }),
+    loadLevels(),
+  ]);
 
   const gameManager = new GameManager(app, LEVELS, screenWidth, screenHeight);
   gameManager.start();

@@ -79,11 +79,13 @@ export const createCard = (
       140,
       50,
       buttonColor,
-      () => {
-        onSelection(Selection.Left);
-        soundManager.play("click");
-        console.log("Action: Left button clicked");
-      }
+      hasRequirementsItems
+        ? () => {
+            onSelection(Selection.Left);
+            soundManager.play("click");
+            console.log("Action: Left button clicked");
+          }
+        : () => {}
     );
     cardContainer.addChild(leftButton);
 

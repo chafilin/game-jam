@@ -497,7 +497,11 @@
               "left": {
                 "text": "Помочь",
                 "success": {
-                  "nextCard": "6"
+                  "nextCard": "6",
+                  "stats": {
+                    "karma": 1
+                  },
+                  "addItem": "coin"
                 }
               }
             },
@@ -529,7 +533,11 @@
               "left": {
                 "text": "Помочь",
                 "success": {
-                  "nextCard": "6"
+                  "nextCard": "6",
+                  "stats": {
+                    "karma": 1
+                  },
+                  "addItem": "coin"
                 }
               },
               "right": {
@@ -589,13 +597,19 @@
               "right": {
                 "text": "Помочь",
                 "success": {
-                  "nextCard": "11"
+                  "nextCard": "11",
+                  "stats": {
+                    "karma": 1
+                  }
                 }
               },
               "left": {
                 "text": "Сбежать",
                 "success": {
-                  "nextCard": "19"
+                  "nextCard": "19",
+                  "stats": {
+                    "karma": -1
+                  }
                 }
               }
             },
@@ -611,13 +625,19 @@
               "right": {
                 "text": "Камень",
                 "success": {
-                  "nextCard": "17"
+                  "nextCard": "17",
+                  "stats": {
+                    "dexterity": 1
+                  }
                 }
               },
               "left": {
                 "text": "Магия",
                 "success": {
-                  "nextCard": "12"
+                  "nextCard": "12",
+                  "stats": {
+                    "magic": 1
+                  }
                 }
               }
             },
@@ -654,14 +674,38 @@
               ],
               "right": {
                 "text": "Камень",
+                "requirements": {
+                  "dexterity": 1
+                },
                 "success": {
-                  "nextCard": "15"
+                  "nextCard": "15",
+                  "stats": {
+                    "dexterity": 2
+                  }
+                },
+                "failure": {
+                  "nextCard": "13_1",
+                  "stats": {
+                    "dexterity": 1
+                  }
                 }
               },
               "left": {
                 "text": "Магия",
+                "requirements": {
+                  "magic": 1
+                },
                 "success": {
-                  "nextCard": "14"
+                  "nextCard": "14",
+                  "stats": {
+                    "magic": 2
+                  }
+                },
+                "failure": {
+                  "nextCard": "14_1",
+                  "stats": {
+                    "magic": 1
+                  }
                 }
               }
             },
@@ -683,7 +727,26 @@
               "left": {
                 "text": "Рассмотреть",
                 "success": {
-                  "nextCard": "16"
+                  "nextCard": "16",
+                  "stats": {
+                    "karma": 1
+                  }
+                }
+              }
+            },
+            "14_1": {
+              "id": "14_1",
+              "npcName": "Narrator",
+              "npcLine": "Магия не слушается. В мгновение чудовище оказывается рядом.",
+              "npcs": [
+                {
+                  "imgSrc": "npc_img"
+                }
+              ],
+              "right": {
+                "text": "Готовиться к смерти",
+                "success": {
+                  "nextCard": "22"
                 }
               }
             },
@@ -705,7 +768,26 @@
               "left": {
                 "text": "Рассмотреть",
                 "success": {
-                  "nextCard": "16"
+                  "nextCard": "16",
+                  "stats": {
+                    "karma": 1
+                  }
+                }
+              }
+            },
+            "15_1": {
+              "id": "15_1",
+              "npcName": "Narrator",
+              "npcLine": "Твои руки дрожат, и камень пролетает мимо. В мгновение чудовище оказывается рядом.",
+              "npcs": [
+                {
+                  "imgSrc": "npc_img"
+                }
+              ],
+              "right": {
+                "text": "Готовиться к смерти",
+                "success": {
+                  "nextCard": "22"
                 }
               }
             },
@@ -787,7 +869,10 @@
               "left": {
                 "text": "Из города",
                 "success": {
-                  "nextCard": "20"
+                  "nextCard": "20",
+                  "stats": {
+                    "karma": -1
+                  }
                 }
               }
             },
@@ -851,7 +936,10 @@
               "right": {
                 "text": "Заплакать",
                 "success": {
-                  "nextCard": "25"
+                  "nextCard": "25",
+                  "stats": {
+                    "karma": 1
+                  }
                 }
               },
               "left": {
@@ -933,7 +1021,10 @@
               "right": {
                 "text": "Честно",
                 "success": {
-                  "nextCard": "29"
+                  "nextCard": "29",
+                  "stats": {
+                    "karma": 1
+                  }
                 }
               },
               "left": {
@@ -1031,7 +1122,10 @@
               "right": {
                 "text": "Хочу помочь",
                 "success": {
-                  "nextCard": "35"
+                  "nextCard": "35",
+                  "stats": {
+                    "karma": 1
+                  }
                 }
               },
               "left": {
@@ -1201,13 +1295,19 @@
               "right": {
                 "text": "Выстрелить в птицу",
                 "success": {
-                  "nextCard": "42"
+                  "nextCard": "42",
+                  "stats": {
+                    "karma": -2
+                  }
                 }
               },
               "left": {
                 "text": "Я буду слушаться",
                 "success": {
-                  "nextCard": "44"
+                  "nextCard": "44",
+                  "stats": {
+                    "savvy": 1
+                  }
                 }
               }
             },
@@ -1316,7 +1416,11 @@
               "right": {
                 "text": "Спасибо",
                 "success": {
-                  "nextCard": "48"
+                  "nextCard": "48",
+                  "addItem": "solar_stone",
+                  "stats": {
+                    "karma": 1
+                  }
                 }
               },
               "left": {
@@ -1452,7 +1556,10 @@
               "left": {
                 "text": "Нет",
                 "success": {
-                  "nextCard": "56"
+                  "nextCard": "56",
+                  "stats": {
+                    "karma": -2
+                  }
                 }
               }
             },
@@ -1468,7 +1575,10 @@
               "right": {
                 "text": "Честно",
                 "success": {
-                  "nextCard": "29"
+                  "nextCard": "29",
+                  "stats": {
+                    "karma": 1
+                  }
                 }
               },
               "left": {
@@ -1664,16 +1774,28 @@
               "right": {
                 "text": "Честно",
                 "success": {
-                  "nextCard": "66"
+                  "nextCard": "66",
+                  "stats": {
+                    "karma": 1
+                  }
                 }
               },
               "left": {
                 "text": "Соврать",
+                "requirements": {
+                  "savvy": 3
+                },
                 "success": {
-                  "nextCard": "79"
+                  "nextCard": "79",
+                  "stats": {
+                    "savvy": 2
+                  }
                 },
                 "failure": {
-                  "nextCard": "67"
+                  "nextCard": "67",
+                  "stats": {
+                    "savvy": 1
+                  }
                 }
               }
             },
@@ -1777,7 +1899,8 @@
               "left": {
                 "text": "Прожолжать преследование",
                 "success": {
-                  "nextCard": "71"
+                  "nextCard": "71",
+                  "addItem": "coin"
                 }
               }
             },
@@ -2017,11 +2140,20 @@
               ],
               "right": {
                 "text": "Ответить",
+                "requirements": {
+                  "savvy": 1
+                },
                 "success": {
-                  "nextCard": "104"
+                  "nextCard": "104",
+                  "stats": {
+                    "savvy": 2
+                  }
                 },
                 "failure": {
-                  "nextCard": "103"
+                  "nextCard": "103",
+                  "stats": {
+                    "savvy": 1
+                  }
                 }
               },
               "left": {
@@ -2065,7 +2197,10 @@
               "left": {
                 "text": "Остановить",
                 "success": {
-                  "nextCard": "85"
+                  "nextCard": "85",
+                  "stats": {
+                    "karma": -1
+                  }
                 }
               }
             },
@@ -2184,8 +2319,13 @@
               },
               "left": {
                 "text": "Дать монетку",
+                "requirementsItems": ["coin"],
                 "success": {
-                  "nextCard": "92"
+                  "nextCard": "92",
+                  "removeItem": "coin",
+                  "stats": {
+                    "karma": 1
+                  }
                 }
               }
             },
@@ -2260,11 +2400,20 @@
               ],
               "right": {
                 "text": "Бард",
+                "requirements": {
+                  "savvy": 2
+                },
                 "success": {
-                  "nextCard": "95"
+                  "nextCard": "95",
+                  "stats": {
+                    "savvy": 2
+                  }
                 },
                 "failure": {
-                  "nextCard": "97"
+                  "nextCard": "97",
+                  "stats": {
+                    "savvy": 1
+                  }
                 }
               },
               "left": {
@@ -2384,8 +2533,10 @@
               },
               "left": {
                 "text": "Ночлег",
+                "requirementsItems": ["coin"],
                 "success": {
-                  "nextCard": "101"
+                  "nextCard": "101",
+                  "removeItem": "coin"
                 }
               }
             },
@@ -2470,11 +2621,20 @@
               ],
               "right": {
                 "text": "Рассказать",
+                "requirements": {
+                  "savvy": 3
+                },
                 "success": {
-                  "nextCard": "108"
+                  "nextCard": "108",
+                  "stats": {
+                    "savvy": 2
+                  }
                 },
                 "failure": {
-                  "nextCard": "106"
+                  "nextCard": "106",
+                  "stats": {
+                    "savvy": 1
+                  }
                 }
               },
               "left": {
@@ -2876,7 +3036,7 @@
               },
               "127": {
                 "id": "127",
-                "npcName": "Мужчина",
+                "npcName": "Бан",
                 "npcLine": "Я — Бан, местный кузнец. А ты откуда, паренёк?",
                 "npcs": [
                   {
@@ -2887,15 +3047,27 @@
                 "right": {
                   "text": "Сказать правду",
                   "success": {
-                    "nextCard": "128"
+                    "nextCard": "128",
+                    "stats": {
+                      "karma": 1
+                    }
                   },
                   "left": {
                     "text": "Соврать",
+                    "requirements": {
+                      "savvy": 2
+                    },
                     "success": {
-                      "nextCard": "142"
+                      "nextCard": "142",
+                      "stats": {
+                        "savvy": 2
+                      }
                     },
                     "failure": {
-                      "nextCard": "140"
+                      "nextCard": "140",
+                      "stats": {
+                        "savvy": 1
+                      }
                     }
                   }
                 }
@@ -2930,7 +3102,10 @@
                 "right": {
                   "text": "Попробовать",
                   "success": {
-                    "nextCard": "130"
+                    "nextCard": "130",
+                    "stats": {
+                      "magic": 1
+                    }
                   },
                   "left": {
                     "text": "Нет",
@@ -3009,7 +3184,10 @@
                   "left": {
                     "text": "Это неправильно",
                     "success": {
-                      "nextCard": "135"
+                      "nextCard": "135",
+                      "stats": {
+                        "karma": 1
+                      }
                     }
                   }
                 }
@@ -3348,7 +3526,10 @@
                 "right": {
                   "text": "Работать",
                   "success": {
-                    "nextCard": "151"
+                    "nextCard": "151",
+                    "stats": {
+                      "dexterity": 1
+                    }
                   }
                 }
               },

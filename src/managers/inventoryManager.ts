@@ -24,7 +24,10 @@ export class InventoryManager {
 
   removeItem(itemId: string): void {
     console.log("Removing item", itemId);
-    this.items = this.items.filter((item) => item.id !== itemId);
+    const index = this.items.findIndex((item) => item.id === itemId);
+    if (index !== -1) {
+      this.items.splice(index, 1);
+    }
   }
 
   hasItem(itemId: string): boolean {

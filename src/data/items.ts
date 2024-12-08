@@ -1,11 +1,16 @@
 import { Item } from "../types/types";
 
 export const ITEMS: Record<string, Item> = {
-  book: {
-    id: "book",
-    name: "Книга",
-    description: "Книга, которая может быть полезна для изучения",
+  coin: {
+    id: "coin",
+    name: "Монета",
+    description: "Золотая монета",
     imgSrc: "frog",
   },
-  // Add more items as needed
+  solar_stone: {
+    id: "solar_stone",
+    name: "Солнечник",
+    description: "Солнечный камень",
+    imgSrc: "cookie",
+  },
 };

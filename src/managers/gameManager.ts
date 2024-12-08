@@ -48,7 +48,7 @@ export class GameManager {
     } else {
       this.levelManager.setCurrentLevel(this.levelManager.getFirstLevelId());
       this.levelManager.setCurrentCardId("1");
-      this.stats = { dexterity: 0, savvy: 0, magic: 0 };
+      this.stats = { dexterity: 0, savvy: 0, magic: 0, karma: 0 };
     }
 
     this.background = createBackground(
@@ -178,7 +178,7 @@ export class GameManager {
     this.levelManager.setCurrentLevel(this.levelManager.getFirstLevelId());
     this.levelManager.setCurrentCardId("1");
     InventoryManager.getInstance().clearItems();
-    this.stats = { dexterity: 0, savvy: 0, magic: 0 };
+    this.stats = { dexterity: 0, savvy: 0, magic: 0, karma: 0 };
     this.updateStats(this.stats);
     this.renderLevel();
     console.log("Action: Progress reset");

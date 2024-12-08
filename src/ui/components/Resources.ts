@@ -76,5 +76,14 @@ export const createResources = (
   resourceContainer3.y = 146;
   resourcesContainer.addChild(resourceContainer3);
 
+  const resourceContainer4 = createResourceContainer(
+    stats.karma * 10,
+    120,
+    screenWidth
+  );
+  resourceContainer4.x = screenWidth - resourceContainer4.width - 16;
+  resourceContainer4.y = 146;
+  resourcesContainer.addChild(resourceContainer4);
+
   return resourcesContainer;
 };

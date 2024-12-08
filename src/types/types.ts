@@ -37,6 +37,7 @@ export type Stats = {
   dexterity: number;
   savvy: number;
   magic: number;
+  karma: number;
 };
 
 export type ImgOptions = {
