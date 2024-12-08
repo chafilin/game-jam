@@ -3287,23 +3287,23 @@
                   "stats": {
                     "karma": 1
                   }
+                }
+              },
+              "left": {
+                "text": "Соврать",
+                "requirements": {
+                  "savvy": 12
                 },
-                "left": {
-                  "text": "Соврать",
-                  "requirements": {
-                    "savvy": 12
-                  },
-                  "success": {
-                    "nextCard": "142",
-                    "stats": {
-                      "savvy": 2
-                    }
-                  },
-                  "failure": {
-                    "nextCard": "140",
-                    "stats": {
-                      "savvy": 1
-                    }
+                "success": {
+                  "nextCard": "142",
+                  "stats": {
+                    "savvy": 2
+                  }
+                },
+                "failure": {
+                  "nextCard": "140",
+                  "stats": {
+                    "savvy": 1
                   }
                 }
               }
