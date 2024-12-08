@@ -14,6 +14,9 @@ export const createInventory = (
   const overlay = new Graphics();
   overlay.rect(0, 0, screenWidth, screenHeight);
   overlay.fill({ color: "#000000", alpha: 0.5 });
+  overlay.eventMode = "static";
+  overlay.cursor = "pointer";
+  overlay.on("pointerdown", onClose);
   inventoryContainer.addChild(overlay);
 
   // Inventory panel

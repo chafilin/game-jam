@@ -11,9 +11,7 @@ export const loadAssets = async (onProgress?: (progress: number) => void) => {
     { alias: "frog", src: "assets/frog.png" },
     { alias: "sturgeon", src: "assets/sturgeon.png" },
     { alias: "cookie", src: "assets/cookie.png" },
-    // { alias: "dexterity_icon", src: "assets/dexterity_icon.png" },
-    // { alias: "savvy_icon", src: "assets/savvy_icon.png" },
-    // { alias: "magic_icon", src: "assets/magic_icon.png" },
+    { alias: "click", src: "sounds/click.mp3" },
   ];
 
   for (const asset of assetList) {

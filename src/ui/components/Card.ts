@@ -3,6 +3,7 @@ import { DropShadowFilter } from "pixi-filters";
 import { Card, Selection } from "../../types/types";
 import { createButton } from "./Button";
 import { InventoryManager } from "../../managers/inventoryManager";
+import { soundManager } from "../../managers/soundManager";
 
 export const createCard = (
   card: Card,
@@ -59,6 +60,7 @@ export const createCard = (
       "#176542",
       () => {
         onSelection(Selection.Right);
+        soundManager.play("click");
         console.log("Action: Right button clicked");
       }
     );
@@ -79,6 +81,7 @@ export const createCard = (
       buttonColor,
       () => {
         onSelection(Selection.Left);
+        soundManager.play("click");
         console.log("Action: Left button clicked");
       }
     );
@@ -98,6 +101,7 @@ export const createCard = (
       hasRequirementsItems
         ? () => {
             onSelection(Selection.Right);
+            soundManager.play("click");
             console.log("Action: Right button clicked");
           }
         : () => {}
