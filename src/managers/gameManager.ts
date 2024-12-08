@@ -8,6 +8,8 @@ import { createHeader } from "../ui/components/Header";
 import { createResources } from "../ui/components/Resources";
 import { EncounterManager } from "./encounterManager";
 import { SaveManager } from "./saveManager";
+import { createInventory } from "../ui/components/Inventory";
+import { InventoryManager } from "./inventoryManager";
 
 export class GameManager {
   private app: Application;
@@ -22,6 +24,7 @@ export class GameManager {
   private menu: Container;
   private encounterManager?: EncounterManager;
   private saveManager: SaveManager;
+  private inventoryContainer?: Container;
 
   constructor(
     app: Application,
@@ -41,6 +44,7 @@ export class GameManager {
       this.levelManager.setCurrentLevel(savedProgress.levelId);
       this.levelManager.setCurrentCardId(savedProgress.cardId);
       this.stats = savedProgress.stats;
+      InventoryManager.getInstance().setItems(savedProgress.inventory);
     } else {
       this.levelManager.setCurrentLevel(this.levelManager.getFirstLevelId());
       this.levelManager.setCurrentCardId("1");
@@ -52,9 +56,15 @@ export class GameManager {
       screenWidth,
       screenHeight
     );
-    this.header = createHeader(screenWidth, () => {
-      this.menu.visible = true;
-    });
+    this.header = createHeader(
+      screenWidth,
+      () => {
+        this.menu.visible = true;
+      },
+      () => {
+        this.openInventory();
+      }
+    );
     this.resources = createResources(screenWidth, this.stats);
     this.encounterContainer = new Container();
     this.app.stage.addChild(this.background);
@@ -101,6 +111,7 @@ export class GameManager {
       levelId: this.levelManager.getCurrentLevel().id,
       cardId: this.levelManager.getCurrentCardId(),
       stats: this.stats,
+      inventory: InventoryManager.getInstance().getItems(),
     };
     this.saveManager.saveProgress(progress);
     console.log("Action: Progress saved", progress);
@@ -149,6 +160,7 @@ export class GameManager {
     if (destination) {
       if (destination.levelId) {
         this.levelManager.setCurrentLevel(destination.levelId);
+        this.saveProgress();
       }
       if (destination.partId) {
         this.levelManager.setCurrentPart(destination.partId);
@@ -159,16 +171,31 @@ export class GameManager {
 
     this.levelManager.setCurrentCardId("1");
     this.renderLevel();
-    this.saveProgress();
   };
 
   public resetProgress() {
     this.saveManager.resetProgress();
     this.levelManager.setCurrentLevel(this.levelManager.getFirstLevelId());
     this.levelManager.setCurrentCardId("1");
+    InventoryManager.getInstance().clearItems();
     this.stats = { dexterity: 0, savvy: 0, magic: 0 };
     this.updateStats(this.stats);
     this.renderLevel();
     console.log("Action: Progress reset");
   }
+
+  private openInventory = () => {
+    this.inventoryContainer = createInventory(
+      this.screenWidth,
+      this.screenHeight,
+      () => this.closeInventory()
+    );
+    this.app.stage.addChild(this.inventoryContainer);
+  };
+
+  private closeInventory = () => {
+    if (this.inventoryContainer) {
+      this.app.stage.removeChild(this.inventoryContainer);
+    }
+  };
 }

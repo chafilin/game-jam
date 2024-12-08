@@ -8,11 +8,14 @@ export type Effect = {
   nextCard?: string;
   nextLevel?: string;
   nextPart?: string;
+  addItem?: string;
+  removeItem?: string;
 };
 
 export type SelectionData = {
   text: string;
   requirements?: Partial<Stats>;
+  requirementsItems?: string[];
   success: Effect;
   failure?: Effect;
 };
@@ -55,3 +58,20 @@ export interface NextDestination {
   levelId?: string;
   partId?: string;
 }
+
+export type Item = {
+  id: string;
+  name: string;
+  description: string;
+  imgSrc: string;
+};
+
+export const ITEMS: Record<string, Item> = {
+  key: {
+    id: "key",
+    name: "Rusty Key",
+    description: "An old key that might open something",
+    imgSrc: "key_icon",
+  },
+  // Add more items as needed
+};

@@ -17,7 +17,10 @@ const createSettingsButton = (onClick: () => void): Sprite => {
   return settingsButton;
 };
 
-const createCharacterButton = (screenWidth: number): Container => {
+const createCharacterButton = (
+  screenWidth: number,
+  onCharacterClick: () => void
+): Container => {
   const characterButton = new Container();
   const charBg = new Graphics();
   charBg.roundRect(-6, 0, 230, 56, 10);
@@ -48,13 +51,15 @@ const createCharacterButton = (screenWidth: number): Container => {
   characterButton.on("pointerdown", () => {
     console.log("Character button clicked");
     console.log("Action: Character button clicked");
+    onCharacterClick();
   });
   return characterButton;
 };
 
 export const createHeader = (
   screenWidth: number,
-  onSettingsClick: () => void
+  onSettingsClick: () => void,
+  onCharacterClick: () => void
 ): Container => {
   const header = new Container();
   header.width = screenWidth;
@@ -62,7 +67,7 @@ export const createHeader = (
   const settingsButton = createSettingsButton(onSettingsClick);
   header.addChild(settingsButton);
 
-  const characterButton = createCharacterButton(screenWidth);
+  const characterButton = createCharacterButton(screenWidth, onCharacterClick);
   header.addChild(characterButton);
 
   return header;

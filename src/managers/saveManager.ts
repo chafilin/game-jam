@@ -1,4 +1,4 @@
-import { Stats } from "../types/types";
+import { Item, Stats } from "../types/types";
 
 export class SaveManager {
   private readonly PROGRESS_KEY = "gameProgress";
@@ -7,6 +7,7 @@ export class SaveManager {
     levelId: string;
     cardId: string;
     stats: Stats;
+    inventory: Item[];
   }): void {
     localStorage.setItem(this.PROGRESS_KEY, JSON.stringify(progress));
     console.log("Action: Progress saved", progress);
@@ -16,6 +17,7 @@ export class SaveManager {
     levelId: string;
     cardId: string;
     stats: Stats;
+    inventory: Item[];
   } | null {
     const saved = localStorage.getItem(this.PROGRESS_KEY);
     if (saved) {

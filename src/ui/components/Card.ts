@@ -2,6 +2,7 @@ import { Container, Graphics, Text } from "pixi.js";
 import { DropShadowFilter } from "pixi-filters";
 import { Card, Selection } from "../../types/types";
 import { createButton } from "./Button";
+import { InventoryManager } from "../../managers/inventoryManager";
 
 export const createCard = (
   card: Card,
@@ -63,13 +64,19 @@ export const createCard = (
     );
     cardContainer.addChild(singleButton);
   } else {
+    const inventory = InventoryManager.getInstance();
+
+    let requirementsItems = card[Selection.Left].requirementsItems || [];
+    let hasRequirementsItems = inventory.hasItems(requirementsItems);
+    let buttonColor = hasRequirementsItems ? "#176542" : "#808080";
+
     const leftButton = createButton(
       card[Selection.Left].text,
       10,
       cardContainer.height - 80,
       140,
       50,
-      "#176542",
+      buttonColor,
       () => {
         onSelection(Selection.Left);
         console.log("Action: Left button clicked");
@@ -77,17 +84,23 @@ export const createCard = (
     );
     cardContainer.addChild(leftButton);
 
+    requirementsItems = card[Selection.Right].requirementsItems || [];
+    hasRequirementsItems = inventory.hasItems(requirementsItems);
+    buttonColor = hasRequirementsItems ? "#176542" : "#808080";
+
     const rightButton = createButton(
       card[Selection.Right].text,
       screenWidth - 230,
       cardContainer.height - 80,
       140,
       50,
-      "#176542",
-      () => {
-        onSelection(Selection.Right);
-        console.log("Action: Right button clicked");
-      }
+      buttonColor,
+      hasRequirementsItems
+        ? () => {
+            onSelection(Selection.Right);
+            console.log("Action: Right button clicked");
+          }
+        : () => {}
     );
     cardContainer.addChild(rightButton);
   }

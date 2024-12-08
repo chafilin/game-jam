@@ -6,6 +6,8 @@ import {
   NextDestination,
 } from "../types/types";
 import { LevelManager } from "./levelManager";
+import { InventoryManager } from "./inventoryManager";
+import { ITEMS } from "../data/items";
 
 export class EncounterManager {
   private encounter: Card;
@@ -43,6 +45,20 @@ export class EncounterManager {
         }
       });
       this.updateStats(newStats);
+    }
+    const inventoryManager = InventoryManager.getInstance();
+
+    if (effect.addItem) {
+      const item = ITEMS[effect.addItem];
+      console.log("Adding item", item);
+      if (item) {
+        inventoryManager.addItem(item);
+      }
+    }
+
+    if (effect.removeItem) {
+      console.log("Removing item", effect.removeItem);
+      inventoryManager.removeItem(effect.removeItem);
     }
 
     if (effect.nextLevel || effect.nextPart) {

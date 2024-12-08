@@ -11,7 +11,6 @@ export const createEncounter = (
 ): Container => {
   const encounterContainer = new Container();
   encounterContainer.y = screenHeight / 4;
-
   const renderEncounter = (card: Card) => {
     encounterContainer.removeChildren();
     const npc = createImage(card.imgSrc, {
