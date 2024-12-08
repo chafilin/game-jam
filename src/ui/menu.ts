@@ -12,6 +12,10 @@ export const createMenu = (
   const overlay = new Graphics();
   overlay.rect(0, 0, screenWidth, screenHeight);
   overlay.fill({ color: "#000000", alpha: 0.5 });
+  overlay.eventMode = "static";
+  overlay.on("pointerdown", () => {
+    menuContainer.visible = false;
+  });
   menuContainer.addChild(overlay);
 
   // Menu panel
@@ -22,7 +26,7 @@ export const createMenu = (
 
   // Title
   const title = new Text({
-    text: "Menu",
+    text: "Меню",
     style: {
       fontSize: 24,
       fill: "#000000",
@@ -35,7 +39,7 @@ export const createMenu = (
 
   // Reset Progress Button
   const resetButton = createButton(
-    "Reset Progress",
+    "Сбросить прогресс",
     screenWidth / 2 - 100,
     screenHeight / 2 - 20,
     200,
@@ -47,7 +51,7 @@ export const createMenu = (
 
   // Close Button
   const closeButton = createButton(
-    "Close",
+    "Закрыть",
     screenWidth / 2 - 100,
     screenHeight / 2 + 40,
     200,
