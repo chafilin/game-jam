@@ -136,7 +136,8 @@ export class GameManager {
       this.stats,
       this.updateStats,
       this.onLevelComplete,
-      this.levelManager
+      this.levelManager,
+      this.updateBackground
     );
 
     const encounter = createEncounter(
@@ -148,10 +149,12 @@ export class GameManager {
     this.encounterContainer.addChild(encounter);
 
     // Update background
-    this.background.texture = Texture.from(
-      this.levelManager.getCurrentBackground()
-    );
+    this.updateBackground(this.levelManager.getCurrentBackground());
   }
+
+  private updateBackground = (background: string) => {
+    this.background.texture = Texture.from(background);
+  };
 
   private onLevelComplete = (destination?: {
     levelId?: string;

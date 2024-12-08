@@ -14,7 +14,7 @@ export class EncounterManager {
   private cards: Record<string, Card>;
   private stats: Stats;
   private updateStats: (newStats: Stats) => void;
-
+  private updateBackground: (background: string) => void;
   private onLevelComplete: (destination?: NextDestination) => void;
   private levelManager: LevelManager;
 
@@ -24,7 +24,8 @@ export class EncounterManager {
     stats: Stats,
     updateStats: (newStats: Stats) => void,
     onLevelComplete: (destination?: NextDestination) => void,
-    levelManager: LevelManager
+    levelManager: LevelManager,
+    updateBackground: (background: string) => void
   ) {
     this.cards = cards;
     this.encounter = cards[initialCardId];
@@ -32,6 +33,7 @@ export class EncounterManager {
     this.updateStats = updateStats;
     this.onLevelComplete = onLevelComplete;
     this.levelManager = levelManager;
+    this.updateBackground = updateBackground;
   }
 
   private handleEffect(effect: Effect): Card | null {
@@ -95,11 +97,16 @@ export class EncounterManager {
       selectionData.requirements || {}
     ).every(([key, value]) => this.stats[key as keyof Stats] >= value);
 
+    let nextEncounter;
+
     if (!meetsRequirements && selectionData.failure) {
-      return this.handleEffect(selectionData.failure);
+      nextEncounter = this.handleEffect(selectionData.failure);
     }
 
-    return this.handleEffect(selectionData.success);
+    nextEncounter = this.handleEffect(selectionData.success);
+    this.updateBackground(nextEncounter?.background || "");
+
+    return nextEncounter;
   }
 
   public getCurrentEncounter(): Card {

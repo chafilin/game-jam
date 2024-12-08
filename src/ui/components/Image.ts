@@ -27,11 +27,34 @@ export const createImage = (
     height: 0,
   }
 ): Sprite => {
+  if (!imgSrc) {
+    return new Sprite();
+  }
   const texture = Texture.from(imgSrc);
   const sprite = new Sprite(texture);
-  sprite.width = options?.width;
-  sprite.height = options?.height;
+
+  // Set position
   sprite.x = options?.x;
   sprite.y = options?.y;
+
+  // If width or height specified, scale proportionally
+  if (options?.width || options?.height) {
+    const aspectRatio = texture.width / texture.height;
+
+    if (options?.height) {
+      // Height is max height - scale width proportionally
+      sprite.height = options.height;
+      sprite.width = options.height * aspectRatio;
+    }
+    if (options?.width) {
+      // Only use width if resulting height would be less than max
+      const heightFromWidth = options.width / aspectRatio;
+      if (!options.height || heightFromWidth <= options.height) {
+        sprite.width = options.width;
+        sprite.height = heightFromWidth;
+      }
+    }
+  }
+
   return sprite;
 };

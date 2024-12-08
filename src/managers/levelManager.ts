@@ -20,9 +20,12 @@ export class LevelManager {
   }
 
   getCurrentBackground(): string {
-    return (
-      this.getCurrentPart()?.background || this.getCurrentLevel().background
-    );
+    const card = this.getCurrentCard();
+    return card.background;
+  }
+
+  getCurrentCard(): Card {
+    return this.getCurrentCards()[this.currentCardId];
   }
 
   getCurrentCards(): Record<string, Card> {

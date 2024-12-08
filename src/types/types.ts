@@ -26,6 +26,7 @@ export type NpcData = {
 
 export type Card = {
   id: string;
+  background: string;
   npcs: NpcData[];
   npcName: string;
   npcLine: string;

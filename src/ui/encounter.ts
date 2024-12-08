@@ -16,7 +16,7 @@ export const createEncounter = (
     encounterContainer.removeChildren();
 
     // Calculate total width needed for all NPCs
-    const npcWidth = 200;
+    const npcWidth = 250;
     const spacing = 10;
     const totalWidth =
       card.npcs.length * npcWidth + (card.npcs.length - 1) * spacing;
@@ -28,7 +28,7 @@ export const createEncounter = (
         x: startX + index * (npcWidth + spacing),
         y: 0,
         width: npcWidth,
-        height: 220,
+        height: 250,
       });
       encounterContainer.addChild(npcSprite);
     });
