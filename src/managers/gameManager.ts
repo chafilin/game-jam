@@ -5,11 +5,12 @@ import { LevelManager } from "./levelManager";
 import { createEncounter } from "../ui/encounter";
 import { createMenu } from "../ui/menu";
 import { createHeader } from "../ui/components/Header";
-import { createResources } from "../ui/components/Resources";
+
 import { EncounterManager } from "./encounterManager";
 import { SaveManager } from "./saveManager";
 import { createInventory } from "../ui/components/Inventory";
 import { InventoryManager } from "./inventoryManager";
+import { BackgroundMusicManager } from "./backgroundMusicManager";
 
 export class GameManager {
   private app: Application;
@@ -19,7 +20,7 @@ export class GameManager {
   private stats: Stats;
   private background: Sprite;
   private header: Container;
-  private resources: Container;
+
   private encounterContainer: Container;
   private menu: Container;
   private encounterManager?: EncounterManager;
@@ -65,11 +66,10 @@ export class GameManager {
         this.openInventory();
       }
     );
-    this.resources = createResources(screenWidth, this.stats);
     this.encounterContainer = new Container();
     this.app.stage.addChild(this.background);
     this.app.stage.addChild(this.header);
-    this.app.stage.addChild(this.resources);
+
     this.app.stage.addChild(this.encounterContainer);
 
     this.menu = createMenu(screenWidth, screenHeight, () => {
@@ -78,10 +78,14 @@ export class GameManager {
     });
     this.menu.visible = false;
     this.app.stage.addChild(this.menu);
+    BackgroundMusicManager.getInstance().addTrack("Adventure");
+    BackgroundMusicManager.getInstance().addTrack("Neverland");
+    BackgroundMusicManager.getInstance().addTrack("The-Lone-Wolf");
   }
 
   start() {
     this.renderLevel();
+    BackgroundMusicManager.getInstance().play();
   }
 
   resize(screenWidth: number, screenHeight: number) {
@@ -91,9 +95,6 @@ export class GameManager {
     this.background.width = screenWidth;
     this.background.height = screenHeight;
     this.header.width = screenWidth;
-    this.app.stage.removeChild(this.resources);
-    this.resources = createResources(screenWidth, this.stats);
-    this.app.stage.addChild(this.resources);
 
     this.app.stage.removeChild(this.menu);
     this.menu = createMenu(screenWidth, screenHeight, () => {
@@ -120,9 +121,6 @@ export class GameManager {
   private updateStats = (newStats: Stats) => {
     Object.assign(this.stats, newStats);
     console.log("Action: Stats updated", this.stats);
-    this.app.stage.removeChild(this.resources);
-    this.resources = createResources(this.screenWidth, this.stats);
-    this.app.stage.addChild(this.resources);
   };
 
   private renderLevel() {
@@ -191,6 +189,7 @@ export class GameManager {
     this.inventoryContainer = createInventory(
       this.screenWidth,
       this.screenHeight,
+      this.stats,
       () => this.closeInventory()
     );
     this.app.stage.addChild(this.inventoryContainer);

@@ -23,26 +23,26 @@ const createCharacterButton = (
 ): Container => {
   const characterButton = new Container();
   const charBg = new Graphics();
-  charBg.roundRect(-6, 0, 230, 56, 10);
+  charBg.roundRect(0, 0, 120, 56, 10);
   charBg.fill({ color: "#ffffff" });
   characterButton.addChild(charBg);
 
-  const stat_icon_texture = Texture.from("stat_icon");
-  const stat_icon = new Sprite(stat_icon_texture);
-  stat_icon.width = 50;
-  stat_icon.height = 50;
-  characterButton.addChild(stat_icon);
+  // const stat_icon_texture = Texture.from("stat_icon");
+  // const stat_icon = new Sprite(stat_icon_texture);
+  // stat_icon.width = 50;
+  // stat_icon.height = 50;
+  // characterButton.addChild(stat_icon);
 
   const characterStatus = new Text({
-    text: "Любитель загадок",
+    text: "Персонаж",
     style: {
       fontSize: 18,
       fill: "#000000",
       align: "left",
     },
   });
-  characterStatus.x = 60;
-  characterStatus.y = 16;
+  characterStatus.x = charBg.width / 2 - characterStatus.width / 2;
+  characterStatus.y = charBg.height / 2 - characterStatus.height / 2;
 
   characterButton.x = screenWidth - 16 - characterButton.width;
   characterButton.y = 16;

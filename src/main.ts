@@ -26,7 +26,9 @@ const init = async () => {
       updateLoader(loader, progress);
     }),
     loadLevels(),
-  ]);
+  ]).finally(() => {
+    app.stage.removeChild(loader);
+  });
 
   const gameManager = new GameManager(app, LEVELS, screenWidth, screenHeight);
   gameManager.start();

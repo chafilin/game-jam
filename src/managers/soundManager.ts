@@ -2,7 +2,7 @@ import { sound } from "@pixi/sound";
 
 export class SoundManager {
   private static instance: SoundManager;
-  private _volume: number = 1;
+  private _volume: number = 0.6;
   private _isMuted: boolean = false;
   private _sounds: Map<string, number> = new Map();
 

@@ -9,6 +9,12 @@ import { LevelManager } from "./levelManager";
 import { InventoryManager } from "./inventoryManager";
 import { ITEMS } from "../data/items";
 
+const rollD20 = () => {
+  const roll = Math.floor(Math.random() * 20) + 1;
+  console.log("Roll: ", roll);
+  return roll;
+};
+
 export class EncounterManager {
   private encounter: Card;
   private cards: Record<string, Card>;
@@ -95,7 +101,9 @@ export class EncounterManager {
 
     const meetsRequirements = Object.entries(
       selectionData.requirements || {}
-    ).every(([key, value]) => this.stats[key as keyof Stats] >= value);
+    ).every(
+      ([key, value]) => this.stats[key as keyof Stats] + rollD20() >= value
+    );
 
     let nextEncounter;
 
@@ -104,7 +112,9 @@ export class EncounterManager {
     }
 
     nextEncounter = this.handleEffect(selectionData.success);
-    this.updateBackground(nextEncounter?.background || "");
+    this.updateBackground(
+      nextEncounter?.background || this.levelManager.getCurrentBackground()
+    );
 
     return nextEncounter;
   }

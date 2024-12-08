@@ -2,17 +2,17 @@
   "levels": [
     {
       "id": "level1",
-      "background": "background",
+      "background": "roomBg",
       "parts": [
         {
           "id": "level1_part1",
-          "background": "background",
+          "background": "roomBg",
           "cards": {
             "1": {
               "id": "1",
               "npcName": "",
               "npcLine": "Ты возвращаешься из школы. Учёба в третьем классе даётся нелегко.",
-              "background": "bgtest",
+              "background": "roomBg",
               "npcs": [
                 {
                   "imgSrc": ""
@@ -29,7 +29,7 @@
               "id": "2",
               "npcName": "",
               "npcLine": "Вместо хороших оценок вам дают наклейки. И сегодня ты опять ничего не получил.",
-              "background": "background",
+              "background": "roomBg",
               "npcs": [
                 {
                   "imgSrc": ""
@@ -46,7 +46,7 @@
               "id": "3",
               "npcName": "",
               "npcLine": "Вот бы наконец-то получить весёлого динозаврика или машинку.",
-              "background": "background",
+              "background": "roomBg",
               "npcs": [
                 {
                   "imgSrc": ""
@@ -63,7 +63,7 @@
               "id": "4",
               "npcName": "",
               "npcLine": "Но больше всего ты мечтаешь о золотом плюсике! Он сияет на солнце словно сокровище.",
-              "background": "background",
+              "background": "roomBg",
               "npcs": [
                 {
                   "imgSrc": ""
@@ -80,7 +80,7 @@
               "id": "5",
               "npcName": "",
               "npcLine": "Как бы хотелось получить этот золотой плюсик.",
-              "background": "background",
+              "background": "roomBg",
               "npcs": [
                 {
                   "imgSrc": ""
@@ -97,7 +97,7 @@
               "id": "6",
               "npcName": "",
               "npcLine": "Вместо учёбы можно было бы заняться своими любимыми делами…",
-              "background": "background",
+              "background": "roomBg",
               "npcs": [
                 {
                   "imgSrc": ""
@@ -126,7 +126,7 @@
               "id": "7",
               "npcName": "",
               "npcLine": "Или поиграть…",
-              "background": "background",
+              "background": "roomBg",
               "npcs": [
                 {
                   "imgSrc": ""
@@ -155,7 +155,7 @@
               "id": "8",
               "npcName": "",
               "npcLine": "Но легендарная наклейка так и манит. Может, всё же поучиться?",
-              "background": "background",
+              "background": "roomBg",
               "npcs": [
                 {
                   "imgSrc": ""
@@ -183,13 +183,13 @@
         },
         {
           "id": "level1_part2",
-          "background": "background",
+          "background": "roomBg",
           "cards": {
             "1": {
               "id": "1",
               "npcName": "",
               "npcLine": "Ты полон решимости и садишься за уроки.",
-              "background": "background",
+              "background": "roomBg",
               "npcs": [
                 {
                   "imgSrc": ""
@@ -206,7 +206,7 @@
               "id": "2",
               "npcName": "",
               "npcLine": "Волга — река в Европейской части России.",
-              "background": "background",
+              "background": "roomBg",
               "npcs": [
                 {
                   "imgSrc": ""
@@ -223,7 +223,7 @@
               "id": "3",
               "npcName": "",
               "npcLine": "По разнообразию рыбы Волга одна из богатейших рек. В реке водятся: сазан, окунь, лещ, сом, судак, щука и ерш. В Волге живут также осётры, белуги и севрюги.",
-              "background": "background",
+              "background": "roomBg",
               "npcs": [
                 {
                   "imgSrc": ""
@@ -240,7 +240,7 @@
               "id": "4",
               "npcName": "",
               "npcLine": "На берегах реки можно увидеть таких редких и красивых птиц, как кудрявый пеликан, большая белая цапля, фазан и многих других.",
-              "background": "background",
+              "background": "roomBg",
               "npcs": [
                 {
                   "imgSrc": ""
@@ -257,7 +257,7 @@
               "id": "5",
               "npcName": "",
               "npcLine": "В дельте Волги в тростниках обитают дикие кабаны…",
-              "background": "background",
+              "background": "roomBg",
               "npcs": [
                 {
                   "imgSrc": ""
@@ -274,7 +274,7 @@
               "id": "6",
               "npcName": "",
               "npcLine": "…насекомые, змеи и лягушки…",
-              "background": "background",
+              "background": "roomBg",
               "npcs": [
                 {
                   "imgSrc": ""
@@ -291,7 +291,7 @@
               "id": "7",
               "npcName": "",
               "npcLine": "…печенька…",
-              "background": "background",
+              "background": "roomBg",
               "npcs": [
                 {
                   "imgSrc": ""
@@ -308,13 +308,13 @@
         },
         {
           "id": "level1_part3",
-          "background": "background",
+          "background": "roomBg",
           "cards": {
             "1": {
               "id": "1",
               "npcName": "Печенька",
               "npcLine": "Ты готов к приключениям? Ради золотого плюсика придётся попотеть!",
-              "background": "background",
+              "background": "roomBg",
               "npcs": [
                 {
                   "imgSrc": "cookie"
@@ -331,7 +331,7 @@
               "id": "2",
               "npcName": "Печенька",
               "npcLine": "Да, но они опаснее обычных приключений. Тебе понадобится помощь. Вот, держи…",
-              "background": "background",
+              "background": "roomBg",
               "npcs": [
                 {
                   "imgSrc": "cookie"
@@ -348,7 +348,7 @@
               "id": "3",
               "npcName": "Печенька",
               "npcLine": "Это магия! Теперь ты волшебник, Гарри!",
-              "background": "background",
+              "background": "roomBg",
               "npcs": [
                 {
                   "imgSrc": "cookie"
@@ -364,8 +364,8 @@
             "4": {
               "id": "4",
               "npcName": "Печенька",
-              "npcLine": "Смотри, тут твои навыки и предметы!\n(Показать на кнопку)",
-              "background": "background",
+              "npcLine": "Смотри, справа сверху твои навыки и предметы!",
+              "background": "roomBg",
               "npcs": [
                 {
                   "imgSrc": "cookie"
@@ -381,8 +381,8 @@
             "5": {
               "id": "5",
               "npcName": "Печенька",
-              "npcLine": "Они пригодятся! Тебя ждёт множество непростых выборов. А выборы влияют на полоску кармы сверху.\n(Показать на полоску)",
-              "background": "background",
+              "npcLine": "Они пригодятся! Тебя ждёт множество непростых выборов. А выборы влияют на карму.",
+              "background": "roomBg",
               "npcs": [
                 {
                   "imgSrc": "cookie"
@@ -399,7 +399,7 @@
               "id": "6",
               "npcName": "Печенька",
               "npcLine": "Карма приведёт к той или иной развязке. Удачи!",
-              "background": "background",
+              "background": "roomBg",
               "npcs": [
                 {
                   "imgSrc": "cookie"
@@ -418,17 +418,17 @@
     },
     {
       "id": "level2",
-      "background": "background",
+      "background": "roomBg",
       "parts": [
         {
           "id": "level2_part1",
-          "background": "background",
+          "background": "roomBg",
           "cards": {
             "1": {
               "id": "1",
               "npcName": "",
               "npcLine": "Ты стоишь возле широкой реки. Перед тобой каменный город с высокими стенами и башнями, прямо как в мультиках.",
-              "background": "background",
+              "background": "townandriver",
               "npcs": [
                 {
                   "imgSrc": ""
@@ -451,7 +451,7 @@
               "id": "2",
               "npcName": "",
               "npcLine": "Вдоль реки ты видишь луга, а далеко за ними густой лес.",
-              "background": "background",
+              "background": "townandriver",
               "npcs": [
                 {
                   "imgSrc": ""
@@ -468,7 +468,7 @@
               "id": "3",
               "npcName": "",
               "npcLine": "У ворот никого нет. Проходя внутрь, ты слышишь множество криков.",
-              "background": "background",
+              "background": "townandriver",
               "npcs": [
                 {
                   "imgSrc": ""
@@ -485,10 +485,10 @@
               "id": "4",
               "npcName": "",
               "npcLine": "Под опрокинутой телегой сидит девочка с лицом лягушки. Она плачет.",
-              "background": "background",
+              "background": "alley",
               "npcs": [
                 {
-                  "imgSrc": "froggy"
+                  "imgSrc": "frog"
                 }
               ],
               "right": {
@@ -508,10 +508,10 @@
               "id": "5",
               "npcName": "Лягушка",
               "npcLine": "Стрекоза страшная! И я потерялась.",
-              "background": "background",
+              "background": "alley",
               "npcs": [
                 {
-                  "imgSrc": "froggy"
+                  "imgSrc": "frog"
                 }
               ],
               "right": {
@@ -535,10 +535,10 @@
               "id": "6",
               "npcName": "",
               "npcLine": "Ты помогаешь девочке найти дом. В благодарность она вручает тебе монетку.",
-              "background": "background",
+              "background": "alley",
               "npcs": [
                 {
-                  "imgSrc": "froggy"
+                  "imgSrc": "frog"
                 }
               ],
               "right": {
@@ -552,10 +552,10 @@
               "id": "7",
               "npcName": "",
               "npcLine": "Девочка удивлённо на тебя смотрит.",
-              "background": "background",
+              "background": "alley",
               "npcs": [
                 {
-                  "imgSrc": "froggy"
+                  "imgSrc": "frog"
                 }
               ],
               "left": {
@@ -579,10 +579,10 @@
               "id": "8",
               "npcName": "",
               "npcLine": "Девочка не отвечает. Но ты замечаешь, что и руки, и ноги у неё тоже лягушачьи.",
-              "background": "background",
+              "background": "alley",
               "npcs": [
                 {
-                  "imgSrc": "froggy"
+                  "imgSrc": "frog"
                 }
               ],
               "right": {
@@ -602,7 +602,7 @@
               "id": "9",
               "npcName": "",
               "npcLine": "Ты выходишь на площадь и видишь стрекозу размером с дом. Вокруг раскиданы люди в доспехах.",
-              "background": "background",
+              "background": "townsquare",
               "npcs": [
                 {
                   "imgSrc": "dragonfly"
@@ -619,10 +619,10 @@
               "id": "10",
               "npcName": "",
               "npcLine": "Недалеко от чудовища стоит паренёк. Похоже, его пытается защитить женщина в доспехах, но она слишком сильно ранена.",
-              "background": "background",
+              "background": "townsquare",
               "npcs": [
                 {
-                  "imgSrc": ""
+                  "imgSrc": "dragonfly"
                 }
               ],
               "right": {
@@ -648,10 +648,10 @@
               "id": "11",
               "npcName": "",
               "npcLine": "Кажется, Печенька говорил, что я теперь волшебник?",
-              "background": "background",
+              "background": "townsquare",
               "npcs": [
                 {
-                  "imgSrc": ""
+                  "imgSrc": "dragonfly"
                 }
               ],
               "right": {
@@ -677,10 +677,10 @@
               "id": "12",
               "npcName": "",
               "npcLine": "Ты творишь магическую вспышку — и она срабатывает! Стрекоза временно слепнет, а паренёк и рыцарь прячутся за угол дома.",
-              "background": "background",
+              "background": "townsquare",
               "npcs": [
                 {
-                  "imgSrc": ""
+                  "imgSrc": "dragonfly"
                 }
               ],
               "right": {
@@ -700,16 +700,16 @@
               "id": "13",
               "npcName": "",
               "npcLine": "Перенапряжение даёт о себе знать. Эта атака будет сложнее.\n(Испытание навыка)",
-              "background": "background",
+              "background": "townsquare",
               "npcs": [
                 {
-                  "imgSrc": ""
+                  "imgSrc": "dragonfly"
                 }
               ],
               "right": {
                 "text": "Камень",
                 "requirements": {
-                  "dexterity": 1
+                  "dexterity": 12
                 },
                 "success": {
                   "nextCard": "15",
@@ -727,7 +727,7 @@
               "left": {
                 "text": "Магия",
                 "requirements": {
-                  "magic": 1
+                  "magic": 12
                 },
                 "success": {
                   "nextCard": "14",
@@ -747,10 +747,10 @@
               "id": "14",
               "npcName": "",
               "npcLine": "Стрела бьётся о крепкий хитин Стрекозы. Монстр замирает, изучая тебя своими огромными глазами.",
-              "background": "background",
+              "background": "townsquare",
               "npcs": [
                 {
-                  "imgSrc": ""
+                  "imgSrc": "dragonfly"
                 }
               ],
               "right": {
@@ -773,10 +773,10 @@
               "id": "14_1",
               "npcName": "",
               "npcLine": "Магия не слушается. В мгновение чудовище оказывается рядом.",
-              "background": "background",
+              "background": "townsquare",
               "npcs": [
                 {
-                  "imgSrc": ""
+                  "imgSrc": "dragonfly"
                 }
               ],
               "right": {
@@ -790,10 +790,10 @@
               "id": "15",
               "npcName": "",
               "npcLine": "Камень попадает, но отскакивает от крепкого хитина Стрекозы. Монстр замирает, изучая тебя своими огромными глазами.",
-              "background": "background",
+              "background": "townsquare",
               "npcs": [
                 {
-                  "imgSrc": ""
+                  "imgSrc": "dragonfly"
                 }
               ],
               "right": {
@@ -816,10 +816,10 @@
               "id": "15_1",
               "npcName": "",
               "npcLine": "Твои руки дрожат, и камень пролетает мимо. В мгновение чудовище оказывается рядом.",
-              "background": "background",
+              "background": "townsquare",
               "npcs": [
                 {
-                  "imgSrc": ""
+                  "imgSrc": "dragonfly"
                 }
               ],
               "right": {
@@ -833,16 +833,16 @@
               "id": "16",
               "npcName": "",
               "npcLine": "Что-то красное на шее.\nРана? Или в чешуе что-то застряло?\nТы не успеваешь рассмотреть: огромное создание поворачивается и улетает.",
-              "background": "background",
+              "background": "townsquare",
               "npcs": [
                 {
-                  "imgSrc": ""
+                  "imgSrc": "dragonfly"
                 }
               ],
               "right": {
                 "text": "Отдышаться",
                 "success": {
-                  "nextCard": null
+                  "nextCard": "23"
                 }
               }
             },
@@ -850,10 +850,10 @@
               "id": "17",
               "npcName": "",
               "npcLine": "Ты метко запускаешь камень прямо в глаз Стрекозе. Этого достаточно, чтобы она отвлеклась на тебя.",
-              "background": "background",
+              "background": "townsquare",
               "npcs": [
                 {
-                  "imgSrc": ""
+                  "imgSrc": "dragonfly"
                 }
               ],
               "right": {
@@ -873,10 +873,10 @@
               "id": "18",
               "npcName": "",
               "npcLine": "Чудовище стремительно нагоняет тебя. Нужно спрятаться!",
-              "background": "background",
+              "background": "townsquare",
               "npcs": [
                 {
-                  "imgSrc": ""
+                  "imgSrc": "dragonfly"
                 }
               ],
               "right": {
@@ -896,7 +896,7 @@
               "id": "19",
               "npcName": "",
               "npcLine": "Убегая, ты слышишь, как на площади что-то шипит и взрывается.",
-              "background": "background",
+              "background": "townsquare",
               "npcs": [
                 {
                   "imgSrc": ""
@@ -922,7 +922,7 @@
               "id": "20",
               "npcName": "",
               "npcLine": "У ворот тебя накрывает тень Стрекозы. Чудовище пролетает над лугами и скрывается в кроне леса.",
-              "background": "background",
+              "background": "townandriver",
               "npcs": [
                 {
                   "imgSrc": ""
@@ -939,10 +939,10 @@
               "id": "21",
               "npcName": "",
               "npcLine": "Готовое к твоей атаке, чудовище уворачивается. В мгновение оно оказывается рядом.",
-              "background": "background",
+              "background": "townsquare",
               "npcs": [
                 {
-                  "imgSrc": ""
+                  "imgSrc": "dragonfly"
                 }
               ],
               "right": {
@@ -956,10 +956,10 @@
               "id": "22",
               "npcName": "",
               "npcLine": "Слышится взрыв, и Стрекозу относит в сторону. Она ошарашено хватает лапами пустоту. Сквозь пыль ты различаешь спасённого тобой паренька, который тянет тебя за собой в укрытие.",
-              "background": "background",
+              "background": "townsquare",
               "npcs": [
                 {
-                  "imgSrc": ""
+                  "imgSrc": "dragonfly"
                 }
               ],
               "right": {
@@ -973,7 +973,7 @@
               "id": "23",
               "npcName": "",
               "npcLine": "На площади собираются люди-животные, пытаясь оказать помощь раненым. Однако не всем можно помочь. Страх сменяется отчаянием и горем.",
-              "background": "background",
+              "background": "townsquare",
               "npcs": [
                 {
                   "imgSrc": ""
@@ -999,10 +999,13 @@
               "id": "24",
               "npcName": "Рыцарь",
               "npcLine": "Проклятое отродие улетело. Но почему?\n(К вам подходит женщина в доспехах, опираясь на плечо паренька.)",
-              "background": "background",
+              "background": "townsquare",
               "npcs": [
                 {
-                  "imgSrc": ""
+                  "imgSrc": "knight"
+                },
+                {
+                  "imgSrc": "desman"
                 }
               ],
               "right": {
@@ -1022,10 +1025,13 @@
               "id": "25",
               "npcName": "Рыцарь",
               "npcLine": "Вы многим помогли. Спасибо. У вас сердце героя.\n(К вам подходит женщина в доспехах, опираясь на плечо паренька.)",
-              "background": "background",
+              "background": "townsquare",
               "npcs": [
                 {
-                  "imgSrc": ""
+                  "imgSrc": "knight"
+                },
+                {
+                  "imgSrc": "desman"
                 }
               ],
               "right": {
@@ -1045,10 +1051,13 @@
               "id": "26",
               "npcName": "Рыцарь",
               "npcLine": "Стрекоза — загадочное чудовище. Уже месяц оно терроризирует наш город. Ещё пару таких нападений мы не выдержим.",
-              "background": "background",
+              "background": "townsquare",
               "npcs": [
                 {
-                  "imgSrc": ""
+                  "imgSrc": "knight"
+                },
+                {
+                  "imgSrc": "desman"
                 }
               ],
               "right": {
@@ -1062,10 +1071,13 @@
               "id": "27",
               "npcName": "Леди Осетрина",
               "npcLine": "Леди Осетрина, рыцарь короны. Это мой оруженосец и изобретатель, Выхухольд. Но кто ты, отважный юноша?",
-              "background": "background",
+              "background": "townsquare",
               "npcs": [
                 {
-                  "imgSrc": ""
+                  "imgSrc": "knight"
+                },
+                {
+                  "imgSrc": "desman"
                 }
               ],
               "right": {
@@ -1088,10 +1100,13 @@
               "id": "28",
               "npcName": "",
               "npcLine": "Ты притворяешься обычным путешественником. Выходит не очень складно. Но, кажется, твою ложь не пытаются разоблачить.",
-              "background": "background",
+              "background": "townsquare",
               "npcs": [
                 {
-                  "imgSrc": ""
+                  "imgSrc": "knight"
+                },
+                {
+                  "imgSrc": "desman"
                 }
               ],
               "right": {
@@ -1105,10 +1120,13 @@
               "id": "29",
               "npcName": "",
               "npcLine": "Ты рассказываешь свою историю. Леди Осетрина выглядит задумчивой и уставшей. Выхухольд же наоборот приободряется.",
-              "background": "background",
+              "background": "townsquare",
               "npcs": [
                 {
-                  "imgSrc": ""
+                  "imgSrc": "knight"
+                },
+                {
+                  "imgSrc": "desman"
                 }
               ],
               "right": {
@@ -1128,10 +1146,13 @@
               "id": "30",
               "npcName": "Леди Осетрина",
               "npcLine": "Многое из твоего рассказа я не поняла. Но это ужасно, что дети вашего мира подвергаются такой опасности ради золотого клея.",
-              "background": "background",
+              "background": "townsquare",
               "npcs": [
                 {
-                  "imgSrc": ""
+                  "imgSrc": "knight"
+                },
+                {
+                  "imgSrc": "desman"
                 }
               ],
               "right": {
@@ -1145,10 +1166,13 @@
               "id": "31",
               "npcName": "Выхухольд",
               "npcLine": "Я надеялся, что существуют другие миры и путешествия между ними! Какая почва для экспериментов!",
-              "background": "background",
+              "background": "townsquare",
               "npcs": [
                 {
-                  "imgSrc": ""
+                  "imgSrc": "knight"
+                },
+                {
+                  "imgSrc": "desman"
                 }
               ],
               "right": {
@@ -1168,10 +1192,13 @@
               "id": "32",
               "npcName": "Леди Осетрина",
               "npcLine": "У тебя будет кров и еда. Но до тех пор, пока не разберусь с чудовищем, помочь большим не могу.",
-              "background": "background",
+              "background": "townsquare",
               "npcs": [
                 {
-                  "imgSrc": ""
+                  "imgSrc": "knight"
+                },
+                {
+                  "imgSrc": "desman"
                 }
               ],
               "right": {
@@ -1194,7 +1221,7 @@
               "id": "33",
               "npcName": "",
               "npcLine": "Ты находишь приют в семье ежей. Ты скучаешь по своему дому, но привыкаешь к новой жизни.",
-              "background": "background",
+              "background": "insidehouse",
               "npcs": [
                 {
                   "imgSrc": ""
@@ -1211,7 +1238,7 @@
               "id": "34",
               "npcName": "",
               "npcLine": "К тебе хорошо относятся. Никто не заставляет тебя работать, и у тебя много свободного времени. Чем ты занимаешься?",
-              "background": "background",
+              "background": "insidehouse",
               "npcs": [
                 {
                   "imgSrc": ""
@@ -1229,10 +1256,13 @@
               "id": "35",
               "npcName": "",
               "npcLine": "Ты должен помочь городу с чудовищем. И начинаешь убеждать Осетрину взять тебя с собой.",
-              "background": "background",
+              "background": "townsquare",
               "npcs": [
                 {
-                  "imgSrc": ""
+                  "imgSrc": "knight"
+                },
+                {
+                  "imgSrc": "desman"
                 }
               ],
               "right": {
@@ -1252,10 +1282,13 @@
               "id": "36",
               "npcName": "Леди Осетрина",
               "npcLine": "В мире много умных и сильных детей. Это не повод рисковать их жизнью. Чудовища детям не игрушка!",
-              "background": "background",
+              "background": "townsquare",
               "npcs": [
                 {
-                  "imgSrc": ""
+                  "imgSrc": "knight"
+                },
+                {
+                  "imgSrc": "desman"
                 }
               ],
               "right": {
@@ -1269,22 +1302,19 @@
                 "success": {
                   "nextCard": "37"
                 }
-              },
-              "left": {
-                "text": "Сдаться",
-                "success": {
-                  "nextCard": "33"
-                }
               }
             },
             "37": {
               "id": "37",
               "npcName": "Леди Осетрина",
               "npcLine": "Думаю, ты прав. Это может помочь. Но не в бою. Я отведу тебя к Королеве.",
-              "background": "background",
+              "background": "townsquare",
               "npcs": [
                 {
-                  "imgSrc": ""
+                  "imgSrc": "knight"
+                },
+                {
+                  "imgSrc": "desman"
                 }
               ],
               "right": {
@@ -1298,10 +1328,13 @@
               "id": "38",
               "npcName": "",
               "npcLine": "Тебя проводят по уютному, небольшому замку. Отстояв очередь, ты наконец встречаешься с королевой.",
-              "background": "background",
+              "background": "townsquare",
               "npcs": [
                 {
-                  "imgSrc": ""
+                  "imgSrc": "knight"
+                },
+                {
+                  "imgSrc": "desman"
                 }
               ],
               "right": {
@@ -1315,10 +1348,13 @@
               "id": "39",
               "npcName": "",
               "npcLine": "Это женщина, словно сделанная из воды. Она слушает Леди Осетрину, улыбается тебе и представляется королевой Вольгой.",
-              "background": "background",
+              "background": "townsquare",
               "npcs": [
                 {
-                  "imgSrc": ""
+                  "imgSrc": "knight"
+                },
+                {
+                  "imgSrc": "desman"
                 }
               ],
               "right": {
@@ -1333,10 +1369,13 @@
               "id": "40",
               "npcName": "",
               "npcLine": "Ты стреляешь магическим снарядом в бутылку. На удивление, это производит большое впечатление на твоих собеседников.",
-              "background": "background",
+              "background": "townsquare",
               "npcs": [
                 {
-                  "imgSrc": ""
+                  "imgSrc": "knight"
+                },
+                {
+                  "imgSrc": "desman"
                 }
               ],
               "right": {
@@ -1350,10 +1389,13 @@
               "id": "41",
               "npcName": "Леди Остерина",
               "npcLine": "Магия — невероятная редкость в нашем мире! Это действительно может помочь со Стрекозой…",
-              "background": "background",
+              "background": "townsquare",
               "npcs": [
                 {
-                  "imgSrc": ""
+                  "imgSrc": "knight"
+                },
+                {
+                  "imgSrc": "desman"
                 }
               ],
               "right": {
@@ -1379,10 +1421,13 @@
               "id": "42",
               "npcName": "",
               "npcLine": "Магия достигает ворона, он в ужасе кричит и падает на землю. Оказывается, это был житель города. К счастью, он едва ранен. Леди Осетрина кричит на тебя.",
-              "background": "background",
+              "background": "townsquare",
               "npcs": [
                 {
-                  "imgSrc": ""
+                  "imgSrc": "knight"
+                },
+                {
+                  "imgSrc": "desman"
                 }
               ],
               "right": {
@@ -1396,10 +1441,13 @@
               "id": "43",
               "npcName": "Леди Осетрина",
               "npcLine": "Ты слишком импульсивен! Я не могу взять тебя с собой. Но… твои способности могут пригодиться Королеве.",
-              "background": "background",
+              "background": "townsquare",
               "npcs": [
                 {
-                  "imgSrc": ""
+                  "imgSrc": "knight"
+                },
+                {
+                  "imgSrc": "desman"
                 }
               ],
               "right": {
@@ -1413,10 +1461,13 @@
               "id": "44",
               "npcName": "Леди Осетрина",
               "npcLine": "Хорошо. Я буду учить тебя защите. Будешь прилежным и осторожным, я возьму тебя в поход на чудовище.",
-              "background": "background",
+              "background": "townsquare",
               "npcs": [
                 {
-                  "imgSrc": ""
+                  "imgSrc": "knight"
+                },
+                {
+                  "imgSrc": "desman"
                 }
               ],
               "right": {
@@ -1431,10 +1482,13 @@
               "id": "45",
               "npcName": "",
               "npcLine": "Тебе помогают зайти в дом. Твоим проводником оказывается паренёк, которого ты спас от чудовища. Рядом лежит рыцарь, прикладывая ткань к ране.",
-              "background": "background",
+              "background": "insidehouse",
               "npcs": [
                 {
-                  "imgSrc": ""
+                  "imgSrc": "desman"
+                },
+                {
+                  "imgSrc": "knight"
                 }
               ],
               "right": {
@@ -1454,10 +1508,13 @@
               "id": "46",
               "npcName": "Паренёк",
               "npcLine": "Вещество, способное аккумулировать энергию солнца. При нарушении целостности оболочки происходит активное высвобождение этой энергии…",
-              "background": "background",
+              "background": "insidehouse",
               "npcs": [
                 {
-                  "imgSrc": ""
+                  "imgSrc": "desman"
+                },
+                {
+                  "imgSrc": "knight"
                 }
               ],
               "right": {
@@ -1477,10 +1534,13 @@
               "id": "47",
               "npcName": "Паренёк",
               "npcLine": "К сожалению, я пока не нашёл месторождение этого вещества и израсходовал почти всё, что у меня было. Но я рад, что она сработала, и вы живы.",
-              "background": "background",
+              "background": "insidehouse",
               "npcs": [
                 {
-                  "imgSrc": ""
+                  "imgSrc": "desman"
+                },
+                {
+                  "imgSrc": "knight"
                 }
               ],
               "right": {
@@ -1504,10 +1564,13 @@
               "id": "48",
               "npcName": "Паренёк",
               "npcLine": "Спасибо вам, что спасли нас. Пожалуйста, примите в подарок остатки вещества, о котором я рассказывал. Я назвал его Солнечник.",
-              "background": "background",
+              "background": "insidehouse",
               "npcs": [
                 {
-                  "imgSrc": ""
+                  "imgSrc": "desman"
+                },
+                {
+                  "imgSrc": "knight"
                 }
               ],
               "right": {
@@ -1521,10 +1584,13 @@
               "id": "49",
               "npcName": "",
               "npcLine": "Стрекоза хищно маневрирует над городом и, не найдя новую жертву, улетает.",
-              "background": "background",
+              "background": "insidehouse",
               "npcs": [
                 {
-                  "imgSrc": ""
+                  "imgSrc": "desman"
+                },
+                {
+                  "imgSrc": "knight"
                 }
               ],
               "right": {
@@ -1538,10 +1604,13 @@
               "id": "50",
               "npcName": "",
               "npcLine": "На площади собираются люди-животные, пытаясь оказать помощь раненым. Однако не всем можно помочь. Страх сменяется отчаянием и горем.",
-              "background": "background",
+              "background": "townsquare",
               "npcs": [
                 {
-                  "imgSrc": ""
+                  "imgSrc": "desman"
+                },
+                {
+                  "imgSrc": "knight"
                 }
               ],
               "right": {
@@ -1561,10 +1630,13 @@
               "id": "51",
               "npcName": "",
               "npcLine": "Недалеко от тебя уже знакомые тебе раненная рыцарь и паренёк. С кем поговорить?",
-              "background": "background",
+              "background": "townsquare",
               "npcs": [
                 {
-                  "imgSrc": ""
+                  "imgSrc": "desman"
+                },
+                {
+                  "imgSrc": "knight"
                 }
               ],
               "right": {
@@ -1584,10 +1656,13 @@
               "id": "52",
               "npcName": "Выхухольд",
               "npcLine": "Спасибо вам, что спасли нас. Это Леди Осетрина, рыцарь короны. А я Выхухольд, её оруженосец.\n(Он скромно кланяется.)",
-              "background": "background",
+              "background": "townsquare",
               "npcs": [
                 {
-                  "imgSrc": ""
+                  "imgSrc": "desman"
+                },
+                {
+                  "imgSrc": "knight"
                 }
               ],
               "right": {
@@ -1601,10 +1676,13 @@
               "id": "53",
               "npcName": "Выхухольд",
               "npcLine": "Стрекоза — очень интересное существо. Несмотря на свои размеры, она обладает удивительной аэродинамикой и мобильностью.",
-              "background": "background",
+              "background": "townsquare",
               "npcs": [
                 {
-                  "imgSrc": ""
+                  "imgSrc": "desman"
+                },
+                {
+                  "imgSrc": "knight"
                 }
               ],
               "right": {
@@ -1618,10 +1696,13 @@
               "id": "54",
               "npcName": "54",
               "npcLine": "Агрессивный хищник, да. Появилось 4 недели назад. Могу предположить, что ещё 4 недели город не выдержит. Могу я тоже задать вопрос?",
-              "background": "background",
+              "background": "townsquare",
               "npcs": [
                 {
-                  "imgSrc": ""
+                  "imgSrc": "desman"
+                },
+                {
+                  "imgSrc": "knight"
                 }
               ],
               "right": {
@@ -1644,10 +1725,13 @@
               "id": "55",
               "npcName": "Выхухольд",
               "npcLine": "Я заметил, что вы немного отличаетесь от среднестатистического жителя этого города. Могу я узнать, кто вы?",
-              "background": "background",
+              "background": "townsquare",
               "npcs": [
                 {
-                  "imgSrc": ""
+                  "imgSrc": "desman"
+                },
+                {
+                  "imgSrc": "knight"
                 }
               ],
               "right": {
@@ -1670,10 +1754,13 @@
               "id": "56",
               "npcName": "",
               "npcLine": "Выхухольд стыдливо умолкает. Леди Остерина смотрит на тебя с осуждением. Они уходят.",
-              "background": "background",
+              "background": "townsquare",
               "npcs": [
                 {
-                  "imgSrc": ""
+                  "imgSrc": "desman"
+                },
+                {
+                  "imgSrc": "knight"
                 }
               ],
               "right": {
@@ -1687,7 +1774,7 @@
               "id": "57",
               "npcName": "",
               "npcLine": "Лапы монстра почти достают тебя. У самого уха слышно жевание массивной челюсти. Но этот звук прерывает свист.",
-              "background": "background",
+              "background": "alley",
               "npcs": [
                 {
                   "imgSrc": ""
@@ -1704,10 +1791,10 @@
               "id": "58",
               "npcName": "",
               "npcLine": "Стрелы. В переулке перед тобой стоит цапля-лучница. Ловкими движениями она выпускает одну стрелу за другой вслед улетающему чудовищу.",
-              "background": "background",
+              "background": "alley",
               "npcs": [
                 {
-                  "imgSrc": ""
+                  "imgSrc": "heron"
                 }
               ],
               "right": {
@@ -1727,10 +1814,10 @@
               "id": "59",
               "npcName": "Лучница",
               "npcLine": "Если бы ты не загораживал, тварь была бы уже мертва.\n(Раздражённый голос навевает мысли о твоей старшей сестре.)",
-              "background": "background",
+              "background": "alley",
               "npcs": [
                 {
-                  "imgSrc": ""
+                  "imgSrc": "heron"
                 }
               ],
               "right": {
@@ -1750,10 +1837,10 @@
               "id": "60",
               "npcName": "",
               "npcLine": "Ты видел, что стрелы едва ранили Стрекозу. Но, видимо, лучница с тобой не согласна.",
-              "background": "background",
+              "background": "alley",
               "npcs": [
                 {
-                  "imgSrc": ""
+                  "imgSrc": "heron"
                 }
               ],
               "right": {
@@ -1773,10 +1860,10 @@
               "id": "61",
               "npcName": "",
               "npcLine": "Лучница говорит, что у неё есть дела важнее, чем спорить с \"капризным ребёнком\". Она уходит.",
-              "background": "background",
+              "background": "alley",
               "npcs": [
                 {
-                  "imgSrc": ""
+                  "imgSrc": "heron"
                 }
               ],
               "right": {
@@ -1796,10 +1883,10 @@
               "id": "62",
               "npcName": "Лучница",
               "npcLine": "Стрекоза, может, и хорошо летает, но не лучше моих стрел! Скоро я с ней разделаюсь.",
-              "background": "background",
+              "background": "alley",
               "npcs": [
                 {
-                  "imgSrc": ""
+                  "imgSrc": "heron"
                 }
               ],
               "right": {
@@ -1813,10 +1900,10 @@
               "id": "63",
               "npcName": "Лучница",
               "npcLine": "Та, кто спасла твою глупую голову. Тебе жить надоело?\n(Раздражённый голос навевает мысли о твоей старшей сестре.)",
-              "background": "background",
+              "background": "alley",
               "npcs": [
                 {
-                  "imgSrc": ""
+                  "imgSrc": "heron"
                 }
               ],
               "right": {
@@ -1836,10 +1923,10 @@
               "id": "64",
               "npcName": "Лучница",
               "npcLine": "В любом случае, очевидно, что ты не можешь позаботиться о себе. Где твой дом?",
-              "background": "background",
+              "background": "alley",
               "npcs": [
                 {
-                  "imgSrc": ""
+                  "imgSrc": "heron"
                 }
               ],
               "right": {
@@ -1853,10 +1940,10 @@
               "id": "65",
               "npcName": "",
               "npcLine": "Лучница так и не назвала своего имени. Стоит ли доверить ей правду о себе?",
-              "background": "background",
+              "background": "alley",
               "npcs": [
                 {
-                  "imgSrc": ""
+                  "imgSrc": "heron"
                 }
               ],
               "right": {
@@ -1871,7 +1958,7 @@
               "left": {
                 "text": "Соврать",
                 "requirements": {
-                  "savvy": 3
+                  "savvy": 12
                 },
                 "success": {
                   "nextCard": "79",
@@ -1891,10 +1978,10 @@
               "id": "66",
               "npcName": "",
               "npcLine": "Ты рассказываешь свою историю. Лучница смеётся, похоже, она тебе не верит.",
-              "background": "background",
+              "background": "alley",
               "npcs": [
                 {
-                  "imgSrc": ""
+                  "imgSrc": "heron"
                 }
               ],
               "right": {
@@ -1908,10 +1995,10 @@
               "id": "67",
               "npcName": "",
               "npcLine": "Ты притворяешься обычным путешественником. Выходит не очень складно. Лучница смеётся.",
-              "background": "background",
+              "background": "alley",
               "npcs": [
                 {
-                  "imgSrc": ""
+                  "imgSrc": "heron"
                 }
               ],
               "right": {
@@ -1931,10 +2018,10 @@
               "id": "68",
               "npcName": "Лучница",
               "npcLine": "Брехун из тебя посредственный. Но спасибо, что развеселил. Удачи!\n(Она собирается уходить.)",
-              "background": "background",
+              "background": "alley",
               "npcs": [
                 {
-                  "imgSrc": ""
+                  "imgSrc": "heron"
                 }
               ],
               "right": {
@@ -1954,10 +2041,10 @@
               "id": "69",
               "npcName": "",
               "npcLine": "Лучница делает вид, что не замечает тебя.",
-              "background": "background",
+              "background": "alley",
               "npcs": [
                 {
-                  "imgSrc": ""
+                  "imgSrc": "heron"
                 }
               ],
               "right": {
@@ -1977,10 +2064,10 @@
               "id": "70",
               "npcName": "Лучница",
               "npcLine": "Я тебе не нянька, хватит за мной идти.",
-              "background": "background",
+              "background": "alley",
               "npcs": [
                 {
-                  "imgSrc": ""
+                  "imgSrc": "heron"
                 }
               ],
               "right": {
@@ -2001,10 +2088,10 @@
               "id": "71",
               "npcName": "Лучница",
               "npcLine": "Держи монетку и оставь меня в покое.",
-              "background": "background",
+              "background": "alley",
               "npcs": [
                 {
-                  "imgSrc": ""
+                  "imgSrc": "heron"
                 }
               ],
               "right": {
@@ -2024,10 +2111,10 @@
               "id": "72",
               "npcName": "Лучница",
               "npcLine": "Что тебе от меня нужно? Иди домой!",
-              "background": "background",
+              "background": "alley",
               "npcs": [
                 {
-                  "imgSrc": ""
+                  "imgSrc": "heron"
                 }
               ],
               "right": {
@@ -2047,7 +2134,7 @@
               "id": "73",
               "npcName": "",
               "npcLine": "Это оказался дом людей-ежей. Они кажутся доброжелательными и даже не против твоей компании.",
-              "background": "background",
+              "background": "insidehouse",
               "npcs": [
                 {
                   "imgSrc": ""
@@ -2070,10 +2157,10 @@
               "id": "74",
               "npcName": "Лучница",
               "npcLine": "Ну что на это раз… Это был не твой дом? Ты заблудился?",
-              "background": "background",
+              "background": "alley",
               "npcs": [
                 {
-                  "imgSrc": ""
+                  "imgSrc": "heron"
                 }
               ],
               "right": {
@@ -2087,10 +2174,10 @@
               "id": "75",
               "npcName": "",
               "npcLine": "Лучница тяжело вздыхает и спрашивает, есть ли у тебя деньги.",
-              "background": "background",
+              "background": "alley",
               "npcs": [
                 {
-                  "imgSrc": ""
+                  "imgSrc": "heron"
                 }
               ],
               "right": {
@@ -2110,10 +2197,10 @@
               "id": "76",
               "npcName": "Лучница",
               "npcLine": "Этого хватит на пару ночей в таверне. Либо… можешь жить у меня.",
-              "background": "background",
+              "background": "alley",
               "npcs": [
                 {
-                  "imgSrc": ""
+                  "imgSrc": "heron"
                 }
               ],
               "right": {
@@ -2133,10 +2220,10 @@
               "id": "77",
               "npcName": "Лучница",
               "npcLine": "Я пущу тебя к себе, но предупреждаю: работы будет много. Согласен?",
-              "background": "background",
+              "background": "alley",
               "npcs": [
                 {
-                  "imgSrc": ""
+                  "imgSrc": "heron"
                 }
               ],
               "right": {
@@ -2156,10 +2243,10 @@
               "id": "78",
               "npcName": "",
               "npcLine": "Дом лучницы оказывается старой лачугой. Тут много охотничьих инструментов и шкур. С лучницей живёт её подруга швея.",
-              "background": "background",
+              "background": "insidehouse",
               "npcs": [
                 {
-                  "imgSrc": ""
+                  "imgSrc": "heron"
                 }
               ],
               "right": {
@@ -2174,10 +2261,10 @@
               "id": "79",
               "npcName": "",
               "npcLine": "Ты врёшь про свои путешествия, получается так складно, что ты и сам себе почти поверил.",
-              "background": "background",
+              "background": "alley",
               "npcs": [
                 {
-                  "imgSrc": ""
+                  "imgSrc": "heron"
                 }
               ],
               "right": {
@@ -2191,10 +2278,10 @@
               "id": "80",
               "npcName": "Лучница",
               "npcLine": "Ребёнок путешественник? Удивительно, что ты ещё жив. Тебе нужен кров?",
-              "background": "background",
+              "background": "alley",
               "npcs": [
                 {
-                  "imgSrc": ""
+                  "imgSrc": "heron"
                 }
               ],
               "right": {
@@ -2214,10 +2301,10 @@
               "id": "81",
               "npcName": "Лучница",
               "npcLine": "Тогда удачи в твоих странствиях!\n(Она уходит.)",
-              "background": "background",
+              "background": "alley",
               "npcs": [
                 {
-                  "imgSrc": ""
+                  "imgSrc": "heron"
                 }
               ],
               "right": {
@@ -2237,16 +2324,16 @@
               "id": "82",
               "npcName": "Мужчина",
               "npcLine": "Ну и денёк, да?\n(Ехидно квакает мужчина-лягушка, сидя среди напуганных людей-животных.)",
-              "background": "background",
+              "background": "tavern",
               "npcs": [
                 {
-                  "imgSrc": ""
+                  "imgSrc": "froggy"
                 }
               ],
               "right": {
                 "text": "Ответить",
                 "requirements": {
-                  "savvy": 1
+                  "savvy": 12
                 },
                 "success": {
                   "nextCard": "104",
@@ -2272,10 +2359,10 @@
               "id": "83",
               "npcName": "",
               "npcLine": "Судя по книгам, доставшимся тебе в наследство от сестры, это таверна.",
-              "background": "background",
+              "background": "tavern",
               "npcs": [
                 {
-                  "imgSrc": ""
+                  "imgSrc": "froggy"
                 }
               ],
               "right": {
@@ -2289,10 +2376,10 @@
               "id": "84",
               "npcName": "",
               "npcLine": "Мужчина-лягушка трогает струны своей лютни и начинает петь.",
-              "background": "background",
+              "background": "tavern",
               "npcs": [
                 {
-                  "imgSrc": ""
+                  "imgSrc": "froggy"
                 }
               ],
               "right": {
@@ -2315,10 +2402,10 @@
               "id": "85",
               "npcName": "",
               "npcLine": "Бард обиженно вздыхает и рассказывает словами. Стрекоза уже месяц нападает на город. Королева и её рыцари не могут её победить.",
-              "background": "background",
+              "background": "tavern",
               "npcs": [
                 {
-                  "imgSrc": ""
+                  "imgSrc": "froggy"
                 }
               ],
               "right": {
@@ -2331,11 +2418,11 @@
             "86": {
               "id": "86",
               "npcName": "",
-              "npcLine": "Стрекоза хищно маневрир��ет над городом и, не найдя новую жертву, улетает. Большая часть людей покидает таверну, но бард остаётся.",
-              "background": "background",
+              "npcLine": "Стрекоза хищно маневрирует над городом и, не найдя новую жертву, улетает. Большая часть людей покидает таверну, но бард остаётся.",
+              "background": "tavern",
               "npcs": [
                 {
-                  "imgSrc": ""
+                  "imgSrc": "froggy"
                 }
               ],
               "right": {
@@ -2355,10 +2442,10 @@
               "id": "87",
               "npcName": "",
               "npcLine": "Он поёт об ужасном чудовище, что мучает город многие дни. О том, как отважно с ним сражаются рыцари.",
-              "background": "background",
+              "background": "tavern",
               "npcs": [
                 {
-                  "imgSrc": ""
+                  "imgSrc": "froggy"
                 }
               ],
               "right": {
@@ -2378,10 +2465,10 @@
               "id": "88",
               "npcName": "",
               "npcLine": "О герое, что спасёт эти земли и станет новым королём. О пирах в его честь. И как все мы будем на них веселиться.",
-              "background": "background",
+              "background": "tavern",
               "npcs": [
                 {
-                  "imgSrc": ""
+                  "imgSrc": "froggy"
                 }
               ],
               "right": {
@@ -2401,10 +2488,10 @@
               "id": "89",
               "npcName": "",
               "npcLine": "Многие в таверне приободрились и хлопают, кто-то даже подпевал. Бард низко кланяется.",
-              "background": "background",
+              "background": "tavern",
               "npcs": [
                 {
-                  "imgSrc": ""
+                  "imgSrc": "froggy"
                 }
               ],
               "right": {
@@ -2418,10 +2505,10 @@
               "id": "90",
               "npcName": "Квакельдо",
               "npcLine": "Бард Квакельдо к твоим услугам! Не желаешь ли профинансировать бедного артиста?",
-              "background": "background",
+              "background": "tavern",
               "npcs": [
                 {
-                  "imgSrc": ""
+                  "imgSrc": "froggy"
                 }
               ],
               "right": {
@@ -2446,10 +2533,10 @@
               "id": "91",
               "npcName": "Квакельдо",
               "npcLine": "Видимо, тебе приходится хуже моего. Давай я угощу тебя ужином?",
-              "background": "background",
+              "background": "tavern",
               "npcs": [
                 {
-                  "imgSrc": ""
+                  "imgSrc": "froggy"
                 }
               ],
               "right": {
@@ -2469,10 +2556,10 @@
               "id": "92",
               "npcName": "Квакельдо",
               "npcLine": "Спасибо, добрый друг! Давай разделим её, отужинав вместе?",
-              "background": "background",
+              "background": "tavern",
               "npcs": [
                 {
-                  "imgSrc": ""
+                  "imgSrc": "froggy"
                 }
               ],
               "right": {
@@ -2492,16 +2579,16 @@
               "id": "93",
               "npcName": "",
               "npcLine": "Вы ужинаете, делясь историями из своей жизни. Квакельдо оплачивает твой ночлег в таверне. Сквозь сон ты слышишь, как он поёт для гостей, его голос убаюкивает встревоженный город.",
-              "background": "background",
+              "background": "tavern",
               "npcs": [
                 {
-                  "imgSrc": ""
+                  "imgSrc": "froggy"
                 }
               ],
               "right": {
                 "text": "Проснуться",
                 "success": {
-                  "nextCard": "86"
+                  "nextCard": "94"
                 }
               }
             },
@@ -2509,7 +2596,7 @@
               "id": "94",
               "npcName": "",
               "npcLine": "Ты просыпаешься всё в той же таверне. Что делать? Может, уговорить барда взять тебя в ученики? Или поискать другие возможности?",
-              "background": "background",
+              "background": "tavern",
               "npcs": [
                 {
                   "imgSrc": ""
@@ -2518,7 +2605,7 @@
               "right": {
                 "text": "Бард",
                 "requirements": {
-                  "savvy": 2
+                  "savvy": 12
                 },
                 "success": {
                   "nextCard": "95",
@@ -2544,10 +2631,10 @@
               "id": "95",
               "npcName": "Квакельдо",
               "npcLine": "Хорошо, дорогой друг, я стану твоим учителем! Отныне эта таверна — твой новый дом и школа.",
-              "background": "background",
+              "background": "tavern",
               "npcs": [
                 {
-                  "imgSrc": ""
+                  "imgSrc": "froggy"
                 }
               ],
               "right": {
@@ -2561,10 +2648,10 @@
               "id": "96",
               "npcName": "",
               "npcLine": "С утра до ночи Квакельдо учит тебя. Твоя речь становится красивее и даже начинает получаться играть на лютне.",
-              "background": "background",
+              "background": "tavern",
               "npcs": [
                 {
-                  "imgSrc": ""
+                  "imgSrc": "froggy"
                 }
               ],
               "right": {
@@ -2579,10 +2666,10 @@
               "id": "97",
               "npcName": "",
               "npcLine": "Квакельдо тебе отказал, хоть и очень вежливо.",
-              "background": "background",
+              "background": "tavern",
               "npcs": [
                 {
-                  "imgSrc": ""
+                  "imgSrc": "froggy"
                 }
               ],
               "right": {
@@ -2596,7 +2683,7 @@
               "id": "98",
               "npcName": "",
               "npcLine": "Ты натыкаешься на лавку кузнеца. Либо можно постучаться в случайный дом. Вдруг кто-то захочет тебя приютить?",
-              "background": "background",
+              "background": "alley",
               "npcs": [
                 {
                   "imgSrc": ""
@@ -2619,7 +2706,7 @@
               "id": "99",
               "npcName": "",
               "npcLine": "Это оказался дом людей-ежей. Они кажутся доброжелательными и даже не против твоей компании.",
-              "background": "background",
+              "background": "insidehouse",
               "npcs": [
                 {
                   "imgSrc": ""
@@ -2642,10 +2729,10 @@
               "id": "100",
               "npcName": "",
               "npcLine": "Таверна полна горюющих людей, которые находят утешение в песнях мужчины-лягушки с лютней.",
-              "background": "background",
+              "background": "tavern",
               "npcs": [
                 {
-                  "imgSrc": ""
+                  "imgSrc": "froggy"
                 }
               ],
               "right": {
@@ -2667,10 +2754,10 @@
               "id": "101",
               "npcName": "",
               "npcLine": "Утро вечера мудреннее. Вы отдаёте монетку владельцу таверны, ужинаете и засыпаете.",
-              "background": "background",
+              "background": "tavern",
               "npcs": [
                 {
-                  "imgSrc": ""
+                  "imgSrc": "froggy"
                 }
               ],
               "right": {
@@ -2684,7 +2771,7 @@
               "id": "102",
               "npcName": "",
               "npcLine": "По дороге ты видишь таверну и лавку кузнеца. Что выберешь?",
-              "background": "background",
+              "background": "alley",
               "npcs": [
                 {
                   "imgSrc": ""
@@ -2707,10 +2794,10 @@
               "id": "103",
               "npcName": "",
               "npcLine": "Ты что-то испуганно бормочешь. Мужчина-лягушка успокаивающе похлопывает тебя по голове.",
-              "background": "background",
+              "background": "tavern",
               "npcs": [
                 {
-                  "imgSrc": ""
+                  "imgSrc": "froggy"
                 }
               ],
               "right": {
@@ -2724,10 +2811,10 @@
               "id": "104",
               "npcName": "",
               "npcLine": "Ты не позволяешь страху взять верх: «Обычный вторник, за исключением говорящего печенья и огромной стрекозы». Мужчина и ещё несколько людей смеются.",
-              "background": "background",
+              "background": "tavern",
               "npcs": [
                 {
-                  "imgSrc": ""
+                  "imgSrc": "froggy"
                 }
               ],
               "right": {
@@ -2741,16 +2828,16 @@
               "id": "105",
               "npcName": "Мужчина",
               "npcLine": "Стрекозу я вижу уже чаще, чем свою зарплату. А вот говорящее печенье — это что-то новенькое!",
-              "background": "background",
+              "background": "tavern",
               "npcs": [
                 {
-                  "imgSrc": ""
+                  "imgSrc": "froggy"
                 }
               ],
               "right": {
                 "text": "Рассказать",
                 "requirements": {
-                  "savvy": 3
+                  "savvy": 12
                 },
                 "success": {
                   "nextCard": "108",
@@ -2776,10 +2863,10 @@
               "id": "106",
               "npcName": "",
               "npcLine": "Большая часть людей теряют интерес к истории и начинают обсуждать Стрекозу. Но лягушка внимательно слушает.",
-              "background": "background",
+              "background": "tavern",
               "npcs": [
                 {
-                  "imgSrc": ""
+                  "imgSrc": "froggy"
                 }
               ],
               "right": {
@@ -2793,10 +2880,10 @@
               "id": "107",
               "npcName": "Мужчина",
               "npcLine": "Незавидная судьба, мой юный друг. Желаю вам, чтобы у этого приключения был счастливый конец!",
-              "background": "background",
+              "background": "tavern",
               "npcs": [
                 {
-                  "imgSrc": ""
+                  "imgSrc": "froggy"
                 }
               ],
               "right": {
@@ -2810,10 +2897,10 @@
               "id": "108",
               "npcName": "",
               "npcLine": "Твою историю с интересом слушают. Мужчина начинает ирать на лютне, аккомпанируя твоему рассказу.",
-              "background": "background",
+              "background": "tavern",
               "npcs": [
                 {
-                  "imgSrc": ""
+                  "imgSrc": "froggy"
                 }
               ],
               "right": {
@@ -2827,10 +2914,10 @@
               "id": "109",
               "npcName": "Мужчина",
               "npcLine": "Какая история! Какой талант рассказчика! Я могу сделать из тебя первоклассного барда!",
-              "background": "background",
+              "background": "tavern",
               "npcs": [
                 {
-                  "imgSrc": ""
+                  "imgSrc": "froggy"
                 }
               ],
               "right": {
@@ -2850,10 +2937,10 @@
               "id": "110",
               "npcName": "Мужчина",
               "npcLine": "Понимаю, жизнь артиста тяжела. Это под силу немногим.",
-              "background": "background",
+              "background": "tavern",
               "npcs": [
                 {
-                  "imgSrc": ""
+                  "imgSrc": "froggy"
                 }
               ],
               "right": {
@@ -2867,10 +2954,10 @@
               "id": "111",
               "npcName": "Мужчина",
               "npcLine": "Меня зовут Квакельдо! Мой первый урок: барды живут либо в дороге, либо среди людей. Отн��не эта таверна — твой новый дом и школа.",
-              "background": "background",
+              "background": "tavern",
               "npcs": [
                 {
-                  "imgSrc": ""
+                  "imgSrc": "froggy"
                 }
               ],
               "right": {
@@ -2890,10 +2977,10 @@
               "id": "112",
               "npcName": "",
               "npcLine": "Квакельдо решает продемонстрировать мастерство. Он трогает струны своей лютни и начинает песнь о Стрекозе.",
-              "background": "background",
+              "background": "tavern",
               "npcs": [
                 {
-                  "imgSrc": ""
+                  "imgSrc": "froggy"
                 }
               ],
               "right": {
@@ -2907,10 +2994,10 @@
               "id": "113",
               "npcName": "",
               "npcLine": "Он поёт об ужасном чудовище, что мучает город многие дни. О том, как отважно с ним сражаются рыцари.",
-              "background": "background",
+              "background": "tavern",
               "npcs": [
                 {
-                  "imgSrc": ""
+                  "imgSrc": "froggy"
                 }
               ],
               "right": {
@@ -2924,10 +3011,10 @@
               "id": "114",
               "npcName": "",
               "npcLine": "О герое, что спасёт эти земли и станет новым королём. О пирах в его честь. И как все мы будем на них веселиться.",
-              "background": "background",
+              "background": "tavern",
               "npcs": [
                 {
-                  "imgSrc": ""
+                  "imgSrc": "froggy"
                 }
               ],
               "right": {
@@ -2947,10 +3034,10 @@
               "id": "115",
               "npcName": "",
               "npcLine": "Многие в таверне приободрились и хлопают, кто-то даже подпевал. Бард низко кланяется.",
-              "background": "background",
+              "background": "tavern",
               "npcs": [
                 {
-                  "imgSrc": ""
+                  "imgSrc": "froggy"
                 }
               ],
               "right": {
@@ -2964,10 +3051,10 @@
               "id": "116",
               "npcName": "",
               "npcLine": "Стрекоза хищно маневрирует над городом и, не найдя новую жертву, улетает. Большая часть людей покидает таверну, но Квакельдо остаётся.",
-              "background": "background",
+              "background": "tavern",
               "npcs": [
                 {
-                  "imgSrc": ""
+                  "imgSrc": "froggy"
                 }
               ],
               "right": {
@@ -2981,7 +3068,7 @@
               "id": "117",
               "npcName": "",
               "npcLine": "На площади собираются люди-животные, пытаясь оказать помощь раненым. Однако не всем можно помочь. Страх сменяется отчаянием и горем.",
-              "background": "background",
+              "background": "townsquare",
               "npcs": [
                 {
                   "imgSrc": ""
@@ -3004,10 +3091,10 @@
               "id": "118",
               "npcName": "",
               "npcLine": "Вы ужинаете с Квакельдо, делясь историями из своей жизни. Он оплачивает твой простой в таверне. Сквозь сон ты слышишь, как он поёт для гостей, его голос убаюкивает встревоженный город.",
-              "background": "background",
+              "background": "tavern",
               "npcs": [
                 {
-                  "imgSrc": ""
+                  "imgSrc": "froggy"
                 }
               ],
               "right": {
@@ -3021,7 +3108,7 @@
               "id": "119",
               "npcName": "",
               "npcLine": "Вокруг дома и лавки. Пора возвращаться в таверну… Или бросить идею стать бардом?",
-              "background": "background",
+              "background": "alley",
               "npcs": [
                 {
                   "imgSrc": ""
@@ -3044,7 +3131,7 @@
               "id": "120",
               "npcName": "",
               "npcLine": "В поисках ночлега ты натыкаешься на ещё открытую лавку кузнеца. Либо можно постучать в чей-нибудь дом.",
-              "background": "background",
+              "background": "alley",
               "npcs": [
                 {
                   "imgSrc": ""
@@ -3067,7 +3154,7 @@
               "id": "121",
               "npcName": "",
               "npcLine": "На площади собираются люди-животные, пытаясь оказать помощь раненым. Однако не всем можно помочь. Страх сменяется отчаянием и горем.",
-              "background": "background",
+              "background": "townsquare",
               "npcs": [
                 {
                   "imgSrc": ""
@@ -3084,10 +3171,10 @@
               "id": "122",
               "npcName": "Мужчина",
               "npcLine": "Повезло тебе, пацан, что не заметила!\n(Мужчина-кабан широко улыбается, положив руку тебе на плечо.)",
-              "background": "background",
+              "background": "townandriver",
               "npcs": [
                 {
-                  "imgSrc": ""
+                  "imgSrc": "ban"
                 }
               ],
               "right": {
@@ -3101,10 +3188,10 @@
               "id": "123",
               "npcName": "Мужчина",
               "npcLine": "Её хитин прочнее стали. Челюсти острее самого искусного клинка. А летит она быстрее ветра.",
-              "background": "background",
+              "background": "townandriver",
               "npcs": [
                 {
-                  "imgSrc": ""
+                  "imgSrc": "ban"
                 }
               ],
               "right": {
@@ -3124,10 +3211,10 @@
               "id": "124",
               "npcName": "Мужчина",
               "npcLine": "Появилась с месяц назад. Почти всех королевских рыцарей перебила. Да ну ничего, справимся как-нибудь!",
-              "background": "background",
+              "background": "townandriver",
               "npcs": [
                 {
-                  "imgSrc": ""
+                  "imgSrc": "ban"
                 }
               ],
               "right": {
@@ -3147,10 +3234,10 @@
               "id": "125",
               "npcName": "Мужчина",
               "npcLine": "Наверное, наелась.",
-              "background": "background",
+              "background": "townandriver",
               "npcs": [
                 {
-                  "imgSrc": ""
+                  "imgSrc": "ban"
                 }
               ],
               "right": {
@@ -3169,11 +3256,10 @@
                 "id": "125",
                 "npcName": "Мужчина",
                 "npcLine": "Знал, уже бы с ней разобрался. Даже не думай об этом, малой: живее будешь. Не детское это дело.",
-                "background": "background",
+                "background": "townandriver",
                 "npcs": [
                   {
-                    "imgSrc": "",
-                    "position": 0
+                    "imgSrc": "ban"
                   }
                 ],
                 "right": {
@@ -3187,11 +3273,10 @@
                 "id": "127",
                 "npcName": "Бан",
                 "npcLine": "Я — Бан, местный кузнец. А ты откуда, паренёк?",
-                "background": "background",
+                "background": "townandriver",
                 "npcs": [
                   {
-                    "imgSrc": "",
-                    "position": 0
+                    "imgSrc": "ban"
                   }
                 ],
                 "right": {
@@ -3205,7 +3290,7 @@
                   "left": {
                     "text": "Соврать",
                     "requirements": {
-                      "savvy": 2
+                      "savvy": 12
                     },
                     "success": {
                       "nextCard": "142",
@@ -3226,11 +3311,10 @@
                 "id": "128",
                 "npcName": "",
                 "npcLine": "Ты рассказываешь свою историю. Бан слушает тебя с доброй улыбкой.",
-                "background": "background",
+                "background": "townandriver",
                 "npcs": [
                   {
-                    "imgSrc": "",
-                    "position": 0
+                    "imgSrc": "ban"
                   }
                 ],
                 "right": {
@@ -3244,11 +3328,10 @@
                 "id": "129",
                 "npcName": "Бан",
                 "npcLine": "Сам не знаю почему, но я тебе верю. Так ты, получается, волшебник?",
-                "background": "background",
+                "background": "townandriver",
                 "npcs": [
                   {
-                    "imgSrc": "",
-                    "position": 0
+                    "imgSrc": "ban"
                   }
                 ],
                 "right": {
@@ -3271,11 +3354,10 @@
                 "id": "130",
                 "npcName": "",
                 "npcLine": "К своему удивлению, у тебя получается сотворить сияние в руке. Неужели это правда? Ты волшебник?",
-                "background": "background",
+                "background": "townandriver",
                 "npcs": [
                   {
-                    "imgSrc": "",
-                    "position": 0
+                    "imgSrc": "ban"
                   }
                 ],
                 "right": {
@@ -3289,11 +3371,10 @@
                 "id": "131",
                 "npcName": "Бан",
                 "npcLine": "Сделаю вид, что не видел этого. И не советую тебе говорить кому-нибудь. У нас в городе волшебников не жалуют.",
-                "background": "background",
+                "background": "townandriver",
                 "npcs": [
                   {
-                    "imgSrc": "",
-                    "position": 0
+                    "imgSrc": "ban"
                   }
                 ],
                 "right": {
@@ -3307,11 +3388,10 @@
                 "id": "132",
                 "npcName": "Бан",
                 "npcLine": "Ну и хорошо: у нас волшебники не водятся, их не особо жалуют.",
-                "background": "background",
+                "background": "townandriver",
                 "npcs": [
                   {
-                    "imgSrc": "",
-                    "position": 0
+                    "imgSrc": "ban"
                   }
                 ],
                 "right": {
@@ -3325,11 +3405,10 @@
                 "id": "133",
                 "npcName": "Бан",
                 "npcLine": "Зависть, что же ещё. Магии не научишься… она либо есть, либо нет.",
-                "background": "background",
+                "background": "townandriver",
                 "npcs": [
                   {
-                    "imgSrc": "",
-                    "position": 0
+                    "imgSrc": "ban"
                   }
                 ],
                 "right": {
@@ -3352,11 +3431,10 @@
                 "id": "134",
                 "npcName": "Бан",
                 "npcLine": "Вот и отлично! Тебе есть, где переночевать, малой?",
-                "background": "background",
+                "background": "townandriver",
                 "npcs": [
                   {
-                    "imgSrc": "",
-                    "position": 0
+                    "imgSrc": "ban"
                   }
                 ],
                 "right": {
@@ -3376,11 +3454,10 @@
                 "id": "135",
                 "npcName": "Бан",
                 "npcLine": "Согласен, но таковы нынче люди. Тебе есть, где переночевать, малой?",
-                "background": "background",
+                "background": "townandriver",
                 "npcs": [
                   {
-                    "imgSrc": "",
-                    "position": 0
+                    "imgSrc": "ban"
                   }
                 ],
                 "right": {
@@ -3399,12 +3476,11 @@
               "136": {
                 "id": "136",
                 "npcName": "Бан",
-                "npcLine": "Тогд�� милости прошу ко мне в берлогу. Мягкие перина не обещаю, но готовлю я вкусно!",
-                "background": "background",
+                "npcLine": "Тогда милости прошу ко мне в берлогу. Мягкие перина не обещаю, но готовлю я вкусно!",
+                "background": "townandriver",
                 "npcs": [
                   {
-                    "imgSrc": "",
-                    "position": 0
+                    "imgSrc": "ban"
                   }
                 ],
                 "right": {
@@ -3424,11 +3500,10 @@
                 "id": "137",
                 "npcName": "Бан",
                 "npcLine": "Тебе пришлось нелегко, пацан. Я буду рад помочь.",
-                "background": "background",
+                "background": "townandriver",
                 "npcs": [
                   {
-                    "imgSrc": "",
-                    "position": 0
+                    "imgSrc": "ban"
                   }
                 ],
                 "right": {
@@ -3448,11 +3523,10 @@
                 "id": "138",
                 "npcName": "",
                 "npcLine": "Ты обустраиваешься в большом каменном доме Бана. Огромная кухня полна разных котелков, сковородок и приправ. И он действительно отлично готовит.",
-                "background": "background",
+                "background": "insidehouse",
                 "npcs": [
                   {
-                    "imgSrc": "",
-                    "position": 0
+                    "imgSrc": "ban"
                   }
                 ],
                 "right": {
@@ -3466,11 +3540,10 @@
                 "id": "139",
                 "npcName": "",
                 "npcLine": "Тебе хорошо живётся у Бана. Он не просит ничего взамен и только рад т��оей компании. Чем займешься в свободное время?",
-                "background": "background",
+                "background": "insidehouse",
                 "npcs": [
                   {
-                    "imgSrc": "",
-                    "position": 0
+                    "imgSrc": "ban"
                   }
                 ],
                 "right": {
@@ -3485,11 +3558,10 @@
                 "id": "140",
                 "npcName": "",
                 "npcLine": "Ты притворяешься обычным путешественником. Выходит не очень складно. Бан, кажется, не заметил.",
-                "background": "background",
+                "background": "townandriver",
                 "npcs": [
                   {
-                    "imgSrc": "",
-                    "position": 0
+                    "imgSrc": "ban"
                   }
                 ],
                 "right": {
@@ -3503,11 +3575,10 @@
                 "id": "141",
                 "npcName": "Бан",
                 "npcLine": "Тебе есть где ночевать, юный путешественник?",
-                "background": "background",
+                "background": "townandriver",
                 "npcs": [
                   {
-                    "imgSrc": "",
-                    "position": 0
+                    "imgSrc": "ban"
                   }
                 ],
                 "right": {
@@ -3527,11 +3598,10 @@
                 "id": "142",
                 "npcName": "",
                 "npcLine": "Ты врёшь про свои путешествия, получается так складно, что ты и сам себе почти поверил.",
-                "background": "background",
+                "background": "townandriver",
                 "npcs": [
                   {
-                    "imgSrc": "",
-                    "position": 0
+                    "imgSrc": "ban"
                   }
                 ],
                 "right": {
@@ -3545,11 +3615,10 @@
                 "id": "143",
                 "npcName": "Бан",
                 "npcLine": "Не думал, что встречу такого юного путешественника. Заходи ко мне в лавку, если что-нибудь понадобится!\n(Он уходит)",
-                "background": "background",
+                "background": "townandriver",
                 "npcs": [
                   {
-                    "imgSrc": "",
-                    "position": 0
+                    "imgSrc": "ban"
                   }
                 ],
                 "right": {
@@ -3569,11 +3638,10 @@
                 "id": "144",
                 "npcName": "",
                 "npcLine": "Бан терпеливо улыбается и ждёт.",
-                "background": "background",
+                "background": "townandriver",
                 "npcs": [
                   {
-                    "imgSrc": "",
-                    "position": 0
+                    "imgSrc": "ban"
                   }
                 ],
                 "right": {
@@ -3593,11 +3661,10 @@
                 "id": "145",
                 "npcName": "Бан",
                 "npcLine": "Совет? Почувствуешь ветер, прячься. Лучше быть живым трусом, чем мёртвым храбрецом.\n(Улыбается)",
-                "background": "background",
+                "background": "townandriver",
                 "npcs": [
                   {
-                    "imgSrc": "",
-                    "position": 0
+                    "imgSrc": "ban"
                   }
                 ],
                 "right": {
@@ -3611,11 +3678,10 @@
                 "id": "146",
                 "npcName": "",
                 "npcLine": "Ты устал и в отчаянии стучишься кому-то в дом…",
-                "background": "background",
+                "background": "alley",
                 "npcs": [
                   {
-                    "imgSrc": "",
-                    "position": 0
+                    "imgSrc": ""
                   }
                 ],
                 "right": {
@@ -3629,11 +3695,10 @@
                 "id": "147",
                 "npcName": "",
                 "npcLine": "Это оказался дом людей-ежей. Они кажутся доброжелательными и даже не против твоей компании.",
-                "background": "background",
+                "background": "insidehouse",
                 "npcs": [
                   {
-                    "imgSrc": "",
-                    "position": 0
+                    "imgSrc": ""
                   }
                 ],
                 "right": {
@@ -3647,11 +3712,10 @@
                 "id": "148",
                 "npcName": "Бан",
                 "npcLine": "Если что нужно будет, заходи вко мне в лавку. Был рад знакомству, парень!",
-                "background": "background",
+                "background": "townandriver",
                 "npcs": [
                   {
-                    "imgSrc": "",
-                    "position": 0
+                    "imgSrc": "ban"
                   }
                 ],
                 "right": {
@@ -3665,11 +3729,10 @@
                 "id": "149",
                 "npcName": "Бан",
                 "npcLine": "Можешь пожить у меня в лавке взамен на работу.",
-                "background": "background",
+                "background": "townandriver",
                 "npcs": [
                   {
-                    "imgSrc": "",
-                    "position": 0
+                    "imgSrc": "ban"
                   }
                 ],
                 "right": {
@@ -3689,11 +3752,10 @@
                 "id": "150",
                 "npcName": "",
                 "npcLine": "В лавке Бана много товаров: вёдра и гвозди, мечи и щиты. Есть тут и вещи, незнакомые тебе. В подвале стоит кузня.",
-                "background": "background",
+                "background": "insidehouse",
                 "npcs": [
                   {
-                    "imgSrc": "",
-                    "position": 0
+                    "imgSrc": "ban"
                   }
                 ],
                 "right": {
@@ -3710,11 +3772,10 @@
                 "id": "151",
                 "npcName": "",
                 "npcLine": "Ты убираешься и помогаешь продавать товары. Взамен получаешь еду и ночлег на сене в кузне. Тяжело, но ты справляешься.",
-                "background": "background",
+                "background": "insidehouse",
                 "npcs": [
                   {
-                    "imgSrc": "",
-                    "position": 0
+                    "imgSrc": "ban"
                   }
                 ],
                 "right": {
@@ -3729,11 +3790,10 @@
                 "id": "152",
                 "npcName": "",
                 "npcLine": "Ты заходишь в лавку кузнеца. Здесь много товаров: вёдра и гвозди, мечи и щиты. Есть и вещи, незнакомые тебе. Мужчина-кабан за прилавком широко улыбается.",
-                "background": "background",
+                "background": "insidehouse",
                 "npcs": [
                   {
-                    "imgSrc": "",
-                    "position": 0
+                    "imgSrc": "ban"
                   }
                 ],
                 "right": {
@@ -3747,11 +3807,10 @@
                 "id": "153",
                 "npcName": "Бан",
                 "npcLine": "Добро пожаловать в лавку кузнеца Бана! Чем могу помочь?",
-                "background": "background",
+                "background": "insidehouse",
                 "npcs": [
                   {
-                    "imgSrc": "",
-                    "position": 0
+                    "imgSrc": "ban"
                   }
                 ],
                 "right": {
@@ -3765,11 +3824,10 @@
                 "id": "154",
                 "npcName": "Бан",
                 "npcLine": "Можешь пожить у меня в лавке взамен на работу.",
-                "background": "background",
+                "background": "insidehouse",
                 "npcs": [
                   {
-                    "imgSrc": "",
-                    "position": 0
+                    "imgSrc": "ban"
                   }
                 ],
                 "right": {

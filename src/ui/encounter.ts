@@ -16,11 +16,15 @@ export const createEncounter = (
     encounterContainer.removeChildren();
 
     // Calculate total width needed for all NPCs
-    const npcWidth = 250;
+    const npcWidth = 248;
     const spacing = 10;
     const totalWidth =
       card.npcs.length * npcWidth + (card.npcs.length - 1) * spacing;
-    const startX = screenWidth / 2 - totalWidth / 2;
+    let startX = screenWidth / 2 - totalWidth / 2;
+
+    if (startX < 0) {
+      startX = 0;
+    }
 
     // Create and position each NPC
     card.npcs.forEach((npc, index) => {
@@ -28,7 +32,7 @@ export const createEncounter = (
         x: startX + index * (npcWidth + spacing),
         y: 0,
         width: npcWidth,
-        height: 250,
+        height: 248,
       });
       encounterContainer.addChild(npcSprite);
     });

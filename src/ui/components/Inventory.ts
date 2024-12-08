@@ -1,9 +1,11 @@
 import { Container, Graphics, Sprite, Text } from "pixi.js";
 import { InventoryManager } from "../../managers/inventoryManager";
+import { Stats } from "../../types/types";
 
 export const createInventory = (
   screenWidth: number,
   screenHeight: number,
+  stats: Stats,
   onClose: () => void
 ): Container => {
   const inventory = InventoryManager.getInstance();
@@ -27,7 +29,7 @@ export const createInventory = (
 
   // Title
   const title = new Text({
-    text: "Inventory",
+    text: "Инвентарь",
     style: {
       fontSize: 24,
       fill: "#000000",
@@ -37,6 +39,23 @@ export const createInventory = (
   title.x = screenWidth / 2 - title.width / 2;
   title.y = screenHeight / 2 - 230;
   inventoryContainer.addChild(title);
+
+  // Stats column
+  const statsContainer = new Container();
+  const statsText = new Text({
+    text: `Карма: ${stats.karma}\n\nМагия: ${stats.magic}\n\nСмекалка: ${stats.savvy}\n\nЛовкость: ${stats.dexterity}`,
+    style: {
+      fontSize: 18,
+      fill: "#000000",
+      align: "left",
+    },
+  });
+  statsText.x = 20;
+  statsText.y = 20;
+  statsContainer.addChild(statsText);
+  statsContainer.x = screenWidth / 2 - 180;
+  statsContainer.y = screenHeight / 2 - 180;
+  inventoryContainer.addChild(statsContainer);
 
   // Items grid
   const itemsContainer = new Container();
@@ -65,7 +84,7 @@ export const createInventory = (
   });
 
   itemsContainer.x = screenWidth / 2 - 180;
-  itemsContainer.y = screenHeight / 2 - 180;
+  itemsContainer.y = inventoryContainer.height / 2;
   inventoryContainer.addChild(itemsContainer);
 
   // Close button

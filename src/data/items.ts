@@ -5,12 +5,12 @@ export const ITEMS: Record<string, Item> = {
     id: "coin",
     name: "Монета",
     description: "Золотая монета",
-    imgSrc: "frog",
+    imgSrc: "coin",
   },
   solar_stone: {
     id: "solar_stone",
     name: "Солнечник",
     description: "Солнечный камень",
-    imgSrc: "cookie",
+    imgSrc: "solar_stone",
   },
 };
