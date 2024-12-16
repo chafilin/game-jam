@@ -1,10 +1,4 @@
-import {
-  Card,
-  Selection,
-  Stats,
-  Effect,
-  NextDestination,
-} from "../types/types";
+import { Card, Selection, Stats, Effect } from "../types/types";
 import { LevelManager } from "./levelManager";
 import { InventoryManager } from "./inventoryManager";
 import { ITEMS } from "../data/items";
@@ -17,32 +11,23 @@ const rollD20 = () => {
 
 export class EncounterManager {
   private encounter: Card;
-  private cards: Record<string, Card>;
   private stats: Stats;
   private updateStats: (newStats: Stats) => void;
-  private updateBackground: (background: string) => void;
-  private onLevelComplete: (destination?: NextDestination) => void;
   private levelManager: LevelManager;
 
   constructor(
-    cards: Record<string, Card>,
-    initialCardId: string,
+    encounter: Card,
     stats: Stats,
     updateStats: (newStats: Stats) => void,
-    onLevelComplete: (destination?: NextDestination) => void,
-    levelManager: LevelManager,
-    updateBackground: (background: string) => void
+    levelManager: LevelManager
   ) {
-    this.cards = cards;
-    this.encounter = cards[initialCardId];
+    this.encounter = encounter;
     this.stats = stats;
     this.updateStats = updateStats;
-    this.onLevelComplete = onLevelComplete;
     this.levelManager = levelManager;
-    this.updateBackground = updateBackground;
   }
 
-  private handleEffect(effect: Effect): Card | null {
+  private handleEffect(effect: Effect): void {
     if (effect.stats) {
       const newStats = { ...this.stats };
       Object.entries(effect.stats).forEach(([key, value]) => {
@@ -76,28 +61,23 @@ export class EncounterManager {
       inventoryManager.removeItem(effect.removeItem);
     }
 
-    if (effect.nextLevel || effect.nextPart) {
-      this.onLevelComplete(
-        effect.nextLevel
-          ? { levelId: effect.nextLevel }
-          : { partId: effect.nextPart }
-      );
-      return null;
+    if (effect.nextLevel) {
+      this.levelManager.setCurrentLevel(effect.nextLevel);
+      this.levelManager.setCurrentCardId("1");
+    } else if (effect.nextPart) {
+      this.levelManager.setCurrentPart(effect.nextPart);
+      this.levelManager.setCurrentCardId("1");
+    } else if (effect.nextCard) {
+      this.levelManager.setCurrentCardId(effect.nextCard);
+    } else {
+      this.levelManager.nextPart();
+      this.levelManager.setCurrentCardId("1");
     }
-
-    if (effect.nextCard) {
-      this.encounter = this.cards[effect.nextCard];
-      this.levelManager.setCurrentCardId(effect.nextCard); // Update currentCardId in LevelManager
-      return this.encounter;
-    }
-
-    this.onLevelComplete();
-    return null;
   }
 
-  public changeEncounter(selection: Selection): Card | null {
+  public changeEncounter(selection: Selection): void {
     const selectionData = this.encounter[selection];
-    if (!selectionData) return null;
+    if (!selectionData) return;
 
     const meetsRequirements = Object.entries(
       selectionData.requirements || {}
@@ -110,19 +90,13 @@ export class EncounterManager {
       return check;
     });
 
-    let nextEncounter;
-
     if (!meetsRequirements && selectionData.failure) {
-      nextEncounter = this.handleEffect(selectionData.failure);
+      this.handleEffect(selectionData.failure);
     } else {
-      nextEncounter = this.handleEffect(selectionData.success);
+      this.handleEffect(selectionData.success);
     }
 
-    this.updateBackground(
-      nextEncounter?.background || this.levelManager.getCurrentBackground()
-    );
-
-    return nextEncounter;
+    this.encounter = this.levelManager.getCurrentCard();
   }
 
   public getCurrentEncounter(): Card {

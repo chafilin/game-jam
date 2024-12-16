@@ -34,7 +34,7 @@ export class GameManager {
     screenHeight: number
   ) {
     this.app = app;
-    this.levelManager = new LevelManager(levels);
+    this.levelManager = new LevelManager(levels, this.saveProgress);
     this.screenWidth = screenWidth;
     this.screenHeight = screenHeight;
     this.saveManager = new SaveManager();
@@ -107,7 +107,7 @@ export class GameManager {
     this.renderLevel();
   }
 
-  private saveProgress() {
+  private saveProgress = () => {
     const progress = {
       levelId: this.levelManager.getCurrentLevel().id,
       cardId: this.levelManager.getCurrentCardId(),
@@ -116,7 +116,7 @@ export class GameManager {
     };
     this.saveManager.saveProgress(progress);
     console.log("Action: Progress saved", progress);
-  }
+  };
 
   private updateStats = (newStats: Stats) => {
     Object.assign(this.stats, newStats);
@@ -129,19 +129,17 @@ export class GameManager {
     const cardId = this.levelManager.getCurrentCardId();
 
     this.encounterManager = new EncounterManager(
-      cards,
-      cardId,
+      cards[cardId],
       this.stats,
       this.updateStats,
-      this.onLevelComplete,
-      this.levelManager,
-      this.updateBackground
+      this.levelManager
     );
 
     const encounter = createEncounter(
       this.screenWidth,
       this.screenHeight,
-      this.encounterManager
+      this.encounterManager,
+      this.updateBackground
     );
 
     this.encounterContainer.addChild(encounter);
@@ -152,26 +150,6 @@ export class GameManager {
 
   private updateBackground = (background: string) => {
     this.background.texture = Texture.from(background);
-  };
-
-  private onLevelComplete = (destination?: {
-    levelId?: string;
-    partId?: string;
-  }) => {
-    if (destination) {
-      if (destination.levelId) {
-        this.levelManager.setCurrentLevel(destination.levelId);
-        this.saveProgress();
-      }
-      if (destination.partId) {
-        this.levelManager.setCurrentPart(destination.partId);
-      }
-    } else {
-      this.levelManager.nextPart();
-    }
-
-    this.levelManager.setCurrentCardId("1");
-    this.renderLevel();
   };
 
   public resetProgress() {
