@@ -7,7 +7,8 @@ import { createCard } from "./components/Card";
 export const createEncounter = (
   screenWidth: number,
   screenHeight: number,
-  encounterManager: EncounterManager
+  encounterManager: EncounterManager,
+  updateBackground: (background: string) => void
 ): Container => {
   const encounterContainer = new Container();
   encounterContainer.y = screenHeight / 5;
@@ -45,10 +46,10 @@ export const createEncounter = (
   };
 
   const changeEncounter = (selection: Selection) => {
-    const nextEncounter = encounterManager.changeEncounter(selection);
-    if (nextEncounter) {
-      renderEncounter(nextEncounter);
-    }
+    encounterManager.changeEncounter(selection);
+    const encounter = encounterManager.getCurrentEncounter();
+    renderEncounter(encounter);
+    updateBackground(encounter.background);
   };
 
   renderEncounter(encounterManager.getCurrentEncounter());

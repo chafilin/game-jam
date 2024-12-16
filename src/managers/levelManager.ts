@@ -5,31 +5,43 @@ export class LevelManager {
   private currentLevelIndex = 0;
   private currentPartIndex = 0;
   private currentCardId: string = "1";
+  private onSaveProgress: () => void;
 
-  constructor(levels: Level[]) {
+  constructor(levels: Level[], onSaveProgress: () => void) {
     this.levels = levels;
+    this.onSaveProgress = onSaveProgress;
+    console.log("LevelManager initialized with levels:", levels);
   }
 
   getCurrentLevel(): Level {
-    return this.levels[this.currentLevelIndex];
+    const level = this.levels[this.currentLevelIndex];
+    console.log("Current level:", level);
+    return level;
   }
 
   getCurrentPart(): Part | null {
     const level = this.getCurrentLevel();
-    return level.parts ? level.parts[this.currentPartIndex] : null;
+    const part = level.parts ? level.parts[this.currentPartIndex] : null;
+    console.log("Current part:", part);
+    return part;
   }
 
   getCurrentBackground(): string {
     const card = this.getCurrentCard();
+    console.log("Current background:", card.background);
     return card.background;
   }
 
   getCurrentCard(): Card {
-    return this.getCurrentCards()[this.currentCardId];
+    const card = this.getCurrentCards()[this.currentCardId];
+    console.log("Current card:", card);
+    return card;
   }
 
   getCurrentCards(): Record<string, Card> {
-    return this.getCurrentPart()?.cards || {};
+    const cards = this.getCurrentPart()?.cards || {};
+    console.log("Current cards:", cards);
+    return cards;
   }
 
   nextLevel(): void {
@@ -42,6 +54,11 @@ export class LevelManager {
       this.currentPartIndex = 0;
       this.currentCardId = "1";
     }
+    this.onSaveProgress();
+    console.log(
+      "Moved to next level. Current level index:",
+      this.currentLevelIndex
+    );
   }
 
   nextPart(): void {
@@ -52,6 +69,10 @@ export class LevelManager {
     } else {
       this.nextLevel();
     }
+    console.log(
+      "Moved to next part. Current part index:",
+      this.currentPartIndex
+    );
   }
 
   setCurrentLevel(levelId: string): void {
@@ -60,6 +81,10 @@ export class LevelManager {
       this.currentLevelIndex = index;
       this.currentPartIndex = 0;
       this.currentCardId = "1"; // Reset card ID when level changes
+      console.log("Set current level to:", levelId);
+    }
+    if (levelId !== "level1") {
+      this.onSaveProgress();
     }
   }
 
@@ -69,19 +94,24 @@ export class LevelManager {
       const index = level.parts.findIndex((part) => part.id === partId);
       if (index !== -1) {
         this.currentPartIndex = index;
+        console.log("Set current part to:", partId);
       }
     }
   }
 
   getCurrentCardId(): string {
+    console.log("Current card ID:", this.currentCardId);
     return this.currentCardId;
   }
 
   setCurrentCardId(cardId: string): void {
     this.currentCardId = cardId;
+    console.log("Set current card ID to:", cardId);
   }
 
   getFirstLevelId(): string {
-    return this.levels[0].id;
+    const firstLevelId = this.levels[0].id;
+    console.log("First level ID:", firstLevelId);
+    return firstLevelId;
   }
 }
