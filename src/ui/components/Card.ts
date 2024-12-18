@@ -43,7 +43,7 @@ export const createCard = (
     text: card.npcLine,
     style: {
       fontFamily: "Neucha",
-      fontSize: 20,
+      fontSize: 22,
       fill: "#000000",
       wordWrap: true,
       wordWrapWidth: cardContainer.width - 25,

@@ -22,7 +22,7 @@ export const createButton = (
     text,
     style: {
       fontFamily: "Neucha",
-      fontSize: 14,
+      fontSize: 23,
       fill: "#ffffff",
       align: "center",
       wordWrap: true,

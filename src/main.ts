@@ -11,8 +11,8 @@ let screenHeight = window.innerHeight;
 
 // Load card data dynamically
 const loadLevels = async (): Promise<Level[]> => {
-  const cardData = await import("./data/cards.json");
-  return cardData.default.levels as Level[];
+  const { levels } = await import("./data/cards.ts");
+  return levels;
 };
 
 // Initialize the game
