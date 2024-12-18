@@ -4,7 +4,7 @@ import { Level, Stats } from "../types/types";
 import { LevelManager } from "./levelManager";
 import { createEncounter } from "../ui/encounter";
 import { createMenu } from "../ui/menu";
-import { createHeader } from "../ui/components/Header";
+import { Header } from "../ui/components/Header";
 
 import { EncounterManager } from "./encounterManager";
 import { SaveManager } from "./saveManager";
@@ -19,7 +19,7 @@ export class GameManager {
   private screenHeight: number;
   private stats: Stats;
   private background: Sprite;
-  private header: Container;
+  private header: Header;
 
   private encounterContainer: Container;
   private menu: Container;
@@ -57,7 +57,7 @@ export class GameManager {
       screenWidth,
       screenHeight
     );
-    this.header = createHeader(
+    this.header = new Header(
       screenWidth,
       () => {
         this.menu.visible = true;
@@ -66,7 +66,12 @@ export class GameManager {
         this.openInventory();
       }
     );
-    this.encounterContainer = new Container();
+
+    this.encounterContainer = new Container({
+      y: this.header.height + 20,
+    });
+    this.encounterContainer.width = screenWidth;
+
     this.app.stage.addChild(this.background);
     this.app.stage.addChild(this.header);
 
@@ -94,7 +99,8 @@ export class GameManager {
 
     this.background.width = screenWidth;
     this.background.height = screenHeight;
-    this.header.width = screenWidth;
+
+    this.header.resize(screenWidth);
 
     this.app.stage.removeChild(this.menu);
     this.menu = createMenu(screenWidth, screenHeight, () => {
@@ -111,7 +117,12 @@ export class GameManager {
     const progress = {
       levelId: this.levelManager.getCurrentLevel().id,
       cardId: this.levelManager.getCurrentCardId(),
-      stats: this.stats,
+      stats: this.stats || {
+        dexterity: 0,
+        savvy: 0,
+        magic: 0,
+        karma: 0,
+      },
       inventory: InventoryManager.getInstance().getItems(),
     };
     this.saveManager.saveProgress(progress);
@@ -137,7 +148,7 @@ export class GameManager {
 
     const encounter = createEncounter(
       this.screenWidth,
-      this.screenHeight,
+      this.screenHeight - this.header.height,
       this.encounterManager,
       this.updateBackground
     );

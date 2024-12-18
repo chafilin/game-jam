@@ -32,9 +32,6 @@ const createCharacterButton = (
   characterButton.eventMode = "static";
   characterButton.cursor = "pointer";
 
-  characterButton.x = screenWidth - 16 - characterButton.width;
-  characterButton.y = 16;
-
   characterButton.interactive = true;
   characterButton.on("pointerdown", () => {
     console.log("Character button clicked");
@@ -44,19 +41,26 @@ const createCharacterButton = (
   return characterButton;
 };
 
-export const createHeader = (
-  screenWidth: number,
-  onSettingsClick: () => void,
-  onCharacterClick: () => void
-): Container => {
-  const header = new Container();
-  header.width = screenWidth;
+export class Header extends Container {
+  private settingsButton: Sprite;
+  private characterButton: Container;
 
-  const settingsButton = createSettingsButton(onSettingsClick);
-  header.addChild(settingsButton);
+  constructor(
+    screenWidth: number,
+    onSettingsClick: () => void,
+    onCharacterClick: () => void
+  ) {
+    super();
 
-  const characterButton = createCharacterButton(screenWidth, onCharacterClick);
-  header.addChild(characterButton);
+    this.settingsButton = createSettingsButton(onSettingsClick);
+    this.addChild(this.settingsButton);
 
-  return header;
-};
+    this.characterButton = createCharacterButton(screenWidth, onCharacterClick);
+    this.addChild(this.characterButton);
+  }
+
+  resize(screenWidth: number) {
+    this.settingsButton.x = 16;
+    this.characterButton.x = screenWidth - 16 - this.characterButton.width;
+  }
+}

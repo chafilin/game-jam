@@ -8,7 +8,8 @@ import { soundManager } from "../../managers/soundManager";
 export const createCard = (
   card: Card,
   onSelection: (selection: Selection) => void,
-  screenWidth: number
+  width: number,
+  height: number
 ): Container => {
   const shadowFilter = new DropShadowFilter({
     color: 0x000000,
@@ -19,7 +20,7 @@ export const createCard = (
 
   const cardContainer = new Container();
   const cardBg = new Graphics();
-  cardBg.roundRect(0, 0, screenWidth - 80, 300, 10);
+  cardBg.roundRect(0, 0, width, height, 10);
   cardBg.fill({ color: "#ffffff" });
 
   cardBg.filters = [shadowFilter];
@@ -71,12 +72,13 @@ export const createCard = (
     let requirementsItems = card[Selection.Left].requirementsItems || [];
     let hasRequirementsItems = inventory.hasItems(requirementsItems);
     let buttonColor = hasRequirementsItems ? "#176542" : "#808080";
+    const buttonWidth = cardContainer.width / 2 - 20;
 
     const leftButton = createButton(
       card[Selection.Left].text,
       10,
       cardContainer.height - 80,
-      140,
+      buttonWidth,
       50,
       buttonColor,
       hasRequirementsItems
@@ -95,9 +97,9 @@ export const createCard = (
 
     const rightButton = createButton(
       card[Selection.Right].text,
-      screenWidth - 230,
+      cardContainer.width / 2 + 10,
       cardContainer.height - 80,
-      140,
+      buttonWidth,
       50,
       buttonColor,
       hasRequirementsItems

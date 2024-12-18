@@ -28,7 +28,7 @@ export const createImage = (
   }
 ): Sprite => {
   if (!imgSrc) {
-    return new Sprite();
+    return new Sprite({ height: options.height, width: options.width });
   }
   const texture = Texture.from(imgSrc);
   const sprite = new Sprite(texture);
