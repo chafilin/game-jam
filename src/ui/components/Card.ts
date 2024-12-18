@@ -29,6 +29,7 @@ export const createCard = (
   const npcName = new Text({
     text: card.npcName,
     style: {
+      fontFamily: "Neucha",
       fontSize: 18,
       fill: "#000000",
     },
@@ -41,6 +42,7 @@ export const createCard = (
   const npcLine = new Text({
     text: card.npcLine,
     style: {
+      fontFamily: "Neucha",
       fontSize: 20,
       fill: "#000000",
       wordWrap: true,

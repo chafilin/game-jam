@@ -29,6 +29,7 @@ const createResourceContainer = (
   const valueText = new Text({
     text: `${value}/${maxValue}`,
     style: {
+      fontFamily: "Neucha",
       fontSize: 20,
       fill: "#ffffff",
       align: "center",

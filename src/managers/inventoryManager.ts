@@ -1,8 +1,11 @@
 import { Item } from "../types/types";
 
+type InventoryChangeCallback = (change: string) => void;
+
 // Inventory singleton
 export class InventoryManager {
   private items: Item[] = [];
+  private changeCallback?: InventoryChangeCallback;
 
   private static instance: InventoryManager;
 
@@ -17,16 +20,23 @@ export class InventoryManager {
     return InventoryManager.instance;
   }
 
+  setChangeCallback(callback: InventoryChangeCallback) {
+    this.changeCallback = callback;
+  }
+
   addItem(item: Item): void {
     console.log("Adding item", item);
     this.items.push(item);
+    this.changeCallback?.(`+ ${item.name}`);
   }
 
   removeItem(itemId: string): void {
     console.log("Removing item", itemId);
+
     const index = this.items.findIndex((item) => item.id === itemId);
     if (index !== -1) {
-      this.items.splice(index, 1);
+      const removedItem = this.items.splice(index, 1)[0];
+      this.changeCallback?.(`- ${removedItem.name}`);
     }
   }
 

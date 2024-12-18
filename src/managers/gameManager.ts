@@ -86,6 +86,9 @@ export class GameManager {
     BackgroundMusicManager.getInstance().addTrack("Adventure");
     BackgroundMusicManager.getInstance().addTrack("Neverland");
     BackgroundMusicManager.getInstance().addTrack("The-Lone-Wolf");
+    InventoryManager.getInstance().setChangeCallback(
+      this.header.animateInventoryChange
+    );
   }
 
   start() {
@@ -130,6 +133,16 @@ export class GameManager {
   };
 
   private updateStats = (newStats: Stats) => {
+    const changedStatsObject: Partial<Stats> = {};
+    for (const key in newStats) {
+      const statKey = key as keyof Stats;
+      if (newStats[statKey] === this.stats[statKey]) {
+        continue;
+      }
+      changedStatsObject[statKey] = newStats[statKey] - this.stats[statKey];
+    }
+
+    this.header.animateStatsChange(changedStatsObject);
     Object.assign(this.stats, newStats);
     console.log("Action: Stats updated", this.stats);
   };

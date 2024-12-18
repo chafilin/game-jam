@@ -28,6 +28,7 @@ export const createMenu = (
   const title = new Text({
     text: "Меню",
     style: {
+      fontFamily: "Neucha",
       fontSize: 24,
       fill: "#000000",
       align: "center",

@@ -31,6 +31,7 @@ export const createInventory = (
   const title = new Text({
     text: "Инвентарь",
     style: {
+      fontFamily: "Neucha",
       fontSize: 24,
       fill: "#000000",
       align: "center",
@@ -45,6 +46,7 @@ export const createInventory = (
   const statsText = new Text({
     text: `Карма: ${stats.karma}\n\nМагия: ${stats.magic}\n\nСмекалка: ${stats.savvy}\n\nЛовкость: ${stats.dexterity}`,
     style: {
+      fontFamily: "Neucha",
       fontSize: 18,
       fill: "#000000",
       align: "left",
@@ -90,7 +92,7 @@ export const createInventory = (
   // Close button
   const closeButton = new Text({
     text: "×",
-    style: { fontSize: 32, fill: "#000000" },
+    style: { fontFamily: "Neucha", fontSize: 32, fill: "#000000" },
   });
   closeButton.x = screenWidth - 40;
   closeButton.y = screenHeight / 2 - 240;

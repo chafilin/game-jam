@@ -1,6 +1,13 @@
-import { Container, Sprite, Texture } from "pixi.js";
+import { Container, Sprite, Texture, Text, Ticker } from "pixi.js";
+import { Stats } from "../../types/types";
 
 const ICON_SIZE = 88;
+const STATS_MAP = {
+  dexterity: "Ловкость",
+  savvy: "Смекалка",
+  magic: "Магия",
+  karma: "Карма",
+};
 
 const createSettingsButton = (onClick: () => void): Sprite => {
   const sb_texture = Texture.from("settings");
@@ -44,6 +51,9 @@ const createCharacterButton = (
 export class Header extends Container {
   private settingsButton: Sprite;
   private characterButton: Container;
+  private changeQueue: string[] = [];
+  private isAnimating: boolean = false;
+  private animationDelay: number = 500; // Delay in milliseconds
 
   constructor(
     screenWidth: number,
@@ -63,4 +73,90 @@ export class Header extends Container {
     this.settingsButton.x = 16;
     this.characterButton.x = screenWidth - 16 - this.characterButton.width;
   }
+
+  // Show stats animated changes under the character icon
+  animateStatsChange(stats: Partial<Stats>) {
+    let statsText = "";
+    for (const key in stats) {
+      const statKey = key as keyof Stats;
+      const value = stats[statKey];
+      if (!value) {
+        continue;
+      }
+      if (value > 0) {
+        const pluses = "+".repeat(value);
+        statsText += `${pluses} ${STATS_MAP[statKey]} `;
+      } else if (value < 0) {
+        const minuses = "-".repeat(-value);
+        statsText += `${minuses} ${STATS_MAP[statKey]} `;
+      }
+    }
+    this.enqueueChange(statsText);
+  }
+
+  animateInventoryChange = (inventoryChange: string) => {
+    this.enqueueChange(inventoryChange);
+  };
+
+  private enqueueChange(change: string) {
+    this.changeQueue.push(change);
+    if (!this.isAnimating) {
+      this.processNextChange();
+    }
+  }
+
+  private processNextChange() {
+    if (this.changeQueue.length === 0) {
+      this.isAnimating = false;
+      return;
+    }
+
+    this.isAnimating = true;
+    const change = this.changeQueue.shift()!;
+    this.animateChanges(change);
+  }
+
+  private animateChanges = (str: string) => {
+    const statChangeText = new Text({
+      text: str,
+      style: {
+        fontFamily: "Neucha",
+        fontSize: 24,
+        fill: "#FFFDDD",
+      },
+    });
+
+    // Position the text below the character button
+    statChangeText.x =
+      this.characterButton.x +
+      this.characterButton.width / 2 -
+      statChangeText.width / 2;
+    statChangeText.y =
+      this.characterButton.y + this.characterButton.height + 10;
+
+    this.addChild(statChangeText);
+
+    // Delay before starting the animation
+    setTimeout(() => {
+      const ticker = new Ticker();
+      let alpha = 1;
+      let y = statChangeText.y;
+
+      ticker.add(() => {
+        y -= 1; // Move up
+        alpha -= 0.02; // Fade out
+
+        statChangeText.y = y;
+        statChangeText.alpha = alpha;
+
+        if (alpha <= 0) {
+          ticker.stop();
+          this.removeChild(statChangeText);
+          this.processNextChange();
+        }
+      });
+
+      ticker.start();
+    }, this.animationDelay);
+  };
 }
