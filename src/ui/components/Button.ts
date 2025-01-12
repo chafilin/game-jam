@@ -1,4 +1,4 @@
-import { Container, Graphics, Text } from "pixi.js";
+import { Container, Graphics, Sprite, Text, Texture } from "pixi.js";
 
 export const createButton = (
   text: string,
@@ -6,16 +6,26 @@ export const createButton = (
   y: number,
   width: number,
   height: number,
-  color: string,
-  onClick: () => void
+  onClick: () => void,
 ): Container => {
   const buttonContainer = new Container();
   const button = new Graphics();
-  button.roundRect(x, y, width, height + 20, 20);
-  button.fill({ color });
+  const buttonBg = new Sprite();
+  buttonBg.texture = Texture.from("woodButton");
+  buttonBg.width = width;
+  buttonBg.height = height;
+  buttonBg.x = x;
+  buttonBg.y = y;
+  buttonContainer.addChild(buttonBg);
 
   buttonContainer.interactive = true;
-  buttonContainer.on("pointerdown", onClick);
+  buttonContainer.on("pointerdown", () => {
+    buttonBg.texture = Texture.from("woodButtonPressed");
+  });
+  buttonContainer.on("pointerup", () => {
+    buttonBg.texture = Texture.from("woodButton");
+    onClick();
+  });
   buttonContainer.addChild(button);
 
   const buttonText = new Text({
@@ -27,11 +37,15 @@ export const createButton = (
       align: "center",
       wordWrap: true,
       wordWrapWidth: width - 20,
+      stroke: {
+        color: "#42210B",
+        width: 2,
+      },
     },
   });
 
   buttonText.x = x + width / 2 - buttonText.width / 2;
-  buttonText.y = y + (height + 20) / 2 - buttonText.height / 2;
+  buttonText.y = y + height / 2 - buttonText.height / 2;
 
   buttonContainer.addChild(buttonText);
 

@@ -29,6 +29,13 @@ export const loadAssets = async (onProgress?: (progress: number) => void) => {
     { alias: "player", src: "assets/images/player.png" },
     { alias: "settings", src: "assets/images/settings.png" },
 
+    // UI
+    { alias: "woodButton", src: "assets/images/ui/WoodButton.png" },
+    {
+      alias: "woodButtonPressed",
+      src: "assets/images/ui/WoodButtonPressed.png",
+    },
+
     // Sounds
     { alias: "click", src: "assets/sounds/click.mp3" },
     { alias: "Adventure", src: "assets/sounds/Adventure.mp3" },

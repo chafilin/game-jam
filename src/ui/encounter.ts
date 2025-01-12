@@ -2,24 +2,34 @@ import { Container } from "pixi.js";
 import { Card, Selection } from "../types/types";
 import { EncounterManager } from "../managers/encounterManager";
 import { createImage } from "./components/Image";
-import { createCard } from "./components/Card";
+import { CardComponent } from "./components/Card";
 
-export const createEncounter = (
-  width: number,
-  height: number,
-  encounterManager: EncounterManager,
-  updateBackground: (background: string) => void
-): Container => {
-  const encounterContainer = new Container({
-    width: width,
-    height: height,
-  });
+export class Encounter extends Container {
+  private blockWidth: number;
+  private blockHeight: number;
+  private encounterManager: EncounterManager;
+  private updateBackground: (background: string) => void;
 
-  encounterContainer.y = 0;
-  encounterContainer.x = 20;
+  constructor(
+    width: number,
+    height: number,
+    encounterManager: EncounterManager,
+    updateBackground: (background: string) => void,
+  ) {
+    super();
+    this.blockWidth = width;
+    this.blockHeight = height;
+    this.encounterManager = encounterManager;
+    this.updateBackground = updateBackground;
 
-  const renderEncounter = (card: Card) => {
-    encounterContainer.removeChildren();
+    this.y = 0;
+    this.x = 20;
+
+    this.renderEncounter(this.encounterManager.getCurrentEncounter());
+  }
+
+  private renderEncounter(card: Card) {
+    this.removeChildren();
 
     // Calculate total width needed for all NPCs
     const npcWidth = 220;
@@ -27,7 +37,7 @@ export const createEncounter = (
     const totalWidth =
       card.npcs.length * npcWidth + (card.npcs.length - 1) * spacing;
 
-    let startX = width / 2 - totalWidth / 2;
+    let startX = this.blockWidth / 2 - totalWidth / 2;
 
     if (startX < 0) {
       startX = 0;
@@ -39,26 +49,27 @@ export const createEncounter = (
         x: startX + index * (npcWidth + spacing),
         y: 0,
         width: npcWidth,
-        height: height / 2,
+        height: this.blockHeight / 2,
       });
-      encounterContainer.addChild(npcSprite);
+      this.addChild(npcSprite);
     });
 
     // Position card below NPCs
-    const cardStack = createCard(card, changeEncounter, width - 40, height / 2);
+    const cardStack = new CardComponent(
+      card,
+      this.changeEncounter.bind(this),
+      this.blockWidth - 40,
+      this.blockHeight / 2,
+    );
     cardStack.x = 0;
-    cardStack.y = height / 2 - 40; // Height of NPCs + spacing
-    encounterContainer.addChild(cardStack);
-  };
+    cardStack.y = this.blockHeight / 2 - 40; // Height of NPCs + spacing
+    this.addChild(cardStack);
+  }
 
-  const changeEncounter = (selection: Selection) => {
-    encounterManager.changeEncounter(selection);
-    const encounter = encounterManager.getCurrentEncounter();
-    renderEncounter(encounter);
-    updateBackground(encounter.background);
-  };
-
-  renderEncounter(encounterManager.getCurrentEncounter());
-
-  return encounterContainer;
-};
+  private changeEncounter(selection: Selection) {
+    this.encounterManager.changeEncounter(selection);
+    const encounter = this.encounterManager.getCurrentEncounter();
+    this.renderEncounter(encounter);
+    this.updateBackground(encounter.background);
+  }
+}

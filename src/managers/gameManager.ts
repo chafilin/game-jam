@@ -2,7 +2,7 @@ import { Application, Container, Sprite, Texture } from "pixi.js";
 import { createBackground } from "../ui/components/Image";
 import { Level, Stats } from "../types/types";
 import { LevelManager } from "./levelManager";
-import { createEncounter } from "../ui/encounter";
+import { Encounter } from "../ui/encounter";
 import { createMenu } from "../ui/menu";
 import { Header } from "../ui/components/Header";
 
@@ -31,7 +31,7 @@ export class GameManager {
     app: Application,
     levels: Level[],
     screenWidth: number,
-    screenHeight: number
+    screenHeight: number,
   ) {
     this.app = app;
     this.levelManager = new LevelManager(levels, this.saveProgress);
@@ -55,7 +55,7 @@ export class GameManager {
     this.background = createBackground(
       this.levelManager.getCurrentBackground(),
       screenWidth,
-      screenHeight
+      screenHeight,
     );
     this.header = new Header(
       screenWidth,
@@ -64,7 +64,7 @@ export class GameManager {
       },
       () => {
         this.openInventory();
-      }
+      },
     );
 
     this.encounterContainer = new Container({
@@ -87,7 +87,7 @@ export class GameManager {
     BackgroundMusicManager.getInstance().addTrack("Neverland");
     BackgroundMusicManager.getInstance().addTrack("The-Lone-Wolf");
     InventoryManager.getInstance().setChangeCallback(
-      this.header.animateInventoryChange
+      this.header.animateInventoryChange,
     );
   }
 
@@ -156,14 +156,14 @@ export class GameManager {
       cards[cardId],
       this.stats,
       this.updateStats,
-      this.levelManager
+      this.levelManager,
     );
 
-    const encounter = createEncounter(
+    const encounter = new Encounter(
       this.screenWidth,
       this.screenHeight - this.header.height,
       this.encounterManager,
-      this.updateBackground
+      this.updateBackground,
     );
 
     this.encounterContainer.addChild(encounter);
@@ -192,7 +192,7 @@ export class GameManager {
       this.screenWidth,
       this.screenHeight,
       this.stats,
-      () => this.closeInventory()
+      () => this.closeInventory(),
     );
     this.app.stage.addChild(this.inventoryContainer);
   };
