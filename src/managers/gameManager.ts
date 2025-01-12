@@ -128,7 +128,7 @@ export class GameManager {
       },
       inventory: InventoryManager.getInstance().getItems(),
     };
-    this.saveManager.saveProgress(progress);
+    // this.saveManager.saveProgress(progress);
     console.log("Action: Progress saved", progress);
   };
 
