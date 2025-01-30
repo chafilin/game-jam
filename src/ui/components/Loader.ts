@@ -10,7 +10,7 @@ export const createLoader = (
 
   const loaderText = new Text({
     text: "Loading... 0%",
-    style: { fontSize: 24, fill: 0x000000 },
+    style: { fontFamily: "Neucha", fontSize: 24, fill: 0x000000 },
   });
   loaderText.anchor.set(0.5);
   loaderText.position.set(screenWidth / 2, screenHeight / 2 - 30);

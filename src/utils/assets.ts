@@ -4,42 +4,48 @@ import { Assets } from "pixi.js";
 export const loadAssets = async (onProgress?: (progress: number) => void) => {
   const assetList = [
     // Images
-    { alias: "bgtest", src: "assets/bgtest.png" },
-    { alias: "roomBg", src: "assets/roomBg.png" },
-    { alias: "settings_button", src: "assets/settings_icon.png" },
-    { alias: "stat_icon", src: "assets/stat_icon.png" },
-    { alias: "res_icon", src: "assets/res1.png" },
-    { alias: "npc_img", src: "assets/npc1.png" },
-    { alias: "frog", src: "assets/frog.png" },
-    { alias: "froggy", src: "assets/froggy.png" },
-    { alias: "knight", src: "assets/knight.png" },
-    { alias: "cookie", src: "assets/cookie.png" },
-    { alias: "ban", src: "assets/ban.png" },
-    { alias: "dragonfly", src: "assets/dragonfly.png" },
-    { alias: "tavern", src: "assets/tavern.png" },
-    { alias: "insidehouse", src: "assets/insidehouse.png" },
-    { alias: "townandriver", src: "assets/townandriver.png" },
-    { alias: "townsquare", src: "assets/townsquare.png" },
-    { alias: "alley", src: "assets/alley.png" },
-    { alias: "desman", src: "assets/desman.png" },
-    { alias: "heron", src: "assets/heron.png" },
+    { alias: "bgtest", src: "assets/images/bgtest.png" },
+    { alias: "roomBg", src: "assets/images/roomBg.png" },
+    { alias: "settings_button", src: "assets/images/settings_icon.png" },
+    { alias: "stat_icon", src: "assets/images/stat_icon.png" },
+    { alias: "res_icon", src: "assets/images/res1.png" },
+    { alias: "npc_img", src: "assets/images/npc1.png" },
+    { alias: "frog", src: "assets/images/frog.png" },
+    { alias: "froggy", src: "assets/images/froggy.png" },
+    { alias: "knight", src: "assets/images/knight.png" },
+    { alias: "cookie", src: "assets/images/cookie.png" },
+    { alias: "ban", src: "assets/images/ban.png" },
+    { alias: "dragonfly", src: "assets/images/dragonfly.png" },
+    { alias: "tavern", src: "assets/images/tavern.png" },
+    { alias: "insidehouse", src: "assets/images/insidehouse.png" },
+    { alias: "townandriver", src: "assets/images/townandriver.png" },
+    { alias: "townsquare", src: "assets/images/townsquare.png" },
+    { alias: "alley", src: "assets/images/alley.png" },
+    { alias: "desman", src: "assets/images/desman.png" },
+    { alias: "heron", src: "assets/images/heron.png" },
 
-    { alias: "coin", src: "assets/coin.png" },
-    { alias: "solar_stone", src: "assets/solar_stone.png" },
-    { alias: "player", src: "assets/player.png" },
-    { alias: "settings", src: "assets/settings.png" },
+    { alias: "coin", src: "assets/images/coin.png" },
+    { alias: "solar_stone", src: "assets/images/solar_stone.png" },
+    { alias: "player", src: "assets/images/player.png" },
+    { alias: "settings", src: "assets/images/settings.png" },
+
+    // UI
+    { alias: "woodButton", src: "assets/images/ui/WoodButton.png" },
+    {
+      alias: "woodButtonPressed",
+      src: "assets/images/ui/WoodButtonPressed.png",
+    },
 
     // Sounds
-    { alias: "click", src: "sounds/click.mp3" },
-    { alias: "Adventure", src: "sounds/Adventure.mp3" },
-    { alias: "Neverland", src: "sounds/Neverland.mp3" },
-    { alias: "The-Lone-Wolf", src: "sounds/The-Lone-Wolf.mp3" },
+    { alias: "click", src: "assets/sounds/click.mp3" },
+    { alias: "Adventure", src: "assets/sounds/Adventure.mp3" },
+    { alias: "Neverland", src: "assets/sounds/Neverland.mp3" },
+    { alias: "The-Lone-Wolf", src: "assets/sounds/The-Lone-Wolf.mp3" },
   ];
 
   for (const asset of assetList) {
     Assets.add(asset);
   }
-
   // Load all assets with progress tracking
   await Assets.load(
     assetList.map((asset) => asset.alias),

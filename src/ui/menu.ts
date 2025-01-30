@@ -28,6 +28,7 @@ export const createMenu = (
   const title = new Text({
     text: "Меню",
     style: {
+      fontFamily: "Neucha",
       fontSize: 24,
       fill: "#000000",
       align: "center",
@@ -43,8 +44,7 @@ export const createMenu = (
     screenWidth / 2 - 100,
     screenHeight / 2 - 20,
     200,
-    20,
-    "#FF4444",
+    50,
     onResetProgress
   );
   menuContainer.addChild(resetButton);
@@ -55,8 +55,7 @@ export const createMenu = (
     screenWidth / 2 - 100,
     screenHeight / 2 + 40,
     200,
-    20,
-    "#176542",
+    50,
     () => {
       menuContainer.visible = false;
     }
