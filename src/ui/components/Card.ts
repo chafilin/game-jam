@@ -190,7 +190,6 @@ export class CardComponent extends Container {
       if (singleButtonBg && (deltaX < -moveTreshold || deltaX > moveTreshold)) {
         singleButtonBg.texture = Texture.from("woodButtonPressed");
       }
-      console.log(deltaX);
 
       if (deltaX < -moveTreshold) {
         if (leftButtonBg) {
