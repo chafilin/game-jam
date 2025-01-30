@@ -7,7 +7,6 @@ import { createMenu } from "../ui/menu";
 import { Header } from "../ui/components/Header";
 
 import { EncounterManager } from "./encounterManager";
-import { SaveManager } from "./saveManager";
 import { createInventory } from "../ui/components/Inventory";
 import { InventoryManager } from "./inventoryManager";
 import { BackgroundMusicManager } from "./backgroundMusicManager";
@@ -24,7 +23,6 @@ export class GameManager {
   private encounterContainer: Container;
   private menu: Container;
   private encounterManager?: EncounterManager;
-  private saveManager: SaveManager;
   private inventoryContainer?: Container;
 
   constructor(
@@ -37,20 +35,10 @@ export class GameManager {
     this.levelManager = new LevelManager(levels, this.saveProgress);
     this.screenWidth = screenWidth;
     this.screenHeight = screenHeight;
-    this.saveManager = new SaveManager();
 
-    // Load saved progress
-    const savedProgress = this.saveManager.loadProgress();
-    if (savedProgress) {
-      this.levelManager.setCurrentLevel(savedProgress.levelId);
-      this.levelManager.setCurrentCardId(savedProgress.cardId);
-      this.stats = savedProgress.stats;
-      InventoryManager.getInstance().setItems(savedProgress.inventory);
-    } else {
-      this.levelManager.setCurrentLevel(this.levelManager.getFirstLevelId());
-      this.levelManager.setCurrentCardId("1");
-      this.stats = { dexterity: 0, savvy: 0, magic: 0, karma: 0 };
-    }
+    this.levelManager.setCurrentLevel(this.levelManager.getFirstLevelId());
+    this.levelManager.setCurrentCardId("1");
+    this.stats = { dexterity: 0, savvy: 0, magic: 0, karma: 0 };
 
     this.background = createBackground(
       this.levelManager.getCurrentBackground(),
@@ -177,7 +165,6 @@ export class GameManager {
   };
 
   public resetProgress() {
-    this.saveManager.resetProgress();
     this.levelManager.setCurrentLevel(this.levelManager.getFirstLevelId());
     this.levelManager.setCurrentCardId("1");
     InventoryManager.getInstance().clearItems();
