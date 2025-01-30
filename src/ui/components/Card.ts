@@ -1,4 +1,4 @@
-import { Container, Graphics, Text } from "pixi.js";
+import { Container, Graphics, Sprite, Text, Texture } from "pixi.js";
 import { DropShadowFilter } from "pixi-filters";
 import { Card, Selection, SelectionData } from "../../types/types";
 import { createButton } from "./Button";
@@ -11,6 +11,9 @@ export class CardComponent extends Container {
   private onSelection: (selection: Selection) => void;
   private cardWidth: number;
   private cardHeight: number;
+  private rightButton: Container = new Container();
+  private leftButton: Container = new Container();
+  private singleButton: Container = new Container();
 
   constructor(
     card: Card,
@@ -27,10 +30,14 @@ export class CardComponent extends Container {
   }
 
   private initialize() {
+    this.pivot.set(this.cardWidth / 2, this.cardHeight);
+    this.x = this.cardWidth / 2;
+    this.y = this.cardHeight * 2 - 40; // Height of NPCs + spacing
     this.addBackground();
     this.addNpcName();
     this.addNpcLine();
     this.addButtons();
+    this.addSwipe();
   }
 
   private addBackground() {
@@ -92,7 +99,7 @@ export class CardComponent extends Container {
   }
 
   private addSingleButton() {
-    const singleButton = createButton(
+    this.singleButton = createButton(
       this.card[Selection.Right].text,
       35,
       this.cardHeight - 80,
@@ -104,7 +111,7 @@ export class CardComponent extends Container {
         console.log("Action: Right button clicked");
       },
     );
-    this.addChild(singleButton);
+    this.addChild(this.singleButton);
   }
 
   private addDoubleButtons(
@@ -117,7 +124,7 @@ export class CardComponent extends Container {
     let hasRequirementsItems = inventory.hasItems(requirementsItems);
     const buttonWidth = this.cardWidth / 2 - 20;
 
-    const leftButton = createButton(
+    this.leftButton = createButton(
       selectionLeft.text,
       10,
       this.cardHeight - 80,
@@ -131,12 +138,12 @@ export class CardComponent extends Container {
           }
         : () => {},
     );
-    this.addChild(leftButton);
+    this.addChild(this.leftButton);
 
     requirementsItems = selectionRight.requirementsItems || [];
     hasRequirementsItems = inventory.hasItems(requirementsItems);
 
-    const rightButton = createButton(
+    this.rightButton = createButton(
       selectionRight.text,
       this.cardWidth / 2 + 10,
       this.cardHeight - 80,
@@ -150,6 +157,90 @@ export class CardComponent extends Container {
           }
         : () => {},
     );
-    this.addChild(rightButton);
+    this.addChild(this.rightButton);
+  }
+
+  private addSwipe() {
+    this.interactive = true;
+    const moveTreshold = this.cardWidth / 6;
+    let startX: number;
+    let deltaX: number;
+    let roation: number;
+    const singleButtonBg = this.singleButton.getChildByLabel(
+      "buttonBg",
+    ) as Sprite;
+
+    const leftButtonBg = this.leftButton.getChildByLabel("buttonBg") as Sprite;
+
+    const rightButtonBg = this.rightButton.getChildByLabel(
+      "buttonBg",
+    ) as Sprite;
+
+    this.on("pointerdown", (event) => {
+      startX = event.x;
+    });
+
+    this.on("pointermove", (event) => {
+      deltaX = event.x - startX;
+
+      roation = (deltaX / 50) * (Math.PI / 180);
+
+      this.rotation = roation;
+      this.x = this.cardWidth / 2 + deltaX;
+      if (singleButtonBg && (deltaX < -moveTreshold || deltaX > moveTreshold)) {
+        singleButtonBg.texture = Texture.from("woodButtonPressed");
+      }
+      console.log(deltaX);
+
+      if (deltaX < -moveTreshold) {
+        if (leftButtonBg) {
+          leftButtonBg.texture = Texture.from("woodButtonPressed");
+        }
+        if (rightButtonBg) {
+          rightButtonBg.texture = Texture.from("woodButton");
+        }
+      }
+      if (deltaX > moveTreshold) {
+        if (rightButtonBg) {
+          rightButtonBg.texture = Texture.from("woodButtonPressed");
+        }
+        if (leftButtonBg) {
+          leftButtonBg.texture = Texture.from("woodButton");
+        }
+      }
+    });
+
+    this.on("pointerup", () => {
+      if (deltaX < -moveTreshold) {
+        if (this.card[Selection.Left] === undefined) {
+          this.onSelection(Selection.Right);
+          soundManager.play("click");
+          console.log("Action: Right button clicked");
+        } else {
+          this.onSelection(Selection.Left);
+          soundManager.play("click");
+          console.log("Action: Left button clicked");
+        }
+      }
+      if (deltaX > moveTreshold) {
+        this.onSelection(Selection.Right);
+        soundManager.play("click");
+        console.log("Action: Right button clicked");
+      }
+
+      if (deltaX < moveTreshold && deltaX > -moveTreshold) {
+        this.x = this.cardWidth / 2;
+        this.rotation = 0;
+        if (singleButtonBg) {
+          singleButtonBg.texture = Texture.from("woodButton");
+        }
+        if (leftButtonBg) {
+          leftButtonBg.texture = Texture.from("woodButton");
+        }
+        if (rightButtonBg) {
+          rightButtonBg.texture = Texture.from("woodButton");
+        }
+      }
+    });
   }
 }

@@ -61,8 +61,6 @@ export class Encounter extends Container {
       this.blockWidth - 40,
       this.blockHeight / 2,
     );
-    cardStack.x = 0;
-    cardStack.y = this.blockHeight / 2 - 40; // Height of NPCs + spacing
     this.addChild(cardStack);
   }
 

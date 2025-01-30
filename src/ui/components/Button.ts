@@ -16,6 +16,7 @@ export const createButton = (
   buttonBg.height = height;
   buttonBg.x = x;
   buttonBg.y = y;
+  buttonBg.label = "buttonBg";
   buttonContainer.addChild(buttonBg);
 
   buttonContainer.interactive = true;
